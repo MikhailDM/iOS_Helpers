@@ -6,13 +6,13 @@ import Foundation
 
 private let calendar = Calendar.current
 
-private enum DateFormat: String {
+enum DateFormat: String {
     case onlyDayOfWeek = "EEEEE"
     case onlyHoursAndMinutes = "HH:mm"
     case dateWithDash = "yyyy-MM-dd"
 }
 
-private enum DateLocale: String {
+enum DateLocale: String {
     case ru = "ru_RU"
     case en = "en_EN"
 }
@@ -23,6 +23,16 @@ private func initDateFormatter(dateFormat: DateFormat, locale: DateLocale) -> Da
     df.dateFormat = dateFormat.rawValue
     return df
 }
+
+
+//MARK: - FUNCTION. UNIVERSAL DATE FORMAT FUNCTION
+
+func getStringFromDate(date: Date, format: DateFormat, locale: DateLocale) -> String {
+    let df = initDateFormatter(dateFormat: format, locale: locale)
+    return df.string(from: date)
+}
+
+
 
 
 //MARK: - FUNCTION. ONLY WEEKDAY IN STRING. "Вт"
@@ -70,3 +80,4 @@ print(onlyHoursAndMinutes(from: Date()))
 print(dateWithDash(from: Date()))
 print(getDateWeekAgo(from: Date()))
 print(getDateComponents(from: Date()))
+print(getStringFromDate(date: Date(), format: .onlyHoursAndMinutes, locale: .ru))
