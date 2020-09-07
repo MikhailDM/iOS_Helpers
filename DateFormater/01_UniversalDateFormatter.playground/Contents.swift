@@ -131,13 +131,23 @@ func getDatesRange(from: Date, to: Date) -> [Date] {
     // In case of the "from" date is more than "to" date it should returns an empty array
     if from > to { return [Date]() }
     var tempDate = from
-    var array = [tempDate]
+    var dates = [tempDate]
     while tempDate < to {
         tempDate = Calendar.current.date(byAdding: .day, value: 1, to: tempDate)!
-        array.append(tempDate)
+        dates.append(tempDate)
     }
-    return array
+    return dates
 }
+
+//// In case of the "from" date is more than "to" date it should returns an empty array
+//   if from > to { return [Date]() }
+//   var tempDate = from
+//   var array = [tempDate]
+//   while tempDate < to {
+//       tempDate = Calendar.current.date(byAdding: .day, value: 1, to: tempDate)!
+//       array.append(tempDate)
+//   }
+//   return array
 
 
 //MARK: - Function. Custom Data
@@ -170,4 +180,4 @@ func getDateComponents(from date: Date) {
 let sunday = calendar.date(byAdding: DateComponents(day: -1), to: Date())
 print(getDateFromDate(from: sunday!, newType: .startOfTheWeek))
 print(getDateFromDate(from: Date(), newType: .startOfTheWeek))
-
+print(getDatesRange(from: getDateFromDate(from: Date(), newType: .weekAgo), to: Date()))
