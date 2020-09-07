@@ -139,16 +139,6 @@ func getDatesRange(from: Date, to: Date) -> [Date] {
     return dates
 }
 
-//// In case of the "from" date is more than "to" date it should returns an empty array
-//   if from > to { return [Date]() }
-//   var tempDate = from
-//   var array = [tempDate]
-//   while tempDate < to {
-//       tempDate = Calendar.current.date(byAdding: .day, value: 1, to: tempDate)!
-//       array.append(tempDate)
-//   }
-//   return array
-
 
 //MARK: - Function. Custom Data
 
