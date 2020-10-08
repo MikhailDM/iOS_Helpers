@@ -8,9 +8,9 @@
 
 import UIKit
 
+
 class VolKingfisherManager {
     //MARK: - Download Image By ID
-    
     func downloadImage(imageView: UIImageView, imageId: String) {
         let url = InetConstants.getEventImage()
         
@@ -22,5 +22,4 @@ class VolKingfisherManager {
         ])
     }
     
-    
-}//Class End
+}//

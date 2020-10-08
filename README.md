@@ -10,8 +10,6 @@ iOS - Helpers
 + [Kingfisher](#Kingfisher)
 + [OtherManagers](#OtherManagers)
 + [ReusViews](#ReusViews)
-+ [UIKit](#UIKit)
-+ [WordCases](#WordCases)
 
 <br />
 <br />
@@ -99,6 +97,9 @@ Requests with RxAlamofire
 ### 01_ValidationManager
 Открытие приложения почты с адресом/Вызов отформатированного номера
 
+### 02_WordCases
+Склоняем слова в зависимости от числа
+
 <br />
 <br />
 
@@ -112,17 +113,4 @@ Reusable View с делегатом
 ### 03_BorderButtonViewWithDelegate
 Reusable View с делегатом
 
-<br />
-<br />
 
->## <a name="UIKit"></a> UIKit
-### 01_UITableView
-+ **01_ExpandSingleCellToFullScreen**   
-Увеличение длины ячейки до полного экрана, если достаточно места
-
-<br />
-<br />
-
->## <a name="WordCases"></a> WordCases
-### 01_WordCases
-Склоняем слова в зависимости от числа
