@@ -37,21 +37,21 @@ Loading data screen Manager
 + **UITableView. Add cells/Show alert**   
 Замена делегирования функций ячеек на RxSwift
 
-+ **UITableView. Custom cells**
++ **UITableView. Custom cells**   
 Передаем информацию из ячеек с помощью RxSwift   
-Растягиваемс посдеднюю ячейку до конца экрана
+Растягиваем посдеднюю ячейку до конца экрана
 
-+ **UITableView. Fullscreen cell**
++ **UITableView. Fullscreen cell**   
 Растягиваем  ячейку на есь экран
 
-+ **UITableView. Calculating cell**
++ **UITableView. Calculating cell**   
 Вычисляемая последняя ячейка списка для заполнения всего экрана
 
-+ **Weather app**
++ **Weather app**   
 Приложение погоды   
 Ловим погоду по городу с помощью RxAlamofire
 
-+ **Adding numbers**
++ **Adding numbers**   
 Сложение трех полей на RxSwift
 
 <br />
