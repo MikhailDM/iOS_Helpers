@@ -1,12 +1,14 @@
-Helpers 
+iOS - Helpers 
 =========================
 
 + [_EKP ](#EKP)
++ [_Projects ](#Projects)
 + [Alamofire](#Alamofire)
 + [Calendars](#Calendars)
 + [DateFormater ](#DateFormater)
 + [Iterators ](#Iterators)
 + [Kingfisher](#Kingfisher)
++ [OtherManagers](#OtherManagers)
 + [ReusViews](#ReusViews)
 + [UIKit](#UIKit)
 + [WordCases](#WordCases)
@@ -28,9 +30,39 @@ Loading data screen Manager
 <br />
 <br />
 
+>## <a name="Projects"></a> _Projects
+### 01_RxAndCS
+Мультипроект по работе с CleanSwift/RxSwift/RxAlamofire
+
++ **UITableView. Add cells/Show alert**   
+Замена делегирования функций ячеек на RxSwift
+
++ **UITableView. Custom cells**
+Передаем информацию из ячеек с помощью RxSwift   
+Растягиваемс посдеднюю ячейку до конца экрана
+
++ **UITableView. Fullscreen cell**
+Растягиваем  ячейку на есь экран
+
++ **UITableView. Calculating cell**
+Вычисляемая последняя ячейка списка для заполнения всего экрана
+
++ **Weather app**
+Приложение погоды   
+Ловим погоду по городу с помощью RxAlamofire
+
++ **Adding numbers**
+Сложение трех полей на RxSwift
+
+<br />
+<br />
+
 >## <a name="Alamofire"></a> Alamofire
 ### 01_AlamofireManager
 Requests with Alamofire
+
+### 02_RxAlamofireManager
+Requests with RxAlamofire
 
 <br />
 <br />
@@ -59,6 +91,13 @@ Requests with Alamofire
 >## <a name="Kingfisher"></a> Kingfisher
 ### 01_DownloadImage
 Загрузка изображений с помощью Kingfisher
+
+<br />
+<br />
+
+>## <a name="OtherManagers"></a> OtherManagers
+### 01_ValidationManager
+Открытие приложения почты с адресом/Вызов отформатированного номера
 
 <br />
 <br />
