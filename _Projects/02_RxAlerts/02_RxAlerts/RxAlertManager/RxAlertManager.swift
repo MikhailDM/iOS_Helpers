@@ -10,7 +10,10 @@ import RxSwift
 
 
 struct RxAlertManager {
+    //MARK: - Properties
     
+    
+    //MARK: - OK Dialog
     func showOKAlert(controller: UIViewController, title: String, text: String) -> Completable {
         return Completable.create { completable in
             let alertVC = UIAlertController(title: title, message: text, preferredStyle: .alert)
@@ -22,6 +25,8 @@ struct RxAlertManager {
         }
     }
     
+    
+    //MARK: - OK/REFRESH Dialog
     func showOKAndRetryAlert(controller: UIViewController, title: String, text: String) -> Maybe<Void> {
         return Maybe.create { completable in
             let alertVC = UIAlertController(title: title, message: text, preferredStyle: .alert)
@@ -35,4 +40,5 @@ struct RxAlertManager {
             return Disposables.create()
         }
     }
-}
+    
+}//
