@@ -52,6 +52,9 @@ Loading data screen Manager
 + **Adding numbers**   
 Сложение трех полей на RxSwift
 
+### 02_RxAlerts
+Работа с UIAlert через Rx
+
 <br />
 <br />
 
