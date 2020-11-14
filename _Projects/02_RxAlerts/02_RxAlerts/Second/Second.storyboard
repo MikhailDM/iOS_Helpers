@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K1z-ov-P0y">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Second-->
+        <scene sceneID="k7F-iU-I48">
+            <objects>
+                <viewController storyboardIdentifier="SecondViewController" title="Second" id="K1z-ov-P0y" customClass="SecondViewController" customModule="_2_RxAlerts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cqg-g2-9Xn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="NzB-dy-ikR">
+                                <rect key="frame" x="121.5" y="368" width="171" height="160.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SECOND SCREEN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93J-vB-PBe">
+                                        <rect key="frame" x="0.0" y="0.0" width="171" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9l-cg-6ca">
+                                        <rect key="frame" x="0.0" y="60.5" width="171" height="30"/>
+                                        <state key="normal" title="SHOW CANCEL ALERT"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAf-PN-fAu">
+                                        <rect key="frame" x="0.0" y="130.5" width="171" height="30"/>
+                                        <state key="normal" title="SHOW OK/RETRY ALERT"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Kfk-Yh-X3q"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NzB-dy-ikR" firstAttribute="centerY" secondItem="Cqg-g2-9Xn" secondAttribute="centerY" id="Mjc-Bn-aUk"/>
+                            <constraint firstItem="NzB-dy-ikR" firstAttribute="centerX" secondItem="Cqg-g2-9Xn" secondAttribute="centerX" id="Y62-sv-pBV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="showOKAlertButton" destination="a9l-cg-6ca" id="0hv-Ew-Bvk"/>
+                        <outlet property="showRetryAlertButton" destination="kAf-PN-fAu" id="nV3-V0-c2w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rlh-3g-uXU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="214" y="102"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
