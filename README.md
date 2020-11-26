@@ -101,12 +101,6 @@ Requests with RxAlamofire
 
 >## <a name="ReusViews"></a> ReusViews
 ### 01_SimpleView
-Простой reusable View
-
-### 02_SolidButtonViewWithDelegate
-Reusable View с делегатом
-
-### 03_BorderButtonViewWithDelegate
-Reusable View с делегатом
+Простой Reusable View
 
 

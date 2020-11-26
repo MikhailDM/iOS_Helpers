@@ -1,5 +1,5 @@
 //
-//  MedNoRegistersToDoctorView.swift
+//  VolNoFilterResultsView.swift
 //  ekpv2
 //
 //  Created by Михаил Дмитриев on 14.08.2020.
@@ -10,8 +10,10 @@ import UIKit
 
 
 class VolNoFilterResultsView: UIView {
-    //MARK: - Init
+    //MARK: - Outlets
     
+    
+    //MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadView()
@@ -24,7 +26,6 @@ class VolNoFilterResultsView: UIView {
     
     
     //MARK: - Load
-    
     func loadView() {
         let bundle = Bundle(for: VolNoFilterResultsView.self)
         let nib = UINib(nibName: "VolNoFilterResultsView", bundle: bundle)
@@ -33,5 +34,4 @@ class VolNoFilterResultsView: UIView {
         addSubview(view)
     }
     
-    
-}//Class End
+}//
