@@ -11,31 +11,27 @@ import RxSwift
 
 struct RxAlertManager {
     //MARK: - Properties
-    
-    
-    //MARK: - OK Dialog
-    func showOKAlert(controller: UIViewController, title: String, text: String) -> Completable {
-        return Completable.create { completable in
-            let alertVC = UIAlertController(title: title, message: text, preferredStyle: .alert)
-            alertVC.addAction(UIAlertAction(title: "Ок", style: .default, handler: {_ in
-                completable(.completed)
-            }))
-            controller.present(alertVC, animated: true, completion: nil)
-            return Disposables.create()
-        }
+    enum ActionButtons: String {
+        case ok = "Ок"
+        case cancel = "Отменить"
+        case retry = "Повторить"
     }
     
     
-    //MARK: - OK/REFRESH Dialog
-    func showOKAndRetryAlert(controller: UIViewController, title: String, text: String) -> Maybe<Void> {
-        return Maybe.create { completable in
+    //MARK: - Universal Alert
+    /// Show custom alert
+    /// - Parameters:
+    ///   - controller: UIViewController
+    ///   - title: String
+    ///   - text: String
+    ///   - actions: Type/Types of actions buttons
+    /// - Returns: Type/Types of pressed buttons
+    func showCustomAlert(controller: UIViewController, title: String, text: String, actions: [ActionButtons]) -> Observable<ActionButtons> {
+        Observable<ActionButtons>.create { observer in
             let alertVC = UIAlertController(title: title, message: text, preferredStyle: .alert)
-            alertVC.addAction(UIAlertAction(title: "Ок", style: .default, handler: {_ in
-                completable(.completed)
-            }))
-            alertVC.addAction(UIAlertAction(title: "Повторить", style: .default, handler: {_ in
-                completable(.success(()))
-            }))
+            actions.forEach { action in
+                alertVC.addAction(UIAlertAction(title: action.rawValue, style: .default, handler: { _ in observer.onNext(action) }))
+            }
             controller.present(alertVC, animated: true, completion: nil)
             return Disposables.create()
         }

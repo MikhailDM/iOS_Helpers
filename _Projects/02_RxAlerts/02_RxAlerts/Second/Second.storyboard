@@ -17,21 +17,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="NzB-dy-ikR">
-                                <rect key="frame" x="121.5" y="368" width="171" height="160.5"/>
+                                <rect key="frame" x="90.5" y="333" width="233" height="230.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SECOND SCREEN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93J-vB-PBe">
-                                        <rect key="frame" x="0.0" y="0.0" width="171" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="233" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9l-cg-6ca">
-                                        <rect key="frame" x="0.0" y="60.5" width="171" height="30"/>
-                                        <state key="normal" title="SHOW CANCEL ALERT"/>
+                                        <rect key="frame" x="0.0" y="60.5" width="233" height="30"/>
+                                        <state key="normal" title="SHOW OK ALERT"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAf-PN-fAu">
-                                        <rect key="frame" x="0.0" y="130.5" width="171" height="30"/>
+                                        <rect key="frame" x="0.0" y="130.5" width="233" height="30"/>
                                         <state key="normal" title="SHOW OK/RETRY ALERT"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vI6-c4-ENz">
+                                        <rect key="frame" x="0.0" y="200.5" width="233" height="30"/>
+                                        <state key="normal" title="SHOW OK/RETRY/CANCEL ALERT"/>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -46,6 +50,7 @@
                     <connections>
                         <outlet property="showOKAlertButton" destination="a9l-cg-6ca" id="0hv-Ew-Bvk"/>
                         <outlet property="showRetryAlertButton" destination="kAf-PN-fAu" id="nV3-V0-c2w"/>
+                        <outlet property="showRetryCancelAlertButton" destination="vI6-c4-ENz" id="hBc-d4-DiU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rlh-3g-uXU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

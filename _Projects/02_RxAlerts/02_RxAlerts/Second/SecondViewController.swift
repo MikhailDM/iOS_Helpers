@@ -25,6 +25,7 @@ class SecondViewController: UIViewController, SecondDisplayLogic {
     //MARK: - Outlets
     @IBOutlet weak var showOKAlertButton: UIButton!
     @IBOutlet weak var showRetryAlertButton: UIButton!
+    @IBOutlet weak var showRetryCancelAlertButton: UIButton!
     
     
     //MARK: - Properties
@@ -41,6 +42,7 @@ class SecondViewController: UIViewController, SecondDisplayLogic {
         configureDesign()
         subscribeToShowOKAlertButton()
         subscribeToShowRetryAlert()
+        subscribeToShowRetryCancelAlert()
     }
     
     deinit {
@@ -52,53 +54,53 @@ class SecondViewController: UIViewController, SecondDisplayLogic {
     func displayData(toDisplay: Second.Model.ViewModel.ViewModelData) { }
     
     
-    //MARK: - Actions
-    
-    
     //MARK: - Private
-    private func configureDesign() {
-//        title = "Title"
-//        navigationItem.backButtonTitle = ""
-//        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-    }
+    private func configureDesign() { }
     
     
     //MARK: - Rx
     private func subscribeToShowOKAlertButton() {
         showOKAlertButton.rx.tap.subscribe(onNext: {
             self.showOkAlert()
-        })
-        .disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
     }
     
     private func subscribeToShowRetryAlert() {
         showRetryAlertButton.rx.tap.subscribe(onNext: {
             self.showRetryAlert()
-        })
-        .disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
+    }
+    
+    private func subscribeToShowRetryCancelAlert() {
+        showRetryCancelAlertButton.rx.tap.subscribe(onNext: {
+            self.showMultiButtonsAlert()
+        }).disposed(by: disposeBag)
     }
     
     
     //MARK: - Alerts
     private func showOkAlert() {
-        alerts.showOKAlert(controller: self, title: "", text: "Ok Alert")
-            .subscribe(onCompleted: {
-                print("===================")
-                self.navigationController?.popViewController(animated: true)
-            })
-            .disposed(by: disposeBag)
+        alerts.showCustomAlert(controller: self, title: "Ok Title", text: "Ok Alert", actions: [.ok])
+            .subscribe(onNext: { [weak self] action in
+                if action == .ok { print("===== OK PRESSED"); self?.navigationController?.popViewController(animated: true) }
+            }).disposed(by: disposeBag)
     }
     
     private func showRetryAlert() {
-        alerts.showOKAndRetryAlert(controller: self, title: "Title", text: "Retry Alert")
-            .subscribe(
-                onSuccess: {
-                    print("===== RETRY")
-                },
-                onCompleted: {
-                    self.navigationController?.popViewController(animated: true)
-                })
-            .disposed(by: disposeBag)
+        alerts.showCustomAlert(controller: self, title: "Ok/Retry Title", text: "Ok/Retry Alert", actions: [.ok, .retry])
+            .subscribe(onNext: { [weak self] action in
+                if action == .ok { print("===== OK PRESSED"); self?.navigationController?.popViewController(animated: true) }
+                if action == .retry { print("===== RETRY PRESSED") }
+            }).disposed(by: disposeBag)
+    }
+    
+    private func showMultiButtonsAlert() {
+        alerts.showCustomAlert(controller: self, title: "Ok/Retry/Cancel Title", text: "Ok/Retry/Cancel Alert", actions: [.ok, .retry, .cancel])
+            .subscribe(onNext: { [weak self] action in
+                if action == .ok { print("===== OK PRESSED"); self?.navigationController?.popViewController(animated: true) }
+                if action == .retry { print("===== RETRY PRESSED") }
+                if action == .cancel { print("===== CANCEL PRESSED") }
+            }).disposed(by: disposeBag)
     }
     
 }//

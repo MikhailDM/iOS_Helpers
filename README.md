@@ -46,7 +46,7 @@ iOS - Helpers
 Сложение трех полей на RxSwift
 
 ### 02_RxAlerts
-Работа с UIAlert через Rx
+Универсальный менеджер для создания UIAlert через Rx
 
 <br />
 <br />
