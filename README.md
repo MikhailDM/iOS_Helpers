@@ -6,6 +6,7 @@ iOS - Helpers
 + [Alamofire](#Alamofire)
 + [Calendars](#Calendars)
 + [DateFormater ](#DateFormater)
++ [HealthKit ](#HealthKit)
 + [Iterators ](#Iterators)
 + [Kingfisher](#Kingfisher)
 + [OtherManagers](#OtherManagers)
@@ -71,6 +72,15 @@ Requests with RxAlamofire
 >## <a name="DateFormater"></a> DateFormater
 ### 01_UniversalDateFormatter
 Работаем с форматированием дат
+
+<br />
+<br />
+
+>## <a name="HealthKit"></a> HealthKit
+### 01_StepsManager
+Менеджер по работе с HealthKit.    
+Получение доступа и количества шагов   
+Текущий статус доступа к приложению "Здоровье"
 
 <br />
 <br />
