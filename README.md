@@ -14,15 +14,8 @@ iOS - Helpers
 <br />
 <br />
 
-
 >## <a name="EKP"></a> _EKP
-### 01_Navigation
-Основные точки навигации
-
-### 02_LoadScreenManager
-Loading data screen Manager
-
-### 03_LoginNavigation
+### 01_LoginNavigation
 Навигация к экрану логина
 
 <br />

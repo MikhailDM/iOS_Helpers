@@ -18,25 +18,19 @@ struct MedNetworkManager {
     
     
     //MARK: - Check if OMS is incorrect
-    func requestOMSisCorrect() -> Observable<Bool> {
+    struct RequestOMSisCorrectModel: Codable {
+        var omsNumber: String?
+        var faultString: String?
+        var faultCode: Int?
+    }
+    
+    func requestOMSisCorrect() -> Observable<RequestOMSisCorrectModel> {
         let url = InetConstants.getMedOMSNumber()
         return alamofireManager.rx
             .request(.post, url, parameters: nil, encoding: JSONEncoding.default, headers: nil)
-            .responseJSON()
-            .map { response -> Bool in
-                return (response.result.value as? NSDictionary)?.object(forKey: "faultCode") != nil ? false : true
-            }
-    }
-    
-    
-    //MARK: - Check if OMS linked to hospital
-    func requestIsOMSLinkedToHospital() -> Observable<Bool> {
-        let url = InetConstants.getMedPoliclinics()
-        return alamofireManager.rx
-            .request(.post, url, parameters: nil, encoding: JSONEncoding.default, headers: nil)
-            .responseJSON()
-            .map { response -> Bool in
-                return ((response.result.value as? NSDictionary)?.object(forKey: "result") as? String) != nil ? false : true
+            .responseData()
+            .map { response -> RequestOMSisCorrectModel in
+                return try JSONDecoder().decode(RequestOMSisCorrectModel.self, from: response.1)
             }
     }
     
@@ -54,11 +48,11 @@ struct MedNetworkManager {
     
     
     //MARK: - Requests appointments
-    func requestUserAppointments() -> Observable<MedAppointServerData> {
+    func requestUserAppointments(hospitalIDs: [Int]) -> Observable<MedAppointServerData> {
         let url = InetConstants.getMedAppointments()
         let parameters: [String: Any] = [
-            "lpu": [0],
-            "actualOnly": true
+            "lpu": hospitalIDs,
+            "actualOnly": false
         ]
         return alamofireManager.rx
             .request(.post, url, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
