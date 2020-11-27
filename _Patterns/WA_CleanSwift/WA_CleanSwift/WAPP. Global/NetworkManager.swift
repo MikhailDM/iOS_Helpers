@@ -11,6 +11,7 @@ import RxAlamofire
 import RxSwift
 
 
+
 struct NetworkManager {
     //MARK: - Properties
     
@@ -49,7 +50,6 @@ struct NetworkManager {
         case .weatherByCityName(cityName: let cityName):
             return "\(weatherURL)&q=\(cityName.split(separator: " ").joined(separator: "+"))"
         }
-    }
-    
+    }    
     
 }//

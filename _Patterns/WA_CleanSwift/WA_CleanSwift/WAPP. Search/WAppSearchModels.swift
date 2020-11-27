@@ -14,17 +14,18 @@ enum WAppSearch {
     enum Model {
         struct Request {
             enum RequestType {
-                case some
+                case subscribeToSearchedCities
+                case getCitiesWhichContainText(searchText: String)
             }
         }
         struct Response {
             enum ResponseType {
-                case some
+                case presentCitiesWhichContainText(searchData: [String])
             }
         }
         struct ViewModel {
             enum ViewModelData {
-                case some
+                case displayCitiesWhichContainText(searchData: [String])
             }
         }
     }

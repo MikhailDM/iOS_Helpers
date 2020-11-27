@@ -15,6 +15,11 @@ class WAppSearchPresenter: WAppSearchPresentationLogic {
     
     
     //MARK: - Present Data
-    func presentData(response: WAppSearch.Model.Response.ResponseType) { }
+    func presentData(response: WAppSearch.Model.Response.ResponseType) {
+        switch response {
+        case .presentCitiesWhichContainText(searchData: let searchData):
+            viewController?.displayData(toDisplay: .displayCitiesWhichContainText(searchData: searchData))
+        }
+    }
     
 }//
