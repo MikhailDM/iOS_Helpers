@@ -25,6 +25,7 @@ class WAppViewController: UIViewController, WAppDisplayLogic {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var weatherIcon: UIImageView!
+    @IBOutlet weak var changeCityButton: UIButton!
     
     
     //MARK: - Properties
@@ -87,9 +88,7 @@ class WAppViewController: UIViewController, WAppDisplayLogic {
         cityLabel.alpha = 0
         temperatureLabel.alpha = 0
         weatherIcon.alpha = 0
-        
-        title = "Weather App"
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationController?.navigationBar.isHidden = true
     }
     
     
@@ -97,6 +96,7 @@ class WAppViewController: UIViewController, WAppDisplayLogic {
     private func chargeRxSubscribes() {
         subscribeToTextField()
         subscribeToSearchButton()
+        subscribeToChangeCityButtonPressed()
     }
     
     private func subscribeToTextField() {
@@ -116,6 +116,13 @@ class WAppViewController: UIViewController, WAppDisplayLogic {
                 guard let self = self else { return }
                 self.view.endEditing(true)
             }).disposed(by: disposeBag)
+    }
+    
+    private func subscribeToChangeCityButtonPressed() {
+        changeCityButton.rx.tap
+            .subscribe { [weak self] _ in
+                self?.router?.routeToSearch()
+            }.disposed(by: disposeBag)
     }
     
     

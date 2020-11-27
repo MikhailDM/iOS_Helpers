@@ -1,35 +1,35 @@
 //
-//  ___FILENAME___
-//  ___PROJECTNAME___
+//  WAppSearchRouter.swift
+//  WA_CleanSwift
 //
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//  Copyright (c) ___YEAR___ ___ORGANIZATIONNAME___. All rights reserved.
+//  Created by Михаил Дмитриев on 27.11.2020.
+//  Copyright (c) 2020 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
 import UIKit
 
 
 //MARK: - Protocol. Routing
-protocol ___VARIABLE_sceneName___RoutingLogic {
+protocol WAppSearchRoutingLogic {
     func routeTo()
 }
 
 
-class ___VARIABLE_sceneName___Router: NSObject, ___VARIABLE_sceneName___RoutingLogic, ___VARIABLE_sceneName___DataPassing {
+class WAppSearchRouter: NSObject, WAppSearchRoutingLogic, WAppSearchDataPassing {
     //MARK: - Properties
-    weak var viewController: ___VARIABLE_sceneName___ViewController?
-    var dataStore: ___VARIABLE_sceneName___DataStore?
+    weak var viewController: WAppSearchViewController?
+    var dataStore: WAppSearchDataStore?
     
     
     //MARK: - Routing
     //Navigation Forward
     func routeTo() {
 //        let storyboard = UIStoryboard(name: "_____", bundle: nil)
-//        guard let viewController = viewController,
+//        guard
+//            let viewController = viewController,
 //            //let homeDS = dataStore,
-//            let destinationVC = storyboard.instantiateViewController(withIdentifier: "_____")
-//              as? UIViewController else { print("===== Navigation Fail"); return }
-//            //var destinationDS = destinationVC.router?.dataStore else { print("===== Navigation Fail"); return }
+//            let destinationVC = storyboard.instantiateViewController(withIdentifier: "_____") as? UIViewController else { fatalError("NAVIGATION FAIL") }
+//            //var destinationDS = destinationVC.router?.dataStore else { fatalError("NAVIGATION FAIL") }
 //
 //        navigateTo(source: viewController, destination: destinationVC)
 //        //passDataTo(source: homeDS, destination: &destinationDS)
@@ -74,7 +74,7 @@ class ___VARIABLE_sceneName___Router: NSObject, ___VARIABLE_sceneName___RoutingL
     
     
     //MARK: - Navigation
-    private func navigateTo(source: ___VARIABLE_sceneName___ViewController, destination: UIViewController) {
+    private func navigateTo(source: WAppSearchViewController, destination: UIViewController) {
         //Navigation Forward
         source.navigationController?.pushViewController(destination as UIViewController, animated: true)
         
@@ -88,12 +88,12 @@ class ___VARIABLE_sceneName___Router: NSObject, ___VARIABLE_sceneName___RoutingL
     
     //MARK: - PassingData
 //    //Pass Data in Navigation Stack
-//    private func passDataTo(source: ___VARIABLE_sceneName___DataStore, destination: inout DestinationDataStore) {
+//    private func passDataTo(source: WAppSearchDataStore, destination: inout DestinationDataStore) {
 //        destination.dataStore = source.dataStore
 //    }
 //
 //    //Pass Data in Modal with Delegate
-//    private func passDataTo(source: ___VARIABLE_sceneName___DataStore) {
+//    private func passDataTo(source: WAppSearchDataStore) {
 //        viewController?.delegate?.onDataSaved(data: source.dataStore)
 //    }
     
