@@ -79,6 +79,7 @@
 			children = (
 				275283222570E11B0003C20D /* WAPP. Global */,
 				2752830E2570E0980003C20D /* WAPP. Main */,
+				2752832F2570E84C0003C20D /* WAPP. Search */,
 				275283262570E3050003C20D /* Support */,
 			);
 			path = WA_CleanSwift;
@@ -117,6 +118,13 @@
 				275283002570DEF70003C20D /* Info.plist */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		2752832F2570E84C0003C20D /* WAPP. Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "WAPP. Search";
 			sourceTree = "<group>";
 		};
 		3FD977B22A5BCCF3F4B94649 /* Pods */ = {

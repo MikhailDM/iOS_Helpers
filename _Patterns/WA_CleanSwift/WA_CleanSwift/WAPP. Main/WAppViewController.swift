@@ -12,7 +12,6 @@ import RxCocoa
 
 
 //MARK: - Protocol. DisplayLogic
-
 protocol WAppDisplayLogic: class {
     func displayData(viewModel: WApp.Model.ViewModel.ViewModelData)
 }
@@ -20,7 +19,6 @@ protocol WAppDisplayLogic: class {
 
 class WAppViewController: UIViewController, WAppDisplayLogic {
     //MARK: - Outlets
-    
     @IBOutlet weak var searchTF: UITextField!
     @IBOutlet weak var searchButton: UIButton!
     
@@ -30,7 +28,6 @@ class WAppViewController: UIViewController, WAppDisplayLogic {
     
     
     //MARK: - Properties
-    
     var interactor: WAppBusinessLogic?
     var router: (NSObjectProtocol & WAppRoutingLogic & WAppDataPassing)?
     lazy var configurator: WAppConfiguratorProtocol = WAppConfigurator()
@@ -41,7 +38,6 @@ class WAppViewController: UIViewController, WAppDisplayLogic {
     
     
     //MARK: - Init
-    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         configurator.configure(with: self)
@@ -54,7 +50,6 @@ class WAppViewController: UIViewController, WAppDisplayLogic {
     
     
     //MARK: - View lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDesign()
@@ -68,7 +63,6 @@ class WAppViewController: UIViewController, WAppDisplayLogic {
     
     
     //MARK: - Display data
-    
     func displayData(viewModel: WApp.Model.ViewModel.ViewModelData) {
         switch viewModel {
         case .displayWeather(viewModel: let viewModel):
@@ -88,11 +82,7 @@ class WAppViewController: UIViewController, WAppDisplayLogic {
     }
     
     
-    //MARK: - Actions
-    
-    
     //MARK: - Private
-    
     private func setupDesign() {
         cityLabel.alpha = 0
         temperatureLabel.alpha = 0
@@ -104,7 +94,6 @@ class WAppViewController: UIViewController, WAppDisplayLogic {
     
     
     //MARK: - Rx
-    
     private func chargeRxSubscribes() {
         subscribeToTextField()
         subscribeToSearchButton()
@@ -118,25 +107,17 @@ class WAppViewController: UIViewController, WAppDisplayLogic {
             .subscribe(onNext: { [weak self] cityName in
                 guard let self = self else { return }
                 self.interactor?.makeRequest(request: .requestWeatherByCity(cityName: cityName))
-            })
-            .disposed(by: disposeBag)
+            }).disposed(by: disposeBag)
     }
     
     private func subscribeToSearchButton() {
-        searchButton.rx
-            .tap
+        searchButton.rx.tap
             .subscribe(onNext: { [weak self] cityName in
                 guard let self = self else { return }
                 self.view.endEditing(true)
-            })
-            .disposed(by: disposeBag)
+            }).disposed(by: disposeBag)
     }
     
     
 }//
-
-
-
-
-//MARK: - Extension.
 
