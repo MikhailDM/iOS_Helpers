@@ -28,8 +28,8 @@ class ___VARIABLE_sceneName___Router: NSObject, ___VARIABLE_sceneName___RoutingL
 //        guard let viewController = viewController,
 //            //let homeDS = dataStore,
 //            let destinationVC = storyboard.instantiateViewController(withIdentifier: "_____")
-//              as? UIViewController else { print("===== Navigation Fail"); return }
-//            //var destinationDS = destinationVC.router?.dataStore else { print("===== Navigation Fail"); return }
+//              as? UIViewController else { print("===== NAVIGATION FAIL"); return }
+//            //var destinationDS = destinationVC.router?.dataStore else { print("===== ===== NAVIGATION FAIL"); return }
 //
 //        navigateTo(source: viewController, destination: destinationVC)
 //        //passDataTo(source: homeDS, destination: &destinationDS)
@@ -40,8 +40,8 @@ class ___VARIABLE_sceneName___Router: NSObject, ___VARIABLE_sceneName___RoutingL
 //        guard
 //            let viewController = viewController,
 //            //let homeDS = dataStore,
-//            let destinationVC = viewController.navigationController?.viewControllers.dropLast().last as? UIViewController else { fatalError("NAVIGATION FAIL") }
-//            //var destinationDS = destinationVC.router?.dataStore else { fatalError("NAVIGATION FAIL") }
+//            let destinationVC = viewController.navigationController?.viewControllers.dropLast().last as? UIViewController else { print("===== NAVIGATION FAIL"); return }
+//            //var destinationDS = destinationVC.router?.dataStore else { print("===== NAVIGATION FAIL"); return }
 //
 //        navigateTo(source: viewController, destination: destinationVC)
 //        //passDataTo(source: homeDS, destination: &destinationDS)

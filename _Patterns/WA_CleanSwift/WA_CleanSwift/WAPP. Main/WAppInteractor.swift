@@ -9,37 +9,35 @@
 import UIKit
 import RxSwift
 
-//MARK: - Protocol. BusinessLogic
 
+//MARK: - Protocol. BusinessLogic
 protocol WAppBusinessLogic {
     func makeRequest(request: WApp.Model.Request.RequestType)
 }
 
 
 //MARK: - Protocol. DataStore
-
 protocol WAppDataStore {
     var dataStore: WAppServerData? { get set }
+    var cityName: String? { get set }
 }
 
 
 class WAppInteractor: WAppBusinessLogic, WAppDataStore {
     //MARK: - Properties
-    
     var presenter: WAppPresentationLogic?
     var service: WAppWorker?
     
     var dataStore: WAppServerData?
+    var cityName: String?
     
     
     //MARK: - Managers/Helpers
-    
     private let networkManager = NetworkManager()
     private let disposeBag = DisposeBag()
     
     
     //MARK: - Requests
-    
     func makeRequest(request: WApp.Model.Request.RequestType) {
         if service == nil {
             service = WAppWorker()

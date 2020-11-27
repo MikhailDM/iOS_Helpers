@@ -16,24 +16,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHX-gH-EjW">
-                                <rect key="frame" x="186" y="437.5" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HrE-ef-ejb">
+                                <rect key="frame" x="10" y="10" width="394" height="85.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter city" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHX-gH-EjW">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ypv-vy-h0v">
+                                        <rect key="frame" x="0.0" y="29.5" width="394" height="56"/>
+                                        <subviews>
+                                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search City" translatesAutoresizingMaskIntoConstraints="NO" id="00L-g4-ESc">
+                                                <rect key="frame" x="0.0" y="0.0" width="334.5" height="56"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </searchBar>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wq-lK-qG5">
+                                                <rect key="frame" x="344.5" y="0.0" width="49.5" height="56"/>
+                                                <state key="normal" title="Cancel"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Kfk-Yh-X3q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="AHX-gH-EjW" firstAttribute="centerX" secondItem="Cqg-g2-9Xn" secondAttribute="centerX" id="mNW-E0-ti8"/>
-                            <constraint firstItem="AHX-gH-EjW" firstAttribute="centerY" secondItem="Cqg-g2-9Xn" secondAttribute="centerY" id="pwC-9r-ER1"/>
+                            <constraint firstItem="HrE-ef-ejb" firstAttribute="top" secondItem="Cqg-g2-9Xn" secondAttribute="top" constant="10" id="4Bb-cI-NO7"/>
+                            <constraint firstItem="HrE-ef-ejb" firstAttribute="leading" secondItem="Cqg-g2-9Xn" secondAttribute="leading" constant="10" id="7Vr-KO-kwB"/>
+                            <constraint firstItem="Kfk-Yh-X3q" firstAttribute="trailing" secondItem="HrE-ef-ejb" secondAttribute="trailing" constant="10" id="bpY-0o-2b5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="5wq-lK-qG5" id="SG8-lE-Lr6"/>
+                        <outlet property="searchBar" destination="00L-g4-ESc" id="214-F6-1bm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rlh-3g-uXU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="214" y="102"/>
+            <point key="canvasLocation" x="213.04347826086959" y="101.78571428571428"/>
         </scene>
     </scenes>
     <resources>

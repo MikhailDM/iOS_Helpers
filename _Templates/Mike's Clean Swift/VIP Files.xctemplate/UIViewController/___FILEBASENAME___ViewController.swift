@@ -36,9 +36,7 @@ class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_scen
         configureUITableView()
     }
     
-    deinit {
-        print("DEINITED - ___VARIABLE_sceneName___ViewController")
-    }
+    deinit { print("DEINITED - ___VARIABLE_sceneName___ViewController") }
     
     
     //MARK: - Display data

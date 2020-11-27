@@ -23,6 +23,8 @@ class WAppSearchViewController: UIViewController, WAppSearchDisplayLogic {
     
     
     //MARK: - Outlets
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var cancelButton: UIButton!
     
     
     //MARK: - Properties
@@ -34,11 +36,11 @@ class WAppSearchViewController: UIViewController, WAppSearchDisplayLogic {
         super.viewDidLoad()
         configureDesign()
         configureUITableView()
+        
+        subscribeToSearchBar()
     }
     
-    deinit {
-        print("DEINITED - WAppSearchViewController")
-    }
+    deinit { print("DEINITED - WAppSearchViewController") }
     
     
     //MARK: - Display data
@@ -60,18 +62,34 @@ class WAppSearchViewController: UIViewController, WAppSearchDisplayLogic {
     
     
     //MARK: - Extension. Rx
+    private func subscribeToSearchBar() {
+        searchBar.rx.value.orEmpty.changed
+            .subscribe(onNext: { text in
+                print("===== SEARCH: \(text)")
+            }).disposed(by: disposeBag)
+    }
     
 }//
 
+/*
+ searchTF.rx
+     .controlEvent([.editingChanged])
+     .withLatestFrom(searchTF.rx.text.orEmpty)
+     .debounce(.seconds(searchDelay), scheduler: MainScheduler.instance)
+     .subscribe(onNext: { [weak self] cityName in
+         guard let self = self else { return }
+         self.interactor?.makeRequest(request: .requestWeatherByCity(cityName: cityName))
+     }).disposed(by: disposeBag)
+ */
 
 //MARK: - Extension. UITableView
 //extension WAppSearchViewController: UITableViewDelegate, UITableViewDataSource {
-//   
+//
 //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return 0
 ////        return TVCells.allCases.count
 //    }
-//    
+//
 //    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        return UITableViewCell.init()
 ////        let cellType = TVCells.allCases[indexPath.row]

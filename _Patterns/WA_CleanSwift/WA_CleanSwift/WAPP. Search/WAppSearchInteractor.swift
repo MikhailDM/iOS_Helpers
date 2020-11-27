@@ -11,14 +11,14 @@ import UIKit
 
 //MARK: - Protocol. Data Store
 protocol WAppSearchDataStore {
-    var dataStore: Any? { get set }
+    var cityName: String? { get set }
 }
 
 
 class WAppSearchInteractor: WAppSearchBusinessLogic, WAppSearchDataStore {
     //MARK: - Properties
     var presenter: WAppSearchPresentationLogic?
-    var dataStore: Any?
+    var cityName: String?
     
     
     //MARK: - Managers
