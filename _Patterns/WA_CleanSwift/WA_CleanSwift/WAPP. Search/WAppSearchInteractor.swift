@@ -12,17 +12,19 @@ import RxSwift
 
 //MARK: - Protocol. Data Store
 protocol WAppSearchDataStore {
-    var cityName: String? { get set }
+    var selectedCity: String? { get set }
 }
 
 
 class WAppSearchInteractor: WAppSearchBusinessLogic, WAppSearchDataStore {
     //MARK: - Properties
     var presenter: WAppSearchPresentationLogic?
-    var cityName: String?
+    var selectedCity: String?
     
+    private var citiesList = [String]()
     private var searchData = [String]()
     private var disposeBag = DisposeBag()
+    
     
     //MARK: - Managers
     private let citiesManager = CitiesManager()
@@ -32,16 +34,21 @@ class WAppSearchInteractor: WAppSearchBusinessLogic, WAppSearchDataStore {
     func makeRequest(request: WAppSearch.Model.Request.RequestType) {
         switch request{
         case .subscribeToSearchedCities:
-            citiesManager.searchedCities
-                .debug("===== CITIES MANAGER")
-                .subscribe(onNext: { [weak self] cities in
-                    guard let self = self else { return }
-                    self.searchData = cities.map { $0.title }
-                    self.presenter?.presentData(response: .presentCitiesWhichContainText(searchData: self.searchData))
-                }).disposed(by: disposeBag)
-            
+            citiesList = citiesManager.getAllCitiesName()
+            presenter?.presentData(response: .presentCitiesWhichContainText(searchData: citiesList))
+
         case .getCitiesWhichContainText(searchText: let searchText):
-            citiesManager.getCitiesAfterSearch(searchText: searchText)
+            guard searchText != "" else {
+                presenter?.presentData(response: .presentCitiesWhichContainText(searchData: citiesList))
+                return
+            }
+            searchData = citiesList.filter { city -> Bool in
+                return city.lowercased().contains(searchText.lowercased())
+            }
+            presenter?.presentData(response: .presentCitiesWhichContainText(searchData: searchData))
+            
+        case .selectCity(city: let city):
+            selectedCity = city
         }
     }
     

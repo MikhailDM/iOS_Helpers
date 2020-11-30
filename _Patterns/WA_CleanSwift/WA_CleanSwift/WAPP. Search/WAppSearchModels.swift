@@ -16,6 +16,7 @@ enum WAppSearch {
             enum RequestType {
                 case subscribeToSearchedCities
                 case getCitiesWhichContainText(searchText: String)
+                case selectCity(city: String)
             }
         }
         struct Response {

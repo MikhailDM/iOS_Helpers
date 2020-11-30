@@ -11,7 +11,7 @@ import UIKit
 
 //MARK: - Protocol. Routing
 protocol WAppSearchRoutingLogic {
-    func routeTo()
+    func routeToWeather()
 }
 
 
@@ -23,16 +23,16 @@ class WAppSearchRouter: NSObject, WAppSearchRoutingLogic, WAppSearchDataPassing 
     
     //MARK: - Routing
     //Navigation Forward
-    func routeTo() {
-//        let storyboard = UIStoryboard(name: "_____", bundle: nil)
-//        guard
-//            let viewController = viewController,
-//            //let homeDS = dataStore,
-//            let destinationVC = storyboard.instantiateViewController(withIdentifier: "_____") as? UIViewController else { fatalError("NAVIGATION FAIL") }
-//            //var destinationDS = destinationVC.router?.dataStore else { fatalError("NAVIGATION FAIL") }
-//
-//        navigateTo(source: viewController, destination: destinationVC)
-//        //passDataTo(source: homeDS, destination: &destinationDS)
+    func routeToWeather() {
+        let storyboard = UIStoryboard(name: "WApp", bundle: nil)
+        guard
+            let viewController = viewController,
+            let homeDS = dataStore,
+            let destinationVC = storyboard.instantiateViewController(withIdentifier: "WAppViewController") as? WAppViewController,
+            var destinationDS = destinationVC.router?.dataStore else { print("NAVIGATION FAIL"); return }
+        
+        navigateToWeather(source: viewController, destination: destinationVC)
+        passDataToWeather(source: homeDS, destination: &destinationDS)
     }
     
 //    //Navigation Backward
@@ -74,27 +74,14 @@ class WAppSearchRouter: NSObject, WAppSearchRoutingLogic, WAppSearchDataPassing 
     
     
     //MARK: - Navigation
-    private func navigateTo(source: WAppSearchViewController, destination: UIViewController) {
-        //Navigation Forward
-        source.navigationController?.pushViewController(destination as UIViewController, animated: true)
-        
-        //Navigation Backward
-        //source.navigationController?.popViewController(animated: true)
-        
-        //Navigation Backward From Modal
-        //source.dismiss(animated: true, completion: nil)
+    private func navigateToWeather(source: WAppSearchViewController, destination: WAppViewController) {
+        source.dismiss(animated: true, completion: nil)
     }
      
     
     //MARK: - PassingData
-//    //Pass Data in Navigation Stack
-//    private func passDataTo(source: WAppSearchDataStore, destination: inout DestinationDataStore) {
-//        destination.dataStore = source.dataStore
-//    }
-//
-//    //Pass Data in Modal with Delegate
-//    private func passDataTo(source: WAppSearchDataStore) {
-//        viewController?.delegate?.onDataSaved(data: source.dataStore)
-//    }
+    private func passDataToWeather(source: WAppSearchDataStore, destination: inout WAppDataStore) {
+        //destination.dataStore = source.dataStore
+    }
     
 }//

@@ -95,6 +95,7 @@
 		275282F12570DEF40003C20D /* WA_CleanSwift */ = {
 			isa = PBXGroup;
 			children = (
+				27E9E1332574E1ED00317612 /* Resourses */,
 				275283222570E11B0003C20D /* WAPP. Global */,
 				2752830E2570E0980003C20D /* WAPP. Main */,
 				2752832F2570E84C0003C20D /* WAPP. Search */,
@@ -160,6 +161,13 @@
 				27C91ACA25710B480064B140 /* WAppSearchTVCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		27E9E1332574E1ED00317612 /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resourses;
 			sourceTree = "<group>";
 		};
 		3FD977B22A5BCCF3F4B94649 /* Pods */ = {

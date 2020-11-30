@@ -40,6 +40,7 @@ class WAppSearchViewController: UIViewController, WAppSearchDisplayLogic {
         configureUITableView()
         
         subscribeToSearchBar()
+        subscribeCancelButtonPressed()
         interactor?.makeRequest(request: .subscribeToSearchedCities)
     }
     
@@ -67,7 +68,6 @@ class WAppSearchViewController: UIViewController, WAppSearchDisplayLogic {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView(frame: .zero)
-//        tableView.register(UINib(nibName: "Cell Name", bundle: nil), forCellReuseIdentifier: "Cell ID")
     }
     
     
@@ -80,6 +80,13 @@ class WAppSearchViewController: UIViewController, WAppSearchDisplayLogic {
             }).disposed(by: disposeBag)
     }
     
+    private func subscribeCancelButtonPressed() {
+        cancelButton.rx.tap
+            .subscribe { [weak self] _ in
+                self?.dismiss(animated: true, completion: nil)
+            }.disposed(by: disposeBag)
+    }
+    
 }//
 
 
@@ -87,7 +94,7 @@ class WAppSearchViewController: UIViewController, WAppSearchDisplayLogic {
 extension WAppSearchViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let searchEmpty = searchBar.text?.isEmpty, !searchEmpty else { return 0 }
+        //guard let searchEmpty = searchBar.text?.isEmpty, !searchEmpty else { return 0 }
         guard !viewModel.isEmpty else { return 1 }
         return viewModel.count
     }
@@ -100,5 +107,11 @@ extension WAppSearchViewController: UITableViewDelegate, UITableViewDataSource {
         }
         cell.title?.text = viewModel[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard viewModel.indices.contains(indexPath.row) else { return }
+        interactor?.makeRequest(request: .selectCity(city: viewModel[indexPath.row]))
+        
     }
 }
