@@ -12,15 +12,15 @@ import RxSwift
 
 //MARK: - Protocol. Data Store
 protocol WAppSearchDataStore {
-    var selectedCity: String? { get set }
+    var selectedCity: PublishSubject<String> { get set }
 }
 
 
 class WAppSearchInteractor: WAppSearchBusinessLogic, WAppSearchDataStore {
     //MARK: - Properties
     var presenter: WAppSearchPresentationLogic?
-    var selectedCity: String?
-    
+    var selectedCity = PublishSubject<String>()
+
     private var citiesList = [String]()
     private var searchData = [String]()
     private var disposeBag = DisposeBag()
@@ -48,7 +48,7 @@ class WAppSearchInteractor: WAppSearchBusinessLogic, WAppSearchDataStore {
             presenter?.presentData(response: .presentCitiesWhichContainText(searchData: searchData))
             
         case .selectCity(city: let city):
-            selectedCity = city
+            selectedCity.onNext(city)
         }
     }
     
