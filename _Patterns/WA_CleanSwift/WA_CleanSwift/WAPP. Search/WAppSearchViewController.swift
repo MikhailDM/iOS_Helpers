@@ -44,11 +44,6 @@ class WAppSearchViewController: UIViewController, WAppSearchDisplayLogic {
         interactor?.makeRequest(request: .subscribeToSearchedCities)
     }
     
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(true)
-//        interactor?.makeRequest(request: .disposeSubscription)
-//    }
-    
     deinit { print("DEINITED - WAppSearchViewController") }
     
     
@@ -67,12 +62,20 @@ class WAppSearchViewController: UIViewController, WAppSearchDisplayLogic {
     private func configureDesign() {
         title = "Search"
         navigationItem.backButtonTitle = ""
+        view.backgroundColor = UIColor.clear
     }
     
     private func configureUITableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView(frame: .zero)
+        tableView.register(UINib(nibName: "WAppSearchTVCell", bundle: nil), forCellReuseIdentifier: "WAppSearchTVCell")
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        tableView.backgroundView = blurEffectView
+        tableView.contentInset = UIEdgeInsets(top: 100, left: 0, bottom: 0, right: 0)
     }
     
     
@@ -104,7 +107,7 @@ extension WAppSearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! WAppSearchTVCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WAppSearchTVCell") as! WAppSearchTVCell
         guard !viewModel.isEmpty else {
             cell.title?.text = "No results"
             return cell

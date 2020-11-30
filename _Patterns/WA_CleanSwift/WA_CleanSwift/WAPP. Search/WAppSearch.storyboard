@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,72 +15,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LaJ-EJ-LSf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HrE-ef-ejb">
-                                <rect key="frame" x="10" y="10" width="394" height="85.5"/>
+                                <rect key="frame" x="26" y="54" width="362" height="85.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter city" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHX-gH-EjW">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="19.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="362" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ypv-vy-h0v">
-                                        <rect key="frame" x="0.0" y="29.5" width="394" height="56"/>
+                                        <rect key="frame" x="0.0" y="29.5" width="362" height="56"/>
                                         <subviews>
                                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search City" translatesAutoresizingMaskIntoConstraints="NO" id="00L-g4-ESc">
-                                                <rect key="frame" x="0.0" y="0.0" width="336" height="56"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="304" height="56"/>
+                                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </searchBar>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wq-lK-qG5">
-                                                <rect key="frame" x="346" y="0.0" width="48" height="56"/>
+                                                <rect key="frame" x="314" y="0.0" width="48" height="56"/>
                                                 <state key="normal" title="Cancel"/>
                                             </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LaJ-EJ-LSf">
-                                <rect key="frame" x="0.0" y="105.5" width="414" height="790.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="pyn-bU-gie" customClass="WAppSearchTVCell" customModule="WA_CleanSwift" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="55"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pyn-bU-gie" id="Nfj-3e-ipd">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCD-LE-H8W">
-                                                    <rect key="frame" x="30" y="17" width="354" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="YCD-LE-H8W" firstAttribute="top" secondItem="Nfj-3e-ipd" secondAttribute="topMargin" constant="6" id="8Nk-AV-Z9w"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="YCD-LE-H8W" secondAttribute="bottom" constant="6" id="N1a-kZ-3kd"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="YCD-LE-H8W" secondAttribute="trailing" constant="10" id="kPk-a0-jYq"/>
-                                                <constraint firstItem="YCD-LE-H8W" firstAttribute="leading" secondItem="Nfj-3e-ipd" secondAttribute="leadingMargin" constant="10" id="ymI-Pr-7hh"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="title" destination="YCD-LE-H8W" id="xLd-eM-sAE"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Kfk-Yh-X3q"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="LaJ-EJ-LSf" firstAttribute="leading" secondItem="Kfk-Yh-X3q" secondAttribute="leading" id="44n-TF-A70"/>
-                            <constraint firstItem="HrE-ef-ejb" firstAttribute="top" secondItem="Cqg-g2-9Xn" secondAttribute="top" constant="10" id="4Bb-cI-NO7"/>
-                            <constraint firstItem="HrE-ef-ejb" firstAttribute="leading" secondItem="Cqg-g2-9Xn" secondAttribute="leading" constant="10" id="7Vr-KO-kwB"/>
-                            <constraint firstAttribute="bottom" secondItem="LaJ-EJ-LSf" secondAttribute="bottom" id="Mpt-Km-9qy"/>
-                            <constraint firstItem="LaJ-EJ-LSf" firstAttribute="top" secondItem="HrE-ef-ejb" secondAttribute="bottom" constant="10" id="aFv-S9-z1x"/>
-                            <constraint firstItem="Kfk-Yh-X3q" firstAttribute="trailing" secondItem="HrE-ef-ejb" secondAttribute="trailing" constant="10" id="bpY-0o-2b5"/>
-                            <constraint firstItem="Kfk-Yh-X3q" firstAttribute="trailing" secondItem="LaJ-EJ-LSf" secondAttribute="trailing" id="hm9-A2-yKR"/>
+                            <constraint firstAttribute="bottom" secondItem="LaJ-EJ-LSf" secondAttribute="bottom" id="AhW-Fc-43q"/>
+                            <constraint firstItem="LaJ-EJ-LSf" firstAttribute="leading" secondItem="Cqg-g2-9Xn" secondAttribute="leading" id="GkE-vr-69O"/>
+                            <constraint firstItem="LaJ-EJ-LSf" firstAttribute="top" secondItem="Cqg-g2-9Xn" secondAttribute="top" id="Toj-Tu-CQh"/>
+                            <constraint firstItem="HrE-ef-ejb" firstAttribute="leading" secondItem="Kfk-Yh-X3q" secondAttribute="leading" constant="26" id="Xc8-TV-1YS"/>
+                            <constraint firstItem="HrE-ef-ejb" firstAttribute="top" secondItem="Kfk-Yh-X3q" secondAttribute="top" constant="10" id="eRv-xc-ZOw"/>
+                            <constraint firstItem="LaJ-EJ-LSf" firstAttribute="trailing" secondItem="Cqg-g2-9Xn" secondAttribute="trailing" id="obf-DH-Te1"/>
+                            <constraint firstItem="Kfk-Yh-X3q" firstAttribute="trailing" secondItem="HrE-ef-ejb" secondAttribute="trailing" constant="26" id="xdC-DE-9vA"/>
                         </constraints>
                     </view>
                     <connections>
@@ -95,9 +68,4 @@
             <point key="canvasLocation" x="213.04347826086959" y="101.78571428571428"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
