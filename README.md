@@ -2,7 +2,9 @@ iOS - Helpers
 =========================
 
 + [_EKP ](#EKP)
++ [_Patterns ](#Patterns)
 + [_Projects ](#Projects)
++ [_Templates ](#Templates)
 + [Alamofire](#Alamofire)
 + [Calendars](#Calendars)
 + [DateFormater ](#DateFormater)
@@ -18,6 +20,13 @@ iOS - Helpers
 >## <a name="EKP"></a> _EKP
 ### 01_LoginNavigation
 Навигация к экрану логина
+
+<br />
+<br />
+
+>## <a name="Patterns"></a> Patterns
+### WA_CleanSwift
+Clean Swift Pattern. Weather app
 
 <br />
 <br />
@@ -48,6 +57,22 @@ iOS - Helpers
 
 ### 02_RxAlerts
 Универсальный менеджер для создания UIAlert через Rx
+
+<br />
+<br />
+
+>## <a name="Templates"></a> Templates   
+Patterns for Xcode   
+Path: cd Library/Developer/Xcode
+
+### Fonts
+UI Fonts
+
+### Mike's Clean Swift
+Clean Swift Template
+
+### Mike's UITableView
+UITableView Template
 
 <br />
 <br />

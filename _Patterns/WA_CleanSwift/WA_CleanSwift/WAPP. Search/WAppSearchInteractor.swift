@@ -19,7 +19,7 @@ protocol WAppSearchDataStore {
 class WAppSearchInteractor: WAppSearchBusinessLogic, WAppSearchDataStore {
     //MARK: - Properties
     var presenter: WAppSearchPresentationLogic?
-    var selectedCity = PublishSubject<String>()
+    public var selectedCity = PublishSubject<String>()
 
     private var citiesList = [String]()
     private var searchData = [String]()

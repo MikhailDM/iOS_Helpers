@@ -117,7 +117,7 @@ extension WAppSearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard viewModel.indices.contains(indexPath.row) else { return }
+        //guard viewModel.indices.contains(indexPath.row) else { return }
         interactor?.makeRequest(request: .selectCity(city: viewModel[indexPath.row]))
         interactor?.makeRequest(request: .completeSubscription)
         dismiss(animated: true, completion: nil)
