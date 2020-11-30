@@ -121,10 +121,19 @@ class WAppViewController: UIViewController, WAppDisplayLogic {
     private func subscribeToChangeCityButtonPressed() {
         changeCityButton.rx.tap
             .subscribe { [weak self] _ in
-                self?.router?.routeToSearch()
+                //self?.router?.routeToSearch()
+                self?.subscribeToSelectedCityOnSearch()
             }.disposed(by: disposeBag)
     }
     
+    private func subscribeToSelectedCityOnSearch() {
+        router?.routeToSearch()
+            .debug("===== subscribeToSelectedCityOnSearch")
+            .subscribe(onNext: { [weak self] city in
+                print("===== CITY \(city)")
+                self?.interactor?.makeRequest(request: .requestWeatherByCity(cityName: city))
+            }).disposed(by: disposeBag)
+    }
     
 }//
 

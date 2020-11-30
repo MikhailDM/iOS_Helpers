@@ -9,8 +9,7 @@
 import UIKit
 
 enum WApp {
-    //MARK: - Actions
-    
+    //MARK: - Models
     enum Model {
         struct Request {
             enum RequestType {
@@ -30,14 +29,10 @@ enum WApp {
         }
     }
     
-    
 }//
 
 
-
-
 //MARK: - View Model
-
 struct WAppViewModel {
     let conditionImage: UIImage?
     let cityNameText: String
@@ -46,7 +41,6 @@ struct WAppViewModel {
 
 
 //MARK: - Server Data
-
 struct WAppServerData: Codable {
     let name: String
     let main: Main

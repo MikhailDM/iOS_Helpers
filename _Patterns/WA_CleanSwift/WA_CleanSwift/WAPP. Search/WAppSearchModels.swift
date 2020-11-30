@@ -17,6 +17,7 @@ enum WAppSearch {
                 case subscribeToSearchedCities
                 case getCitiesWhichContainText(searchText: String)
                 case selectCity(city: String)
+                case completeSubscription
             }
         }
         struct Response {

@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import RxSwift
+
 
 //MARK: - Protocol. RoutingLogic
 protocol WAppRoutingLogic {
-    func routeToSearch()
+    func routeToSearch() -> PublishSubject<String>
 }
 
 
@@ -27,12 +29,16 @@ class WAppRouter: NSObject, WAppRoutingLogic, WAppDataPassing {
     
     
     //MARK: - Routing
-    func routeToSearch() {
+    func routeToSearch() -> PublishSubject<String> {
         let storyboard = UIStoryboard(name: "WAppSearch", bundle: nil)
-        guard let viewController = viewController,
+        guard
+            let viewController = viewController,
             let destinationVC = storyboard.instantiateViewController(withIdentifier: "WAppSearchViewController")
-                as? WAppSearchViewController else { print("===== NAVIGATION FAIL"); return }
+                as? WAppSearchViewController,
+            let destinationDS = destinationVC.router?.dataStore else { return PublishSubject<String>.create { (observer) -> Disposable in
+                observer.onCompleted(); return Disposables.create() } as! PublishSubject<String> }
         navigateToSearch(source: viewController, destination: destinationVC)
+        return destinationDS.selectedCity
     }
     
     

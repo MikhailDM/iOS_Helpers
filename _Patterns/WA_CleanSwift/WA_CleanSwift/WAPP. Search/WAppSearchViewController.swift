@@ -44,6 +44,11 @@ class WAppSearchViewController: UIViewController, WAppSearchDisplayLogic {
         interactor?.makeRequest(request: .subscribeToSearchedCities)
     }
     
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(true)
+//        interactor?.makeRequest(request: .disposeSubscription)
+//    }
+    
     deinit { print("DEINITED - WAppSearchViewController") }
     
     
@@ -94,7 +99,6 @@ class WAppSearchViewController: UIViewController, WAppSearchDisplayLogic {
 extension WAppSearchViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //guard let searchEmpty = searchBar.text?.isEmpty, !searchEmpty else { return 0 }
         guard !viewModel.isEmpty else { return 1 }
         return viewModel.count
     }
@@ -112,6 +116,8 @@ extension WAppSearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard viewModel.indices.contains(indexPath.row) else { return }
         interactor?.makeRequest(request: .selectCity(city: viewModel[indexPath.row]))
+        interactor?.makeRequest(request: .completeSubscription)
         dismiss(animated: true, completion: nil)
     }
-}
+    
+}//

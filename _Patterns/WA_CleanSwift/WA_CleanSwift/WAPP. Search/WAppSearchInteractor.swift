@@ -49,6 +49,9 @@ class WAppSearchInteractor: WAppSearchBusinessLogic, WAppSearchDataStore {
             
         case .selectCity(city: let city):
             selectedCity.onNext(city)
+            
+        case .completeSubscription:
+            selectedCity.onCompleted()
         }
     }
     
