@@ -11,10 +11,8 @@ import RxAlamofire
 import RxSwift
 
 
-
 struct NetworkManager {
     //MARK: - Properties
-    
     private let disposeBag = DisposeBag()
     private let session = SessionManager()
     
@@ -23,14 +21,12 @@ struct NetworkManager {
     
     
     //MARK: - Request type
-    
     enum RequestType {
         case defaultWeather
         case weatherByCityName(cityName: String)
     }
     
     //MARK: - Public request
-    
     func fetchWeather(requestType: RequestType) -> Observable<WAppServerData> {
         let requestURL = getCorrectURL(requestType: requestType)
         return session.rx
@@ -42,7 +38,6 @@ struct NetworkManager {
     
 
     //MARK: - Private
-    
     private func getCorrectURL(requestType: RequestType) -> String {
         switch requestType {
         case .defaultWeather:

@@ -93,9 +93,10 @@
                     <navigationItem key="navigationItem" id="B8v-TT-XdY"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="celsiusLabel" destination="v1L-Bb-YrG" id="fBK-w7-jfT"/>
                         <outlet property="changeCityButton" destination="1wb-Hu-TpM" id="i36-sD-s9g"/>
                         <outlet property="cityLabel" destination="kW7-pt-XfF" id="ws0-UL-MEV"/>
-                        <outlet property="deegreesLabel" destination="v1L-Bb-YrG" id="fBK-w7-jfT"/>
+                        <outlet property="deegreeLabel" destination="5Gu-BP-VLp" id="AKj-C3-ISY"/>
                         <outlet property="temperatureLabel" destination="TEt-YM-ffY" id="m0L-hi-PR6"/>
                         <outlet property="weatherIcon" destination="8Qe-Xp-5Dm" id="fEc-XC-Opm"/>
                     </connections>
