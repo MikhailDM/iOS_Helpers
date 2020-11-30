@@ -8,8 +8,8 @@
 
 import UIKit
 
+
 class WAppWorker {
     //MARK: - Worker
-    
     
 }//

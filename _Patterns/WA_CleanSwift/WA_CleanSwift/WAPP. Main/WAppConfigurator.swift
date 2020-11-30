@@ -8,8 +8,8 @@
 
 import UIKit
 
-//MARK: - Protocol. Configurator
 
+//MARK: - Protocol. Configurator
 protocol WAppConfiguratorProtocol: class {
     func configure(with viewController: WAppViewController)
 }
@@ -17,7 +17,6 @@ protocol WAppConfiguratorProtocol: class {
 
 class WAppConfigurator: WAppConfiguratorProtocol {
     //MARK: - Configurator
-    
     func configure(with viewController: WAppViewController) {
         let interactor            = WAppInteractor()
         let presenter             = WAppPresenter()
@@ -29,6 +28,5 @@ class WAppConfigurator: WAppConfiguratorProtocol {
         router.viewController     = viewController
         router.dataStore          = interactor
     }
-    
     
 }//

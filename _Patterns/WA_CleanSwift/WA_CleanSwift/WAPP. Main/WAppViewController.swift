@@ -25,6 +25,7 @@ class WAppViewController: UIViewController, WAppDisplayLogic {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var weatherIcon: UIImageView!
+    @IBOutlet weak var deegreesLabel: UILabel!
     @IBOutlet weak var changeCityButton: UIButton!
     
     
@@ -67,27 +68,40 @@ class WAppViewController: UIViewController, WAppDisplayLogic {
     func displayData(viewModel: WApp.Model.ViewModel.ViewModelData) {
         switch viewModel {
         case .displayWeather(viewModel: let viewModel):
-            print("SCREEN VIEWMODEL: \(viewModel)")
-            
             cityLabel.text = viewModel.cityNameText
             temperatureLabel.text = viewModel.temperatureText
             weatherIcon.image = viewModel.conditionImage
-            
-            UIView.animate(withDuration: animationDelay) { [weak self] in
-                guard let self = self else { return }
-                self.cityLabel.alpha = 1
-                self.temperatureLabel.alpha = 1
-                self.weatherIcon.alpha = 1
-            }
+            animateUpdatedWeather()
+//            UIView.animate(withDuration: animationDelay) { [weak self] in
+//                guard let self = self else { return }
+//                self.cityLabel.alpha = 1
+//                self.temperatureLabel.alpha = 1
+//                self.weatherIcon.alpha = 1
+//            }
         }
     }
     
     
     //MARK: - Private
+    private func animateUpdatedWeather() {
+        cityLabel.alpha = 0
+        temperatureLabel.alpha = 0
+        weatherIcon.alpha = 0
+        deegreesLabel.alpha = 0
+        UIView.animate(withDuration: animationDelay) { [weak self] in
+            guard let self = self else { return }
+            self.cityLabel.alpha = 1
+            self.temperatureLabel.alpha = 1
+            self.weatherIcon.alpha = 1
+            self.deegreesLabel.alpha = 1
+        }
+    }
+    
     private func setupDesign() {
         cityLabel.alpha = 0
         temperatureLabel.alpha = 0
         weatherIcon.alpha = 0
+        deegreesLabel.alpha = 0
         navigationController?.navigationBar.isHidden = true
     }
     
@@ -128,9 +142,7 @@ class WAppViewController: UIViewController, WAppDisplayLogic {
     
     private func subscribeToSelectedCityOnSearch() {
         router?.routeToSearch()
-            .debug("===== subscribeToSelectedCityOnSearch")
             .subscribe(onNext: { [weak self] city in
-                print("===== CITY \(city)")
                 self?.interactor?.makeRequest(request: .requestWeatherByCity(cityName: city))
             }).disposed(by: disposeBag)
     }

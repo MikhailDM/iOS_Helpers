@@ -8,8 +8,8 @@
 
 import UIKit
 
-//MARK: - Protocol. PresentationLogic
 
+//MARK: - Protocol. PresentationLogic
 protocol WAppPresentationLogic {
     func presentData(response: WApp.Model.Response.ResponseType)
 }
@@ -17,7 +17,6 @@ protocol WAppPresentationLogic {
 
 class WAppPresenter: WAppPresentationLogic {
     //MARK: - Properties
-    
     weak var viewController: WAppDisplayLogic?
     
     
@@ -25,7 +24,6 @@ class WAppPresenter: WAppPresentationLogic {
     
     
     //MARK: - Present data
-    
     func presentData(response: WApp.Model.Response.ResponseType) {
         switch response {
         case .presentWeather(data: let data):
@@ -38,14 +36,10 @@ class WAppPresenter: WAppPresentationLogic {
     
     
     //MARK: - Private
-    
-    //Преобразуем значение погоды в текст
     private func transformTemperature(temperature: Double) -> String {
         return String(format: "%.1f", temperature)
     }
     
-    
-    //Преобразуем значение погоды в картинку
     private func transformCondition(conditionId: Int?) -> UIImage? {
         guard let idSafe = conditionId else { return nil }
         switch idSafe {
@@ -67,6 +61,5 @@ class WAppPresenter: WAppPresentationLogic {
             return UIImage(systemName:"cloud")
         }
     }
-    
     
 }//
