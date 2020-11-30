@@ -19,9 +19,6 @@ protocol WAppDisplayLogic: class {
 
 class WAppViewController: UIViewController, WAppDisplayLogic {
     //MARK: - Outlets
-    @IBOutlet weak var searchTF: UITextField!
-    @IBOutlet weak var searchButton: UIButton!
-    
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var weatherIcon: UIImageView!
@@ -55,7 +52,7 @@ class WAppViewController: UIViewController, WAppDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDesign()
-        chargeRxSubscribes()
+        subscribeToChangeCityButtonPressed()
         interactor?.makeRequest(request: .requestDefaultWeather)
     }
     
@@ -103,45 +100,23 @@ class WAppViewController: UIViewController, WAppDisplayLogic {
         weatherIcon.alpha = 0
         deegreesLabel.alpha = 0
         navigationController?.navigationBar.isHidden = true
+        changeCityButton.layer.borderWidth = 1
+        changeCityButton.layer.borderColor = UIColor.white.cgColor
+        changeCityButton.layer.cornerRadius = changeCityButton.frame.height / 6
     }
     
     
     //MARK: - Rx
-    private func chargeRxSubscribes() {
-        subscribeToTextField()
-        subscribeToSearchButton()
-        subscribeToChangeCityButtonPressed()
-    }
-    
-    private func subscribeToTextField() {
-        searchTF.rx
-            .controlEvent([.editingChanged])
-            .withLatestFrom(searchTF.rx.text.orEmpty)
-            .debounce(.seconds(searchDelay), scheduler: MainScheduler.instance)
-            .subscribe(onNext: { [weak self] cityName in
-                guard let self = self else { return }
-                self.interactor?.makeRequest(request: .requestWeatherByCity(cityName: cityName))
-            }).disposed(by: disposeBag)
-    }
-    
-    private func subscribeToSearchButton() {
-        searchButton.rx.tap
-            .subscribe(onNext: { [weak self] cityName in
-                guard let self = self else { return }
-                self.view.endEditing(true)
-            }).disposed(by: disposeBag)
-    }
-    
     private func subscribeToChangeCityButtonPressed() {
         changeCityButton.rx.tap
             .subscribe { [weak self] _ in
-                //self?.router?.routeToSearch()
                 self?.subscribeToSelectedCityOnSearch()
             }.disposed(by: disposeBag)
     }
     
     private func subscribeToSelectedCityOnSearch() {
         router?.routeToSearch()
+            .debug("===== SELECT CITY")
             .subscribe(onNext: { [weak self] city in
                 self?.interactor?.makeRequest(request: .requestWeatherByCity(cityName: city))
             }).disposed(by: disposeBag)
