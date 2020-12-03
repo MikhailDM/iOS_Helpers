@@ -41,35 +41,9 @@ class WAppPresenter: WAppPresenterProtocol, WAppOutputInteractorProtocol, WAppDa
     //MARK: - Private
     private func getViewModel() -> WAppEntity.ViewModel {
         guard let data = serverData else { return WAppEntity.ViewModel(conditionImage: UIImage(systemName:"cloud.bolt"), cityNameText: "", temperatureText: "") }
-        return WAppEntity.ViewModel(conditionImage: transformCondition(conditionId: data.weather.first?.id),
-                             cityNameText: data.name,
-                             temperatureText: transformTemperature(temperature: data.main.temp))
-    }
-    
-    private func transformTemperature(temperature: Double) -> String {
-        return String(format: "%.1f", temperature)
-    }
-    
-    private func transformCondition(conditionId: Int?) -> UIImage? {
-        guard let idSafe = conditionId else { return nil }
-        switch idSafe {
-        case 200...232:
-            return UIImage(systemName:"cloud.bolt")
-        case 300...321:
-            return UIImage(systemName:"cloud.drizzle")
-        case 500...531:
-            return UIImage(systemName:"cloud.rain")
-        case 600...622:
-            return UIImage(systemName:"cloud.snow")
-        case 701...781:
-            return UIImage(systemName:"cloud.fog")
-        case 800:
-            return UIImage(systemName:"sun.max")
-        case 801...804:
-            return UIImage(systemName:"cloud.bolt")
-        default:
-            return UIImage(systemName:"cloud")
-        }
+        return WAppEntity.ViewModel(conditionImage: data.transformedCondition,
+                                    cityNameText: data.name,
+                                    temperatureText: data.transformedTemperature)
     }
     
 }//
