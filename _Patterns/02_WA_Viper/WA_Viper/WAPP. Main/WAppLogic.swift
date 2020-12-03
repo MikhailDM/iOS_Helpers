@@ -42,7 +42,7 @@ enum WApp {
     
     
     //MARK: - Data Store
-    struct WAppDataStore {
+    struct DataStore {
         var data: Any?
     }
     

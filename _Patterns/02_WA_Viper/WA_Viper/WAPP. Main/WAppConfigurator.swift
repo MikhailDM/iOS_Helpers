@@ -37,18 +37,18 @@ protocol WAppOutputInteractorProtocol: class {
 }
 
 
+//MARK: - Protocol. Presenter. Presenter -> Another View
 protocol WAppRouterProtocol {
-    //Presenter -> Another View
+    var viewController: WAppViewController? { get set }
+    var dataStore: WAppDataStoreProtocol? { get set }
     func routeToView(view: WApp.Route)
 }
 
 
+//MARK: - Protocol. Presenter/Router. Data Store
 protocol WAppDataStoreProtocol {
-    //Presenter/Router. Data Store
-    var viewController: WAppViewController? { get set }
-    var dataStore: WApp.WAppDataStore? { get set }
+    var dataStore: WApp.DataStore? { get set }
 }
-
 
 
 //MARK: - Protocol. Configure
@@ -63,25 +63,20 @@ class WAppConfigurator: WAppConfiguratorProtocol {
         let interactor            = WAppInteractor()
         let presenter             = WAppPresenter()
         let router                = WAppRouter()
+        let dataStore             = WApp.DataStore()
         
         viewController.presenter  = presenter
         presenter.view            = viewController
         presenter.router          = router
         presenter.interactor      = interactor
-        //presenter.dataStore =
+        presenter.dataStore       = dataStore
         interactor.presenter      = presenter
         router.viewController     = viewController
-        //router.dataStore = presenter
-        
-//        viewController.interactor = interactor
-//        viewController.router     = router
-//        interactor.presenter      = presenter
-//        presenter.viewController  = viewController
-//        router.viewController     = viewController
-//        router.dataStore          = interactor
+        router.dataStore = presenter
     }
     
 }//
+
 
 /*
  fruitListRef.presenter = presenter

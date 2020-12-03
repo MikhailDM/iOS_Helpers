@@ -8,19 +8,22 @@
 
 import UIKit
 
-class WAppRouter: WAppRouterProtocol, WAppDataStoreProtocol {
-    
-    
-    func routeToView(view: WApp.Route) { }
-    
+
+class WAppRouter: WAppRouterProtocol {
     //MARK: - Properties
     weak var viewController: WAppViewController?
-    var dataStore: WApp.WAppDataStore?
+    var dataStore: WAppDataStoreProtocol?
     
+    
+    //MARK: - Route
+    func routeToView(view: WApp.Route) { }
+    
+    
+   
     
     //MARK: - Routing
     //Navigation Forward
-    func routeTo() {
+//    func routeTo() {
 //        let storyboard = UIStoryboard(name: "_____", bundle: nil)
 //        guard let viewController = viewController,
 //            //let homeDS = dataStore,
@@ -30,7 +33,7 @@ class WAppRouter: WAppRouterProtocol, WAppDataStoreProtocol {
 //
 //        navigateTo(source: viewController, destination: destinationVC)
 //        //passDataTo(source: homeDS, destination: &destinationDS)
-    }
+//    }
     
 //    //Navigation Backward
 //    func routeTo() {

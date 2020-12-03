@@ -9,11 +9,12 @@
 import UIKit
 
 
-class WAppPresenter: WAppPresenterProtocol, WAppOutputInteractorProtocol {
+class WAppPresenter: WAppPresenterProtocol, WAppOutputInteractorProtocol, WAppDataStoreProtocol {
     //MARK: - Properties
     var view: WAppViewProtocol?
     var router: WAppRouterProtocol?
     var interactor: WAppInputInteractorProtocol?
+    var dataStore: WApp.DataStore?
     
     
     //MARK: - Present
@@ -25,16 +26,12 @@ class WAppPresenter: WAppPresenterProtocol, WAppOutputInteractorProtocol {
     }
     
     
-    //MARK: - From Interactor
+    //MARK: - Interactor Response
     func makeResponse(request: WApp.Action.InteractorResponse.InteractorResponseType) {
         switch request {
         case .getTestText(text: let text):
             view?.display(displayType: .displayTestText(text: text))
         }
     }
-    
-    
-    //MARK: - Present Data
-    //func presentData(response: WApp.Model.Response.ResponseType) { }
     
 }//

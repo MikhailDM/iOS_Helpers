@@ -16,7 +16,7 @@
 		277982042578EF9200CAAAC5 /* WApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277981FA2578EF9200CAAAC5 /* WApp.storyboard */; };
 		2779821D2578F1F300CAAAC5 /* WAppPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277982172578F1F300CAAAC5 /* WAppPresenter.swift */; };
 		2779821E2578F1F300CAAAC5 /* WAppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277982182578F1F300CAAAC5 /* WAppRouter.swift */; };
-		2779821F2578F1F300CAAAC5 /* WAppEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277982192578F1F300CAAAC5 /* WAppEntities.swift */; };
+		2779821F2578F1F300CAAAC5 /* WAppLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277982192578F1F300CAAAC5 /* WAppLogic.swift */; };
 		277982202578F1F300CAAAC5 /* WAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2779821A2578F1F300CAAAC5 /* WAppViewController.swift */; };
 		277982212578F1F300CAAAC5 /* WAppInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2779821B2578F1F300CAAAC5 /* WAppInteractor.swift */; };
 		277982222578F1F300CAAAC5 /* WAppConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2779821C2578F1F300CAAAC5 /* WAppConfigurator.swift */; };
@@ -36,7 +36,7 @@
 		277981FA2578EF9200CAAAC5 /* WApp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WApp.storyboard; sourceTree = "<group>"; };
 		277982172578F1F300CAAAC5 /* WAppPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppPresenter.swift; sourceTree = "<group>"; };
 		277982182578F1F300CAAAC5 /* WAppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppRouter.swift; sourceTree = "<group>"; };
-		277982192578F1F300CAAAC5 /* WAppEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppEntities.swift; sourceTree = "<group>"; };
+		277982192578F1F300CAAAC5 /* WAppLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppLogic.swift; sourceTree = "<group>"; };
 		2779821A2578F1F300CAAAC5 /* WAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppViewController.swift; sourceTree = "<group>"; };
 		2779821B2578F1F300CAAAC5 /* WAppInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppInteractor.swift; sourceTree = "<group>"; };
 		2779821C2578F1F300CAAAC5 /* WAppConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppConfigurator.swift; sourceTree = "<group>"; };
@@ -109,8 +109,8 @@
 				277982172578F1F300CAAAC5 /* WAppPresenter.swift */,
 				2779821B2578F1F300CAAAC5 /* WAppInteractor.swift */,
 				277982182578F1F300CAAAC5 /* WAppRouter.swift */,
-				277982192578F1F300CAAAC5 /* WAppEntities.swift */,
 				2779821C2578F1F300CAAAC5 /* WAppConfigurator.swift */,
+				277982192578F1F300CAAAC5 /* WAppLogic.swift */,
 			);
 			path = "WAPP. Main";
 			sourceTree = "<group>";
@@ -250,7 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2779821F2578F1F300CAAAC5 /* WAppEntities.swift in Sources */,
+				2779821F2578F1F300CAAAC5 /* WAppLogic.swift in Sources */,
 				277981D72578EEC600CAAAC5 /* AppDelegate.swift in Sources */,
 				277982202578F1F300CAAAC5 /* WAppViewController.swift in Sources */,
 				277981FF2578EF9200CAAAC5 /* NetworkManager.swift in Sources */,
