@@ -1,83 +1,29 @@
 //
 //  WAppInteractor.swift
-//  RxAndCS
+//  WA_Viper
 //
-//  Created by Dmitriev on 25.09.2020.
+//  Created by Михаил Дмитриев on 03.12.2020.
 //  Copyright (c) 2020 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
 import UIKit
-import RxSwift
 
 
-//MARK: - Protocol. BusinessLogic
-protocol WAppBusinessLogic {
-    func makeRequest(request: WApp.Model.Request.RequestType)
-}
-
-
-//MARK: - Protocol. DataStore
-protocol WAppDataStore {
-    var dataStore: WAppServerData? { get set }
-    var cityName: String? { get set }
-}
-
-
-class WAppInteractor: WAppBusinessLogic, WAppDataStore {
+class WAppInteractor: WAppInputInteractorProtocol  {
     //MARK: - Properties
-    var presenter: WAppPresentationLogic?
-    var service: WAppWorker?
-    
-    var dataStore: WAppServerData?
-    var cityName: String?
+    weak var presenter: WAppOutputInteractorProtocol?
     
     
-    //MARK: - Managers/Helpers
-    private let networkManager = NetworkManager()
-    private let disposeBag = DisposeBag()
+    //MARK: - Managers
     
     
-    //MARK: - Requests
-    func makeRequest(request: WApp.Model.Request.RequestType) {
-        if service == nil {
-            service = WAppWorker()
-        }
-        
+    //MARK: - Request
+    func makeRequest(request: WApp.Action.InteractorRequest.InteractorRequestType) {
         switch request {
-        case .requestDefaultWeather:
-            networkManager
-                .fetchWeather(requestType: .defaultWeather)
-                .subscribe { [weak self] data in
-                    guard let self = self else { return }
-                    self.dataStore = data
-                    self.goToPresenter()
-                }
-                onError: { (error) in
-                    print("FETCH WEATHER ERROR: \(error)")
-                }
-                .disposed(by: disposeBag)
-            
-        case .requestWeatherByCity(cityName: let cityName):
-            networkManager
-                .fetchWeather(requestType: .weatherByCityName(cityName: cityName))
-                .subscribe { [weak self] data in
-                    guard let self = self else { return }
-                    self.dataStore = data
-                    self.goToPresenter()
-                }
-                onError: { (error) in
-                    print("FETCH WEATHER ERROR: \(error)")
-                }
-                .disposed(by: disposeBag)
+        case .changeTestText(text: let text):
+            let newText = text + "NEW NEW"
+            presenter?.makeResponse(request: .getTestText(text: newText))
         }
-    }
-    
-    
-    //MARK: - Private
-    
-    private func goToPresenter() {
-        guard let dataStoreSafe = dataStore else { return }
-        presenter?.presentData(response: .presentWeather(data: dataStoreSafe))
     }
     
 }//

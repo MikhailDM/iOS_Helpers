@@ -13,14 +13,13 @@
 		277981E32578EEC900CAAAC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277981E12578EEC900CAAAC5 /* LaunchScreen.storyboard */; };
 		277981FE2578EF9200CAAAC5 /* CitiesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277981F32578EF9200CAAAC5 /* CitiesManager.swift */; };
 		277981FF2578EF9200CAAAC5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277981F42578EF9200CAAAC5 /* NetworkManager.swift */; };
-		277982002578EF9200CAAAC5 /* WAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277981F62578EF9200CAAAC5 /* WAppViewController.swift */; };
-		277982012578EF9200CAAAC5 /* WAppInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277981F72578EF9200CAAAC5 /* WAppInteractor.swift */; };
-		277982022578EF9200CAAAC5 /* WAppConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277981F82578EF9200CAAAC5 /* WAppConfigurator.swift */; };
-		277982032578EF9200CAAAC5 /* WAppPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277981F92578EF9200CAAAC5 /* WAppPresenter.swift */; };
 		277982042578EF9200CAAAC5 /* WApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277981FA2578EF9200CAAAC5 /* WApp.storyboard */; };
-		277982052578EF9200CAAAC5 /* WAppWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277981FB2578EF9200CAAAC5 /* WAppWorker.swift */; };
-		277982062578EF9200CAAAC5 /* WAppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277981FC2578EF9200CAAAC5 /* WAppRouter.swift */; };
-		277982072578EF9200CAAAC5 /* WAppModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277981FD2578EF9200CAAAC5 /* WAppModels.swift */; };
+		2779821D2578F1F300CAAAC5 /* WAppPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277982172578F1F300CAAAC5 /* WAppPresenter.swift */; };
+		2779821E2578F1F300CAAAC5 /* WAppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277982182578F1F300CAAAC5 /* WAppRouter.swift */; };
+		2779821F2578F1F300CAAAC5 /* WAppEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277982192578F1F300CAAAC5 /* WAppEntities.swift */; };
+		277982202578F1F300CAAAC5 /* WAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2779821A2578F1F300CAAAC5 /* WAppViewController.swift */; };
+		277982212578F1F300CAAAC5 /* WAppInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2779821B2578F1F300CAAAC5 /* WAppInteractor.swift */; };
+		277982222578F1F300CAAAC5 /* WAppConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2779821C2578F1F300CAAAC5 /* WAppConfigurator.swift */; };
 		7C780FF99FE7C920580F8063 /* Pods_WA_Viper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B1F3D1265BB927D3494D98 /* Pods_WA_Viper.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,14 +33,13 @@
 		277981E42578EEC900CAAAC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		277981F32578EF9200CAAAC5 /* CitiesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesManager.swift; sourceTree = "<group>"; };
 		277981F42578EF9200CAAAC5 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		277981F62578EF9200CAAAC5 /* WAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WAppViewController.swift; sourceTree = "<group>"; };
-		277981F72578EF9200CAAAC5 /* WAppInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WAppInteractor.swift; sourceTree = "<group>"; };
-		277981F82578EF9200CAAAC5 /* WAppConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WAppConfigurator.swift; sourceTree = "<group>"; };
-		277981F92578EF9200CAAAC5 /* WAppPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WAppPresenter.swift; sourceTree = "<group>"; };
 		277981FA2578EF9200CAAAC5 /* WApp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WApp.storyboard; sourceTree = "<group>"; };
-		277981FB2578EF9200CAAAC5 /* WAppWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WAppWorker.swift; sourceTree = "<group>"; };
-		277981FC2578EF9200CAAAC5 /* WAppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WAppRouter.swift; sourceTree = "<group>"; };
-		277981FD2578EF9200CAAAC5 /* WAppModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WAppModels.swift; sourceTree = "<group>"; };
+		277982172578F1F300CAAAC5 /* WAppPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppPresenter.swift; sourceTree = "<group>"; };
+		277982182578F1F300CAAAC5 /* WAppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppRouter.swift; sourceTree = "<group>"; };
+		277982192578F1F300CAAAC5 /* WAppEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppEntities.swift; sourceTree = "<group>"; };
+		2779821A2578F1F300CAAAC5 /* WAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppViewController.swift; sourceTree = "<group>"; };
+		2779821B2578F1F300CAAAC5 /* WAppInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppInteractor.swift; sourceTree = "<group>"; };
+		2779821C2578F1F300CAAAC5 /* WAppConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppConfigurator.swift; sourceTree = "<group>"; };
 		5A44F9FDEF0C006290E32200 /* Pods-WA_Viper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WA_Viper.release.xcconfig"; path = "Target Support Files/Pods-WA_Viper/Pods-WA_Viper.release.xcconfig"; sourceTree = "<group>"; };
 		67B1F3D1265BB927D3494D98 /* Pods_WA_Viper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WA_Viper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -107,13 +105,12 @@
 			isa = PBXGroup;
 			children = (
 				277981FA2578EF9200CAAAC5 /* WApp.storyboard */,
-				277981F62578EF9200CAAAC5 /* WAppViewController.swift */,
-				277981F72578EF9200CAAAC5 /* WAppInteractor.swift */,
-				277981F82578EF9200CAAAC5 /* WAppConfigurator.swift */,
-				277981F92578EF9200CAAAC5 /* WAppPresenter.swift */,
-				277981FB2578EF9200CAAAC5 /* WAppWorker.swift */,
-				277981FC2578EF9200CAAAC5 /* WAppRouter.swift */,
-				277981FD2578EF9200CAAAC5 /* WAppModels.swift */,
+				2779821A2578F1F300CAAAC5 /* WAppViewController.swift */,
+				277982172578F1F300CAAAC5 /* WAppPresenter.swift */,
+				2779821B2578F1F300CAAAC5 /* WAppInteractor.swift */,
+				277982182578F1F300CAAAC5 /* WAppRouter.swift */,
+				277982192578F1F300CAAAC5 /* WAppEntities.swift */,
+				2779821C2578F1F300CAAAC5 /* WAppConfigurator.swift */,
 			);
 			path = "WAPP. Main";
 			sourceTree = "<group>";
@@ -253,17 +250,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				277982012578EF9200CAAAC5 /* WAppInteractor.swift in Sources */,
-				277982002578EF9200CAAAC5 /* WAppViewController.swift in Sources */,
-				277982032578EF9200CAAAC5 /* WAppPresenter.swift in Sources */,
+				2779821F2578F1F300CAAAC5 /* WAppEntities.swift in Sources */,
 				277981D72578EEC600CAAAC5 /* AppDelegate.swift in Sources */,
-				277982022578EF9200CAAAC5 /* WAppConfigurator.swift in Sources */,
+				277982202578F1F300CAAAC5 /* WAppViewController.swift in Sources */,
 				277981FF2578EF9200CAAAC5 /* NetworkManager.swift in Sources */,
+				277982222578F1F300CAAAC5 /* WAppConfigurator.swift in Sources */,
+				2779821E2578F1F300CAAAC5 /* WAppRouter.swift in Sources */,
+				2779821D2578F1F300CAAAC5 /* WAppPresenter.swift in Sources */,
+				277982212578F1F300CAAAC5 /* WAppInteractor.swift in Sources */,
 				277981FE2578EF9200CAAAC5 /* CitiesManager.swift in Sources */,
 				277981D92578EEC600CAAAC5 /* SceneDelegate.swift in Sources */,
-				277982052578EF9200CAAAC5 /* WAppWorker.swift in Sources */,
-				277982062578EF9200CAAAC5 /* WAppRouter.swift in Sources */,
-				277982072578EF9200CAAAC5 /* WAppModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

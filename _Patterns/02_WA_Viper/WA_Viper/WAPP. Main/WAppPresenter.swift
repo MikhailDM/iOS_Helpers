@@ -1,65 +1,40 @@
 //
 //  WAppPresenter.swift
-//  RxAndCS
+//  WA_Viper
 //
-//  Created by Dmitriev on 25.09.2020.
+//  Created by Михаил Дмитриев on 03.12.2020.
 //  Copyright (c) 2020 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
 import UIKit
 
 
-//MARK: - Protocol. PresentationLogic
-protocol WAppPresentationLogic {
-    func presentData(response: WApp.Model.Response.ResponseType)
-}
-
-
-class WAppPresenter: WAppPresentationLogic {
+class WAppPresenter: WAppPresenterProtocol, WAppOutputInteractorProtocol {
     //MARK: - Properties
-    weak var viewController: WAppDisplayLogic?
+    var view: WAppViewProtocol?
+    var router: WAppRouterProtocol?
+    var interactor: WAppInputInteractorProtocol?
     
     
-    //MARK: - Managers/Helpers
-    
-    
-    //MARK: - Present data
-    func presentData(response: WApp.Model.Response.ResponseType) {
-        switch response {
-        case .presentWeather(data: let data):
-            let vm = WAppViewModel(conditionImage: transformCondition(conditionId: data.weather.first?.id),
-                                   cityNameText: data.name,
-                                   temperatureText: transformTemperature(temperature: data.main.temp))
-            viewController?.displayData(viewModel: .displayWeather(viewModel: vm))
+    //MARK: - Present
+    func present(presentType: WApp.Action.Present.PresentType) {
+        switch presentType {
+        case .presentTestText:
+            interactor?.makeRequest(request: .changeTestText(text: "XXXXX"))
         }
     }
     
     
-    //MARK: - Private
-    private func transformTemperature(temperature: Double) -> String {
-        return String(format: "%.1f", temperature)
-    }
-    
-    private func transformCondition(conditionId: Int?) -> UIImage? {
-        guard let idSafe = conditionId else { return nil }
-        switch idSafe {
-        case 200...232:
-            return UIImage(systemName:"cloud.bolt")
-        case 300...321:
-            return UIImage(systemName:"cloud.drizzle")
-        case 500...531:
-            return UIImage(systemName:"cloud.rain")
-        case 600...622:
-            return UIImage(systemName:"cloud.snow")
-        case 701...781:
-            return UIImage(systemName:"cloud.fog")
-        case 800:
-            return UIImage(systemName:"sun.max")
-        case 801...804:
-            return UIImage(systemName:"cloud.bolt")
-        default:
-            return UIImage(systemName:"cloud")
+    //MARK: - From Interactor
+    func makeResponse(request: WApp.Action.InteractorResponse.InteractorResponseType) {
+        switch request {
+        case .getTestText(text: let text):
+            view?.display(displayType: .displayTestText(text: text))
         }
     }
+    
+    
+    //MARK: - Present Data
+    //func presentData(response: WApp.Model.Response.ResponseType) { }
     
 }//
