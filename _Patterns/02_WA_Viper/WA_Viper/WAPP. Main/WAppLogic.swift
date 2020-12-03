@@ -24,12 +24,12 @@ enum WApp {
         }
         struct InteractorResponse {
             enum ResponseType {
-                case responseDefaultWeather(data: WAppServerData)
+                case responseDefaultWeather(data: WAppEntity.ServerData)
             }
         }
         struct Display {
             enum DisplayType {
-                case displayWeather(viewModel: WAppViewModel)
+                case displayWeather(viewModel: WAppEntity.ViewModel)
             }
         }
     }
@@ -47,31 +47,6 @@ enum WApp {
     }
     
 }//
-
-
-//MARK: - View Model
-struct WAppViewModel {
-    let conditionImage: UIImage?
-    let cityNameText: String
-    let temperatureText: String
-}
-
-
-//MARK: - Server Data
-struct WAppServerData: Codable {
-    let name: String
-    let main: Main
-    let weather: [Weather]
-    
-    struct Main: Codable {
-        let temp: Double
-    }
-
-    struct Weather: Codable {
-        let description: String
-        let id: Int
-    }
-}
 
 
 

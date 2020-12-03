@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2779528D25797AB500C282C9 /* WAppEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2779528C25797AB500C282C9 /* WAppEntity.swift */; };
 		277981D72578EEC600CAAAC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277981D62578EEC600CAAAC5 /* AppDelegate.swift */; };
 		277981D92578EEC600CAAAC5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277981D82578EEC600CAAAC5 /* SceneDelegate.swift */; };
 		277981E02578EEC900CAAAC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 277981DF2578EEC900CAAAC5 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		1B59CE75588F9052365C167F /* Pods-WA_Viper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WA_Viper.debug.xcconfig"; path = "Target Support Files/Pods-WA_Viper/Pods-WA_Viper.debug.xcconfig"; sourceTree = "<group>"; };
+		2779528C25797AB500C282C9 /* WAppEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppEntity.swift; sourceTree = "<group>"; };
 		277981D32578EEC600CAAAC5 /* WA_Viper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WA_Viper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		277981D62578EEC600CAAAC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		277981D82578EEC600CAAAC5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				277982182578F1F300CAAAC5 /* WAppRouter.swift */,
 				2779821C2578F1F300CAAAC5 /* WAppConfigurator.swift */,
 				277982192578F1F300CAAAC5 /* WAppLogic.swift */,
+				2779528C25797AB500C282C9 /* WAppEntity.swift */,
 			);
 			path = "WAPP. Main";
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				277981D72578EEC600CAAAC5 /* AppDelegate.swift in Sources */,
 				277982202578F1F300CAAAC5 /* WAppViewController.swift in Sources */,
 				277981FF2578EF9200CAAAC5 /* NetworkManager.swift in Sources */,
+				2779528D25797AB500C282C9 /* WAppEntity.swift in Sources */,
 				277982222578F1F300CAAAC5 /* WAppConfigurator.swift in Sources */,
 				2779821E2578F1F300CAAAC5 /* WAppRouter.swift in Sources */,
 				2779821D2578F1F300CAAAC5 /* WAppPresenter.swift in Sources */,

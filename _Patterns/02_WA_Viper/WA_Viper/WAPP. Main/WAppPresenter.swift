@@ -16,7 +16,7 @@ class WAppPresenter: WAppPresenterProtocol, WAppOutputInteractorProtocol, WAppDa
     var interactor: WAppInputInteractorProtocol?
     var dataStore: WApp.DataStore?
     
-    private var serverData: WAppServerData?
+    private var serverData: WAppEntity.ServerData?
     
     
     //MARK: - Present
@@ -39,9 +39,9 @@ class WAppPresenter: WAppPresenterProtocol, WAppOutputInteractorProtocol, WAppDa
     
     
     //MARK: - Private
-    private func getViewModel() -> WAppViewModel {
-        guard let data = serverData else { return WAppViewModel(conditionImage: UIImage(systemName:"cloud.bolt"), cityNameText: "", temperatureText: "") }
-        return WAppViewModel(conditionImage: transformCondition(conditionId: data.weather.first?.id),
+    private func getViewModel() -> WAppEntity.ViewModel {
+        guard let data = serverData else { return WAppEntity.ViewModel(conditionImage: UIImage(systemName:"cloud.bolt"), cityNameText: "", temperatureText: "") }
+        return WAppEntity.ViewModel(conditionImage: transformCondition(conditionId: data.weather.first?.id),
                              cityNameText: data.name,
                              temperatureText: transformTemperature(temperature: data.main.temp))
     }
