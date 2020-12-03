@@ -14,7 +14,7 @@ import RxCocoa
 class WAppViewController: UIViewController, WAppViewProtocol {
     //MARK: - Configure
     var presenter: WAppPresenterProtocol?
-    var configurator: WAppConfiguratorProtocol = WAppConfigurator()
+    var configurator = WAppConfigurator()
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         configurator.configure(with: self)
@@ -45,12 +45,12 @@ class WAppViewController: UIViewController, WAppViewProtocol {
     deinit { print("DEINITED - WAppViewController") }
     
     
-    //MARK: - Display data
-    //func displayData(dataType: WApp.Action.ViewModel.ViewModelData) { }
+    //MARK: - Display
     func display(displayType: WApp.Action.Display.DisplayType) {
         switch displayType {
         case .displayTestText(text: let text):
             print("===== TEST TEXT: \(text)")
+            presenter?.present(presentType: .presentDataStore)
         }
     }
     

@@ -18,11 +18,11 @@ class WAppInteractor: WAppInputInteractorProtocol  {
     
     
     //MARK: - Request
-    func makeRequest(request: WApp.Action.InteractorRequest.InteractorRequestType) {
-        switch request {
+    func makeRequest(requestType: WApp.Action.InteractorRequest.InteractorRequestType) {
+        switch requestType {
         case .changeTestText(text: let text):
-            let newText = text + "NEW NEW"
-            presenter?.makeResponse(request: .getTestText(text: newText))
+            let newText = text + " AFTER INTERACTOR"
+            presenter?.makeResponse(requestType: .getTestText(text: newText))
         }
     }
     

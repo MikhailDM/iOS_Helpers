@@ -15,6 +15,7 @@ enum WApp {
         struct Present {
             enum PresentType {
                 case presentTestText
+                case presentDataStore
             }
         }
         struct InteractorRequest {
@@ -43,7 +44,7 @@ enum WApp {
     
     //MARK: - Data Store
     struct DataStore {
-        var data: Any?
+        var text: String?
     }
     
 }//

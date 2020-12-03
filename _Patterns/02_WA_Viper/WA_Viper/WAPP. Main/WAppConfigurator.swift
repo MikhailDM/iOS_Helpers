@@ -11,6 +11,8 @@ import UIKit
 
 //MARK: - Protocol. View. Presenter -> View
 protocol WAppViewProtocol {
+    var configurator: WAppConfigurator { get set }
+    var presenter: WAppPresenterProtocol? { get set }
     func display(displayType: WApp.Action.Display.DisplayType)
 }
 
@@ -27,13 +29,13 @@ protocol WAppPresenterProtocol {
 //MARK: - Protocol. Interactor.  Presenter -> Interactor
 protocol WAppInputInteractorProtocol: class {
     var presenter: WAppOutputInteractorProtocol? { get set }
-    func makeRequest(request: WApp.Action.InteractorRequest.InteractorRequestType)
+    func makeRequest(requestType: WApp.Action.InteractorRequest.InteractorRequestType)
 }
 
 
 //MARK: - Protocol. Presenter. Interactor -> Presenter
 protocol WAppOutputInteractorProtocol: class {
-    func makeResponse(request: WApp.Action.InteractorResponse.InteractorResponseType)
+    func makeResponse(requestType: WApp.Action.InteractorResponse.InteractorResponseType)
 }
 
 
@@ -51,7 +53,7 @@ protocol WAppDataStoreProtocol {
 }
 
 
-//MARK: - Protocol. Configure
+//MARK: - Protocol. Configurator
 protocol WAppConfiguratorProtocol: class {
     func configure(with viewController: WAppViewController)
 }

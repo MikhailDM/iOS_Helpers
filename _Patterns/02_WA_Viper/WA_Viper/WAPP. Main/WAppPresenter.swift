@@ -21,15 +21,20 @@ class WAppPresenter: WAppPresenterProtocol, WAppOutputInteractorProtocol, WAppDa
     func present(presentType: WApp.Action.Present.PresentType) {
         switch presentType {
         case .presentTestText:
-            interactor?.makeRequest(request: .changeTestText(text: "XXXXX"))
+            interactor?.makeRequest(requestType: .changeTestText(text: "XXXXX"))
+            
+        case .presentDataStore:
+            guard let data = dataStore?.text else { return }
+            print("===== DATA IN DATA STORE: \(data)")
         }
     }
     
     
     //MARK: - Interactor Response
-    func makeResponse(request: WApp.Action.InteractorResponse.InteractorResponseType) {
-        switch request {
+    func makeResponse(requestType: WApp.Action.InteractorResponse.InteractorResponseType) {
+        switch requestType {
         case .getTestText(text: let text):
+            dataStore?.text = text
             view?.display(displayType: .displayTestText(text: text))
         }
     }
