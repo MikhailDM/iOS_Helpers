@@ -1,0 +1,464 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		277981D72578EEC600CAAAC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277981D62578EEC600CAAAC5 /* AppDelegate.swift */; };
+		277981D92578EEC600CAAAC5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277981D82578EEC600CAAAC5 /* SceneDelegate.swift */; };
+		277981E02578EEC900CAAAC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 277981DF2578EEC900CAAAC5 /* Assets.xcassets */; };
+		277981E32578EEC900CAAAC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277981E12578EEC900CAAAC5 /* LaunchScreen.storyboard */; };
+		277981FE2578EF9200CAAAC5 /* CitiesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277981F32578EF9200CAAAC5 /* CitiesManager.swift */; };
+		277981FF2578EF9200CAAAC5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277981F42578EF9200CAAAC5 /* NetworkManager.swift */; };
+		277982002578EF9200CAAAC5 /* WAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277981F62578EF9200CAAAC5 /* WAppViewController.swift */; };
+		277982012578EF9200CAAAC5 /* WAppInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277981F72578EF9200CAAAC5 /* WAppInteractor.swift */; };
+		277982022578EF9200CAAAC5 /* WAppConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277981F82578EF9200CAAAC5 /* WAppConfigurator.swift */; };
+		277982032578EF9200CAAAC5 /* WAppPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277981F92578EF9200CAAAC5 /* WAppPresenter.swift */; };
+		277982042578EF9200CAAAC5 /* WApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277981FA2578EF9200CAAAC5 /* WApp.storyboard */; };
+		277982052578EF9200CAAAC5 /* WAppWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277981FB2578EF9200CAAAC5 /* WAppWorker.swift */; };
+		277982062578EF9200CAAAC5 /* WAppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277981FC2578EF9200CAAAC5 /* WAppRouter.swift */; };
+		277982072578EF9200CAAAC5 /* WAppModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277981FD2578EF9200CAAAC5 /* WAppModels.swift */; };
+		7C780FF99FE7C920580F8063 /* Pods_WA_Viper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B1F3D1265BB927D3494D98 /* Pods_WA_Viper.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1B59CE75588F9052365C167F /* Pods-WA_Viper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WA_Viper.debug.xcconfig"; path = "Target Support Files/Pods-WA_Viper/Pods-WA_Viper.debug.xcconfig"; sourceTree = "<group>"; };
+		277981D32578EEC600CAAAC5 /* WA_Viper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WA_Viper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		277981D62578EEC600CAAAC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		277981D82578EEC600CAAAC5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		277981DF2578EEC900CAAAC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		277981E22578EEC900CAAAC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		277981E42578EEC900CAAAC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		277981F32578EF9200CAAAC5 /* CitiesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesManager.swift; sourceTree = "<group>"; };
+		277981F42578EF9200CAAAC5 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		277981F62578EF9200CAAAC5 /* WAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WAppViewController.swift; sourceTree = "<group>"; };
+		277981F72578EF9200CAAAC5 /* WAppInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WAppInteractor.swift; sourceTree = "<group>"; };
+		277981F82578EF9200CAAAC5 /* WAppConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WAppConfigurator.swift; sourceTree = "<group>"; };
+		277981F92578EF9200CAAAC5 /* WAppPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WAppPresenter.swift; sourceTree = "<group>"; };
+		277981FA2578EF9200CAAAC5 /* WApp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WApp.storyboard; sourceTree = "<group>"; };
+		277981FB2578EF9200CAAAC5 /* WAppWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WAppWorker.swift; sourceTree = "<group>"; };
+		277981FC2578EF9200CAAAC5 /* WAppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WAppRouter.swift; sourceTree = "<group>"; };
+		277981FD2578EF9200CAAAC5 /* WAppModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WAppModels.swift; sourceTree = "<group>"; };
+		5A44F9FDEF0C006290E32200 /* Pods-WA_Viper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WA_Viper.release.xcconfig"; path = "Target Support Files/Pods-WA_Viper/Pods-WA_Viper.release.xcconfig"; sourceTree = "<group>"; };
+		67B1F3D1265BB927D3494D98 /* Pods_WA_Viper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WA_Viper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		277981D02578EEC600CAAAC5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C780FF99FE7C920580F8063 /* Pods_WA_Viper.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		060AA926711E32E7E8C16BE7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				67B1F3D1265BB927D3494D98 /* Pods_WA_Viper.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		277981CA2578EEC600CAAAC5 = {
+			isa = PBXGroup;
+			children = (
+				277981D52578EEC600CAAAC5 /* WA_Viper */,
+				277981D42578EEC600CAAAC5 /* Products */,
+				DD5B85497E67553AC197758D /* Pods */,
+				060AA926711E32E7E8C16BE7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		277981D42578EEC600CAAAC5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				277981D32578EEC600CAAAC5 /* WA_Viper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		277981D52578EEC600CAAAC5 /* WA_Viper */ = {
+			isa = PBXGroup;
+			children = (
+				277981F22578EF9200CAAAC5 /* WAPP. Global */,
+				277981F52578EF9200CAAAC5 /* WAPP. Main */,
+				2779820A2578EFA000CAAAC5 /* Support */,
+			);
+			path = WA_Viper;
+			sourceTree = "<group>";
+		};
+		277981F22578EF9200CAAAC5 /* WAPP. Global */ = {
+			isa = PBXGroup;
+			children = (
+				277981F32578EF9200CAAAC5 /* CitiesManager.swift */,
+				277981F42578EF9200CAAAC5 /* NetworkManager.swift */,
+			);
+			path = "WAPP. Global";
+			sourceTree = "<group>";
+		};
+		277981F52578EF9200CAAAC5 /* WAPP. Main */ = {
+			isa = PBXGroup;
+			children = (
+				277981FA2578EF9200CAAAC5 /* WApp.storyboard */,
+				277981F62578EF9200CAAAC5 /* WAppViewController.swift */,
+				277981F72578EF9200CAAAC5 /* WAppInteractor.swift */,
+				277981F82578EF9200CAAAC5 /* WAppConfigurator.swift */,
+				277981F92578EF9200CAAAC5 /* WAppPresenter.swift */,
+				277981FB2578EF9200CAAAC5 /* WAppWorker.swift */,
+				277981FC2578EF9200CAAAC5 /* WAppRouter.swift */,
+				277981FD2578EF9200CAAAC5 /* WAppModels.swift */,
+			);
+			path = "WAPP. Main";
+			sourceTree = "<group>";
+		};
+		2779820A2578EFA000CAAAC5 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				277981D62578EEC600CAAAC5 /* AppDelegate.swift */,
+				277981D82578EEC600CAAAC5 /* SceneDelegate.swift */,
+				277981DF2578EEC900CAAAC5 /* Assets.xcassets */,
+				277981E12578EEC900CAAAC5 /* LaunchScreen.storyboard */,
+				277981E42578EEC900CAAAC5 /* Info.plist */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		DD5B85497E67553AC197758D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1B59CE75588F9052365C167F /* Pods-WA_Viper.debug.xcconfig */,
+				5A44F9FDEF0C006290E32200 /* Pods-WA_Viper.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		277981D22578EEC600CAAAC5 /* WA_Viper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 277981E72578EEC900CAAAC5 /* Build configuration list for PBXNativeTarget "WA_Viper" */;
+			buildPhases = (
+				F4C5914AFBCD21B5753A7EFA /* [CP] Check Pods Manifest.lock */,
+				277981CF2578EEC600CAAAC5 /* Sources */,
+				277981D02578EEC600CAAAC5 /* Frameworks */,
+				277981D12578EEC600CAAAC5 /* Resources */,
+				CCD686F75F96CB40F7C9E3B9 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WA_Viper;
+			productName = WA_Viper;
+			productReference = 277981D32578EEC600CAAAC5 /* WA_Viper.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		277981CB2578EEC600CAAAC5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					277981D22578EEC600CAAAC5 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+				};
+			};
+			buildConfigurationList = 277981CE2578EEC600CAAAC5 /* Build configuration list for PBXProject "WA_Viper" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 277981CA2578EEC600CAAAC5;
+			productRefGroup = 277981D42578EEC600CAAAC5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				277981D22578EEC600CAAAC5 /* WA_Viper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		277981D12578EEC600CAAAC5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				277981E32578EEC900CAAAC5 /* LaunchScreen.storyboard in Resources */,
+				277981E02578EEC900CAAAC5 /* Assets.xcassets in Resources */,
+				277982042578EF9200CAAAC5 /* WApp.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CCD686F75F96CB40F7C9E3B9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WA_Viper/Pods-WA_Viper-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WA_Viper/Pods-WA_Viper-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WA_Viper/Pods-WA_Viper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4C5914AFBCD21B5753A7EFA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WA_Viper-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		277981CF2578EEC600CAAAC5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				277982012578EF9200CAAAC5 /* WAppInteractor.swift in Sources */,
+				277982002578EF9200CAAAC5 /* WAppViewController.swift in Sources */,
+				277982032578EF9200CAAAC5 /* WAppPresenter.swift in Sources */,
+				277981D72578EEC600CAAAC5 /* AppDelegate.swift in Sources */,
+				277982022578EF9200CAAAC5 /* WAppConfigurator.swift in Sources */,
+				277981FF2578EF9200CAAAC5 /* NetworkManager.swift in Sources */,
+				277981FE2578EF9200CAAAC5 /* CitiesManager.swift in Sources */,
+				277981D92578EEC600CAAAC5 /* SceneDelegate.swift in Sources */,
+				277982052578EF9200CAAAC5 /* WAppWorker.swift in Sources */,
+				277982062578EF9200CAAAC5 /* WAppRouter.swift in Sources */,
+				277982072578EF9200CAAAC5 /* WAppModels.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		277981E12578EEC900CAAAC5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				277981E22578EEC900CAAAC5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		277981E52578EEC900CAAAC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		277981E62578EEC900CAAAC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		277981E82578EEC900CAAAC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B59CE75588F9052365C167F /* Pods-WA_Viper.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BNVRX9T4P8;
+				INFOPLIST_FILE = WA_Viper/Support/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Mike-Dmitriev.WA-Viper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		277981E92578EEC900CAAAC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A44F9FDEF0C006290E32200 /* Pods-WA_Viper.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BNVRX9T4P8;
+				INFOPLIST_FILE = WA_Viper/Support/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Mike-Dmitriev.WA-Viper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		277981CE2578EEC600CAAAC5 /* Build configuration list for PBXProject "WA_Viper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				277981E52578EEC900CAAAC5 /* Debug */,
+				277981E62578EEC900CAAAC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		277981E72578EEC900CAAAC5 /* Build configuration list for PBXNativeTarget "WA_Viper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				277981E82578EEC900CAAAC5 /* Debug */,
+				277981E92578EEC900CAAAC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 277981CB2578EEC600CAAAC5 /* Project object */;
+}
