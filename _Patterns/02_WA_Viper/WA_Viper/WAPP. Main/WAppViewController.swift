@@ -38,8 +38,7 @@ class WAppViewController: UIViewController, WAppViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureDesign()
-        configureUITableView()
-        presenter?.present(presentType: .presentTestText)
+        presenter?.presenterRequest(requestType: .requestDefaultWeather)
     }
     
     deinit { print("DEINITED - WAppViewController") }
@@ -48,51 +47,45 @@ class WAppViewController: UIViewController, WAppViewProtocol {
     //MARK: - Display
     func display(displayType: WApp.Action.Display.DisplayType) {
         switch displayType {
-        case .displayTestText(text: let text):
-            print("===== TEST TEXT: \(text)")
-            presenter?.present(presentType: .presentDataStore)
+        case .displayWeather(viewModel: let viewModel):
+            cityLabel.text = viewModel.cityNameText
+            temperatureLabel.text = viewModel.temperatureText
+            weatherIcon.image = viewModel.conditionImage
+            animateUpdatedWeather()
         }
     }
     
     
     //MARK: - Private
+    private func animateUpdatedWeather() {
+        fadeLabels()
+        UIView.animate(withDuration: 0.5) { [weak self] in
+            guard let self = self else { return }
+            self.cityLabel.alpha = 1
+            self.temperatureLabel.alpha = 1
+            self.weatherIcon.alpha = 1
+            self.celsiusLabel.alpha = 1
+            self.deegreeLabel.alpha = 1
+        }
+    }
+    
+    private func fadeLabels() {
+        cityLabel.alpha = 0
+        temperatureLabel.alpha = 0
+        weatherIcon.alpha = 0
+        celsiusLabel.alpha = 0
+        deegreeLabel.alpha = 0
+    }
+    
     private func configureDesign() {
+        fadeLabels()
         navigationController?.navigationBar.isHidden = true
-//        title = "Title"
-//        navigationItem.backButtonTitle = ""
-//        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-    }
-    
-    private func configureUITableView() {
-//        tableView.delegate = self
-//        tableView.dataSource = self
-//        tableView.tableFooterView = UIView(frame: .zero)
-//        tableView.register(UINib(nibName: "Cell Name", bundle: nil), forCellReuseIdentifier: "Cell ID")
+        changeCityButton.layer.borderWidth = 1
+        changeCityButton.layer.borderColor = UIColor.white.cgColor
+        changeCityButton.layer.cornerRadius = changeCityButton.frame.height / 6
     }
     
     
-    //MARK: - Extension. Rx
+    //MARK: - Rx
     
 }//
-
-
-//MARK: - Extension. UITableView
-extension WAppViewController: UITableViewDelegate, UITableViewDataSource {
-   
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
-//        return TVCells.allCases.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell.init()
-//        let cellType = TVCells.allCases[indexPath.row]
-//
-//        switch cellType {
-//        case .CellName:
-//            guard let cell = tableView.dequeueReusableCell(withIdentifier: "UITVCalculatingTextTVCell")
-//                    as? UITVCalculatingTextTVCell else { return UITableViewCell.init()}
-//            return cell
-//        }
-    }
-}

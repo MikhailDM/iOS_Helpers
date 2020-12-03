@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 
 class WAppInteractor: WAppInputInteractorProtocol  {
@@ -15,15 +16,24 @@ class WAppInteractor: WAppInputInteractorProtocol  {
     
     
     //MARK: - Managers
+    private let networkManager = NetworkManager()
+    private let disposeBag = DisposeBag()
     
     
     //MARK: - Request
-    func makeRequest(requestType: WApp.Action.InteractorRequest.InteractorRequestType) {
+    func interactorRequest(requestType: WApp.Action.InteractorRequest.RequestType) {
         switch requestType {
-        case .changeTestText(text: let text):
-            let newText = text + " AFTER INTERACTOR"
-            presenter?.makeResponse(requestType: .getTestText(text: newText))
+        case .requestDefaultWeather:
+            networkManager
+                .fetchWeather(requestType: .defaultWeather)
+                .subscribe(
+                    onNext: { [weak self] data in
+                        self?.presenter?.interactorResponse(responseType: .responseDefaultWeather(data: data))
+                    },
+                    onError: { error in print("===== FETCH WEATHER ERROR: \(error)") })
+                .disposed(by: disposeBag)
         }
     }
+    
     
 }//

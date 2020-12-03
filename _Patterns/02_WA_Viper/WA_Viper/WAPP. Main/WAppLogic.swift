@@ -12,25 +12,24 @@ import UIKit
 enum WApp {
     //MARK: - Logic
     enum Action {
-        struct Present {
-            enum PresentType {
-                case presentTestText
-                case presentDataStore
+        struct PresenterRequest {
+            enum RequestType {
+                case requestDefaultWeather
             }
         }
         struct InteractorRequest {
-            enum InteractorRequestType {
-                case changeTestText(text: String)
+            enum RequestType {
+                case requestDefaultWeather
             }
         }
         struct InteractorResponse {
-            enum InteractorResponseType {
-                case getTestText(text: String)
+            enum ResponseType {
+                case responseDefaultWeather(data: WAppServerData)
             }
         }
         struct Display {
             enum DisplayType {
-                case displayTestText(text: String)
+                case displayWeather(viewModel: WAppViewModel)
             }
         }
     }
@@ -44,7 +43,7 @@ enum WApp {
     
     //MARK: - Data Store
     struct DataStore {
-        var text: String?
+        var cityName: String?
     }
     
 }//

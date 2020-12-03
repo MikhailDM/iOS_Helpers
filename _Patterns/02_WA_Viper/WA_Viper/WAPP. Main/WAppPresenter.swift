@@ -16,26 +16,59 @@ class WAppPresenter: WAppPresenterProtocol, WAppOutputInteractorProtocol, WAppDa
     var interactor: WAppInputInteractorProtocol?
     var dataStore: WApp.DataStore?
     
+    private var serverData: WAppServerData?
+    
     
     //MARK: - Present
-    func present(presentType: WApp.Action.Present.PresentType) {
-        switch presentType {
-        case .presentTestText:
-            interactor?.makeRequest(requestType: .changeTestText(text: "XXXXX"))
-            
-        case .presentDataStore:
-            guard let data = dataStore?.text else { return }
-            print("===== DATA IN DATA STORE: \(data)")
+    func presenterRequest(requestType: WApp.Action.PresenterRequest.RequestType) {
+        switch requestType {
+        case .requestDefaultWeather:
+            interactor?.interactorRequest(requestType: .requestDefaultWeather)
         }
     }
     
     
     //MARK: - Interactor Response
-    func makeResponse(requestType: WApp.Action.InteractorResponse.InteractorResponseType) {
-        switch requestType {
-        case .getTestText(text: let text):
-            dataStore?.text = text
-            view?.display(displayType: .displayTestText(text: text))
+    func interactorResponse(responseType: WApp.Action.InteractorResponse.ResponseType) {
+        switch responseType {
+        case .responseDefaultWeather(data: let data):
+            serverData = data
+            view?.display(displayType: .displayWeather(viewModel: getViewModel()))
+        }
+    }
+    
+    
+    //MARK: - Private
+    private func getViewModel() -> WAppViewModel {
+        guard let data = serverData else { return WAppViewModel(conditionImage: UIImage(systemName:"cloud.bolt"), cityNameText: "", temperatureText: "") }
+        return WAppViewModel(conditionImage: transformCondition(conditionId: data.weather.first?.id),
+                             cityNameText: data.name,
+                             temperatureText: transformTemperature(temperature: data.main.temp))
+    }
+    
+    private func transformTemperature(temperature: Double) -> String {
+        return String(format: "%.1f", temperature)
+    }
+    
+    private func transformCondition(conditionId: Int?) -> UIImage? {
+        guard let idSafe = conditionId else { return nil }
+        switch idSafe {
+        case 200...232:
+            return UIImage(systemName:"cloud.bolt")
+        case 300...321:
+            return UIImage(systemName:"cloud.drizzle")
+        case 500...531:
+            return UIImage(systemName:"cloud.rain")
+        case 600...622:
+            return UIImage(systemName:"cloud.snow")
+        case 701...781:
+            return UIImage(systemName:"cloud.fog")
+        case 800:
+            return UIImage(systemName:"sun.max")
+        case 801...804:
+            return UIImage(systemName:"cloud.bolt")
+        default:
+            return UIImage(systemName:"cloud")
         }
     }
     

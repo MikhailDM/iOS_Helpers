@@ -22,20 +22,20 @@ protocol WAppPresenterProtocol {
     var view: WAppViewProtocol? { get set }
     var router: WAppRouterProtocol? { get set }
     var interactor: WAppInputInteractorProtocol? { get set }
-    func present(presentType: WApp.Action.Present.PresentType)
+    func presenterRequest(requestType: WApp.Action.PresenterRequest.RequestType)
 }
 
 
-//MARK: - Protocol. Interactor.  Presenter -> Interactor
+//MARK: - Protocol. Interactor. Presenter -> Interactor
 protocol WAppInputInteractorProtocol: class {
     var presenter: WAppOutputInteractorProtocol? { get set }
-    func makeRequest(requestType: WApp.Action.InteractorRequest.InteractorRequestType)
+    func interactorRequest(requestType: WApp.Action.InteractorRequest.RequestType)
 }
 
 
 //MARK: - Protocol. Presenter. Interactor -> Presenter
 protocol WAppOutputInteractorProtocol: class {
-    func makeResponse(requestType: WApp.Action.InteractorResponse.InteractorResponseType)
+    func interactorResponse(responseType: WApp.Action.InteractorResponse.ResponseType)
 }
 
 
