@@ -9,12 +9,12 @@
 import UIKit
 
 
-class ___VARIABLE_sceneName___Presenter: ___VARIABLE_sceneName___SearchPresenterProtocol, ___VARIABLE_sceneName___SearchPresenterLogicProtocol, ___VARIABLE_sceneName___SearchOutputInteractorProtocol, ___VARIABLE_sceneName___SearchDataStoreProtocol {
+class ___VARIABLE_sceneName___Presenter: ___VARIABLE_sceneName___PresenterProtocol, ___VARIABLE_sceneName___PresenterLogicProtocol, ___VARIABLE_sceneName___OutputInteractorProtocol, ___VARIABLE_sceneName___DataStoreProtocol {
     //MARK: - Properties
-    var view: ___VARIABLE_sceneName___SearchViewLogicProtocol?
-    var router: ___VARIABLE_sceneName___SearchRouterLogicProtocol?
-    var interactor: ___VARIABLE_sceneName___SearchInputInteractorLogicProtocol?
-    var dataStore: ___VARIABLE_sceneName___Search.DataStore?
+    var view: ___VARIABLE_sceneName___ViewLogicProtocol?
+    var router: ___VARIABLE_sceneName___RouterLogicProtocol?
+    var interactor: ___VARIABLE_sceneName___InputInteractorLogicProtocol?
+    var dataStore: ___VARIABLE_sceneName___.DataStore?
     
     
     //MARK: - Presenter Request

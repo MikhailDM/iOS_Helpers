@@ -11,7 +11,7 @@ import UIKit
 
 class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_sceneName___ViewProtocol, ___VARIABLE_sceneName___ViewLogicProtocol {
     //MARK: - Configure
-    var presenter: (___VARIABLE_sceneName___SearchPresenterLogicProtocol & ___VARIABLE_sceneName___SearchDataStoreProtocol)?
+    var presenter: (___VARIABLE_sceneName___PresenterLogicProtocol & ___VARIABLE_sceneName___DataStoreProtocol)?
     var configurator = ___VARIABLE_sceneName___Configurator()
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
