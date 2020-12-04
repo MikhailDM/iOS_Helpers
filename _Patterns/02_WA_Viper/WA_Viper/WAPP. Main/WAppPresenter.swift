@@ -24,6 +24,9 @@ class WAppPresenter: WAppPresenterProtocol, WAppOutputInteractorProtocol, WAppDa
         switch requestType {
         case .requestDefaultWeather:
             interactor?.interactorRequest(requestType: .requestDefaultWeather)
+            
+        case .updateCity(city: let city):
+            interactor?.interactorRequest(requestType: .requestWeatherByCity(cityName: city))
         }
     }
     
@@ -31,7 +34,7 @@ class WAppPresenter: WAppPresenterProtocol, WAppOutputInteractorProtocol, WAppDa
     //MARK: - Interactor Response
     func interactorResponse(responseType: WApp.Action.InteractorResponse.ResponseType) {
         switch responseType {
-        case .responseDefaultWeather(data: let data):
+        case .responseWeatherByCity(data: let data):
             serverData = data
             view?.display(displayType: .displayWeather(viewModel: getViewModel()))
         }

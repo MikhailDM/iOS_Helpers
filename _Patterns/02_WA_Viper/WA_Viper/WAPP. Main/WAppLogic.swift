@@ -3,10 +3,10 @@
 //  WA_Viper
 //
 //  Created by Михаил Дмитриев on 03.12.2020.
-//  Copyright (c) 2020 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
 import UIKit
+import RxSwift
 
 
 enum WApp {
@@ -15,16 +15,18 @@ enum WApp {
         struct PresenterRequest {
             enum RequestType {
                 case requestDefaultWeather
+                case updateCity(city: String)
             }
         }
         struct InteractorRequest {
             enum RequestType {
                 case requestDefaultWeather
+                case requestWeatherByCity(cityName: String)
             }
         }
         struct InteractorResponse {
             enum ResponseType {
-                case responseDefaultWeather(data: WAppEntity.ServerData)
+                case responseWeatherByCity(data: WAppEntity.ServerData)
             }
         }
         struct Display {
@@ -43,7 +45,7 @@ enum WApp {
     
     //MARK: - Data Store
     struct DataStore {
-        var cityName: String?
+        var data: Any?
     }
     
 }//

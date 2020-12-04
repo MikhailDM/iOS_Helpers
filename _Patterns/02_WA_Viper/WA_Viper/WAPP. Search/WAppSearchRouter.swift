@@ -9,15 +9,14 @@
 import UIKit
 
 
-class WAppSearchRouter: WAppSearchRouterProtocol {
+class WAppSearchRouter: WAppSearchRouterProtocol, WAppSearchRouterLogicProtocol {
     //MARK: - Properties
     weak var viewController: WAppSearchViewController?
     var dataStore: WAppSearchDataStoreProtocol?
     
     
     //MARK: - Route
-    func routeToView(view: WAppSearch.Route) { }
-    
+    func routeToView(routeType: WAppSearch.Route) { }
 //Navigation Forward
 //    func routeTo() {
 //        let storyboard = UIStoryboard(name: "_____", bundle: nil)

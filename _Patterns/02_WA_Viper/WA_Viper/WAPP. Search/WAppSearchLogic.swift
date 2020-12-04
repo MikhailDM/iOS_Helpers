@@ -7,6 +7,7 @@
 
 
 import UIKit
+import RxSwift
 
 
 enum WAppSearch {
@@ -15,6 +16,7 @@ enum WAppSearch {
         struct PresenterRequest {
             enum RequestType {
                 case getCitiesList
+                case selectCity(city: String)
             }
         }
         struct InteractorRequest {
@@ -43,6 +45,6 @@ enum WAppSearch {
     
     //MARK: - Data Store
     struct DataStore {
-        var data: Any?
+        var selectedCity = PublishSubject<String>()
     }
 }//

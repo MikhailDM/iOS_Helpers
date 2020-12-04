@@ -10,26 +10,35 @@ import UIKit
 
 
 //MARK: - Protocol. View. Presenter -> View
+protocol WAppSearchViewLogicProtocol {
+    func display(displayType: WAppSearch.Action.Display.DisplayType)
+}
+
 protocol WAppSearchViewProtocol {
     var configurator: WAppSearchConfigurator { get set }
-    var presenter: WAppSearchPresenterProtocol? { get set }
-    func display(displayType: WAppSearch.Action.Display.DisplayType)
+    var presenter: (WAppSearchPresenterLogicProtocol & WAppSearchDataStoreProtocol)? { get set }
 }
 
 
 //MARK: - Protocol. Presenter. View -> Presenter
-protocol WAppSearchPresenterProtocol {
-    var view: WAppSearchViewProtocol? { get set }
-    var router: WAppSearchRouterProtocol? { get set }
-    var interactor: WAppSearchInputInteractorProtocol? { get set }
+protocol WAppSearchPresenterLogicProtocol {
     func presenterRequest(requestType: WAppSearch.Action.PresenterRequest.RequestType)
+}
+
+protocol WAppSearchPresenterProtocol {
+    var view: WAppSearchViewLogicProtocol? { get set }
+    var router: WAppSearchRouterLogicProtocol? { get set }
+    var interactor: WAppSearchInputInteractorLogicProtocol? { get set }
 }
 
 
 //MARK: - Protocol. Interactor. Presenter -> Interactor
+protocol WAppSearchInputInteractorLogicProtocol: class {
+    func interactorRequest(requestType: WAppSearch.Action.InteractorRequest.RequestType)
+}
+
 protocol WAppSearchInputInteractorProtocol: class {
     var presenter: WAppSearchOutputInteractorProtocol? { get set }
-    func interactorRequest(requestType: WAppSearch.Action.InteractorRequest.RequestType)
 }
 
 
@@ -39,11 +48,14 @@ protocol WAppSearchOutputInteractorProtocol: class {
 }
 
 
-//MARK: - Protocol. Presenter. Presenter -> Another View
+//MARK: - Protocol. Router. Presenter -> Another View
+protocol WAppSearchRouterLogicProtocol {
+    func routeToView(routeType: WAppSearch.Route)
+}
+
 protocol WAppSearchRouterProtocol {
     var viewController: WAppSearchViewController? { get set }
     var dataStore: WAppSearchDataStoreProtocol? { get set }
-    func routeToView(view: WAppSearch.Route)
 }
 
 

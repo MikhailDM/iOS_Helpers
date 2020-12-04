@@ -11,9 +11,9 @@ import RxSwift
 import RxCocoa
 
 
-class WAppSearchViewController: UIViewController, WAppSearchViewProtocol {
+class WAppSearchViewController: UIViewController, WAppSearchViewProtocol, WAppSearchViewLogicProtocol {
     //MARK: - Configure
-    var presenter: WAppSearchPresenterProtocol?
+    var presenter: (WAppSearchPresenterLogicProtocol & WAppSearchDataStoreProtocol)?
     var configurator = WAppSearchConfigurator()
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -52,6 +52,7 @@ class WAppSearchViewController: UIViewController, WAppSearchViewProtocol {
         case .displayCities(cities: let cities):
             viewModel = cities
             tableView.reloadData()
+            
         }
     }
     
@@ -114,8 +115,8 @@ extension WAppSearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        interactor?.makeRequest(request: .selectCity(city: viewModel[indexPath.row]))
-//        interactor?.makeRequest(request: .completeSubscription)
+        presenter?.presenterRequest(requestType: .selectCity(city: viewModel[indexPath.row]))
+        //interactor?.makeRequest(request: .completeSubscription)
         dismiss(animated: true, completion: nil)
     }
 }//

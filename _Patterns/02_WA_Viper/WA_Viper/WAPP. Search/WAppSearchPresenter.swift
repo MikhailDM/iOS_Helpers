@@ -9,11 +9,11 @@
 import UIKit
 
 
-class WAppSearchPresenter: WAppSearchPresenterProtocol, WAppSearchOutputInteractorProtocol, WAppSearchDataStoreProtocol {
+class WAppSearchPresenter: WAppSearchPresenterProtocol, WAppSearchPresenterLogicProtocol, WAppSearchOutputInteractorProtocol, WAppSearchDataStoreProtocol {
     //MARK: - Properties
-    var view: WAppSearchViewProtocol?
-    var router: WAppSearchRouterProtocol?
-    var interactor: WAppSearchInputInteractorProtocol?
+    var view: WAppSearchViewLogicProtocol?
+    var router: WAppSearchRouterLogicProtocol?
+    var interactor: WAppSearchInputInteractorLogicProtocol?
     var dataStore: WAppSearch.DataStore?
     
     private var citiesList = CitiesManager().getAllCitiesName()
@@ -24,6 +24,11 @@ class WAppSearchPresenter: WAppSearchPresenterProtocol, WAppSearchOutputInteract
         switch requestType {
         case .getCitiesList:
             view?.display(displayType: .displayCities(cities: citiesList))
+            
+        case .selectCity(city: let city):
+            dataStore?.selectedCity.onNext(city)
+            print("===== Selected CITY \(city)")
+            dataStore?.selectedCity.onCompleted()
         }
     }
     

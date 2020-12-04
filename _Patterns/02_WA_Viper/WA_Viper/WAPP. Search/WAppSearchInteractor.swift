@@ -9,7 +9,7 @@
 import UIKit
 
 
-class WAppSearchInteractor: WAppSearchInputInteractorProtocol  {
+class WAppSearchInteractor: WAppSearchInputInteractorProtocol, WAppSearchInputInteractorLogicProtocol  {
     //MARK: - Properties
     weak var presenter: WAppSearchOutputInteractorProtocol?
     

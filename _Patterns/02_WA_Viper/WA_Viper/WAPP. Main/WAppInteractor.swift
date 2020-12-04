@@ -28,7 +28,17 @@ class WAppInteractor: WAppInputInteractorProtocol  {
                 .fetchWeather(requestType: .defaultWeather)
                 .subscribe(
                     onNext: { [weak self] data in
-                        self?.presenter?.interactorResponse(responseType: .responseDefaultWeather(data: data))
+                        self?.presenter?.interactorResponse(responseType: .responseWeatherByCity(data: data))
+                    },
+                    onError: { error in print("===== FETCH WEATHER ERROR: \(error)") })
+                .disposed(by: disposeBag)
+            
+        case .requestWeatherByCity(cityName: let cityName):
+            networkManager
+                .fetchWeather(requestType: .weatherByCityName(cityName: cityName))
+                .subscribe(
+                    onNext: { [weak self] data in
+                        self?.presenter?.interactorResponse(responseType: .responseWeatherByCity(data: data))
                     },
                     onError: { error in print("===== FETCH WEATHER ERROR: \(error)") })
                 .disposed(by: disposeBag)
