@@ -25,8 +25,11 @@ iOS - Helpers
 <br />
 
 >## <a name="Patterns"></a> Patterns
-### 01_WA_CleanSwift
-Clean Swift Pattern. Weather app
+### SB_WA_CleanSwift
+Clean Swift Pattern. Weather app with Storyboards
+
+### SB_WA_Viper
+Viper Pattern. Weather app with Storyboards
 
 <br />
 <br />
