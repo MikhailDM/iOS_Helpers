@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K1z-ov-P0y">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--WAppSearch-->
+        <scene sceneID="k7F-iU-I48">
+            <objects>
+                <viewController storyboardIdentifier="WAppSearchViewController" title="WAppSearch" id="K1z-ov-P0y" customClass="WAppSearchViewController" customModule="WA_CleanSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cqg-g2-9Xn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LaJ-EJ-LSf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HrE-ef-ejb">
+                                <rect key="frame" x="26" y="54" width="362" height="85.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter city" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHX-gH-EjW">
+                                        <rect key="frame" x="0.0" y="0.0" width="362" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ypv-vy-h0v">
+                                        <rect key="frame" x="0.0" y="29.5" width="362" height="56"/>
+                                        <subviews>
+                                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search City" translatesAutoresizingMaskIntoConstraints="NO" id="00L-g4-ESc">
+                                                <rect key="frame" x="0.0" y="0.0" width="304" height="56"/>
+                                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </searchBar>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wq-lK-qG5">
+                                                <rect key="frame" x="314" y="0.0" width="48" height="56"/>
+                                                <state key="normal" title="Cancel"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Kfk-Yh-X3q"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="LaJ-EJ-LSf" secondAttribute="bottom" id="AhW-Fc-43q"/>
+                            <constraint firstItem="LaJ-EJ-LSf" firstAttribute="leading" secondItem="Cqg-g2-9Xn" secondAttribute="leading" id="GkE-vr-69O"/>
+                            <constraint firstItem="LaJ-EJ-LSf" firstAttribute="top" secondItem="Cqg-g2-9Xn" secondAttribute="top" id="Toj-Tu-CQh"/>
+                            <constraint firstItem="HrE-ef-ejb" firstAttribute="leading" secondItem="Kfk-Yh-X3q" secondAttribute="leading" constant="26" id="Xc8-TV-1YS"/>
+                            <constraint firstItem="HrE-ef-ejb" firstAttribute="top" secondItem="Kfk-Yh-X3q" secondAttribute="top" constant="10" id="eRv-xc-ZOw"/>
+                            <constraint firstItem="LaJ-EJ-LSf" firstAttribute="trailing" secondItem="Cqg-g2-9Xn" secondAttribute="trailing" id="obf-DH-Te1"/>
+                            <constraint firstItem="Kfk-Yh-X3q" firstAttribute="trailing" secondItem="HrE-ef-ejb" secondAttribute="trailing" constant="26" id="xdC-DE-9vA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="5wq-lK-qG5" id="SG8-lE-Lr6"/>
+                        <outlet property="searchBar" destination="00L-g4-ESc" id="214-F6-1bm"/>
+                        <outlet property="tableView" destination="LaJ-EJ-LSf" id="Uty-Xz-B5K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rlh-3g-uXU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="213.04347826086959" y="101.78571428571428"/>
+        </scene>
+    </scenes>
+</document>

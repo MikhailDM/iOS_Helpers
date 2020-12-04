@@ -1,35 +1,35 @@
 //
-//  WAppModels.swift
+//  WAppSearchLogic.swift
 //  WA_Viper
 //
-//  Created by Михаил Дмитриев on 03.12.2020.
-//  Copyright (c) 2020 ___ORGANIZATIONNAME___. All rights reserved.
+//  Created by Михаил Дмитриев on 04.12.2020
 //
+
 
 import UIKit
 
 
-enum WApp {
+enum WAppSearch {
     //MARK: - Logic
     enum Action {
         struct PresenterRequest {
             enum RequestType {
-                case requestDefaultWeather
+                case getCitiesList
             }
         }
         struct InteractorRequest {
             enum RequestType {
-                case requestDefaultWeather
+                case some
             }
         }
         struct InteractorResponse {
             enum ResponseType {
-                case responseDefaultWeather(data: WAppEntity.ServerData)
+                case some
             }
         }
         struct Display {
             enum DisplayType {
-                case displayWeather(viewModel: WAppEntity.ViewModel)
+                case displayCities(cities: [String])
             }
         }
     }
@@ -37,16 +37,12 @@ enum WApp {
     
     //MARK: - Route
     enum Route {
-        case routeToSearch
+        case some
     }
     
     
     //MARK: - Data Store
     struct DataStore {
-        var cityName: String?
+        var data: Any?
     }
-    
 }//
-
-
-

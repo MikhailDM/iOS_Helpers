@@ -43,7 +43,7 @@ protocol WAppOutputInteractorProtocol: class {
 protocol WAppRouterProtocol {
     var viewController: WAppViewController? { get set }
     var dataStore: WAppDataStoreProtocol? { get set }
-    func routeToView(view: WApp.Route)
+    func routeToView(routeType: WApp.Route)
 }
 
 

@@ -38,6 +38,7 @@ class WAppViewController: UIViewController, WAppViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureDesign()
+        subscribeToChangeCityButtonPressed()
         presenter?.presenterRequest(requestType: .requestDefaultWeather)
     }
     
@@ -87,5 +88,12 @@ class WAppViewController: UIViewController, WAppViewProtocol {
     
     
     //MARK: - Rx
+    private func subscribeToChangeCityButtonPressed() {
+        changeCityButton.rx.tap
+            .subscribe { [weak self] _ in
+                //self?.subscribeToSelectedCityOnSearch()
+                self?.presenter?.router?.routeToView(routeType: .routeToSearch)
+            }.disposed(by: disposeBag)
+    }
     
 }//

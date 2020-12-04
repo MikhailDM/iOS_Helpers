@@ -43,7 +43,7 @@ protocol ___VARIABLE_sceneName___OutputInteractorProtocol: class {
 protocol ___VARIABLE_sceneName___RouterProtocol {
     var viewController: ___VARIABLE_sceneName___ViewController? { get set }
     var dataStore: ___VARIABLE_sceneName___DataStoreProtocol? { get set }
-    func routeToView(view: ___VARIABLE_sceneName___.Route)
+    func routeToView(routeType: ___VARIABLE_sceneName___.Route)
 }
 
 

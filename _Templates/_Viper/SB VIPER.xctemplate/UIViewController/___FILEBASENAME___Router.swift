@@ -16,19 +16,18 @@ class ___VARIABLE_sceneName___Router: ___VARIABLE_sceneName___RouterProtocol {
     
     
     //MARK: - Route
-    func routeToView(view: ___VARIABLE_sceneName___.Route) { }
+    func routeToView(routeType: ___VARIABLE_sceneName___.Route) { }
     
 //Navigation Forward
-//    func routeTo() {
-//        let storyboard = UIStoryboard(name: "_____", bundle: nil)
-//        guard let viewController = viewController,
-//            //let homeDS = dataStore,
-//            let destinationVC = storyboard.instantiateViewController(withIdentifier: "_____")
-//              as? UIViewController else { print("===== NAVIGATION FAIL"); return }
-//            //var destinationDS = destinationVC.router?.dataStore else { print("===== ===== NAVIGATION FAIL"); return }
+//    let storyboard = UIStoryboard(name: "_____", bundle: nil)
+//    guard let viewController = viewController,
+//              //let homeDS = dataStore,
+//              let destinationVC = storyboard.instantiateViewController(withIdentifier: "_____")
+//                as? UIViewController else { print("===== NAVIGATION FAIL"); return }
+//    //var destinationDS = destinationVC.router?.dataStore else { print("===== NAVIGATION FAIL"); return }
 //
-//        navigateTo(source: viewController, destination: destinationVC)
-//        //passDataTo(source: homeDS, destination: &destinationDS)
+//    navigateTo(source: viewController, destination: destinationVC)
+//    //passDataTo(source: homeDS, destination: &destinationDS)
    
     
     //MARK: - Navigation
