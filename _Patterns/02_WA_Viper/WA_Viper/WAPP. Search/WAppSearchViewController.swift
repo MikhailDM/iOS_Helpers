@@ -83,7 +83,7 @@ class WAppSearchViewController: UIViewController, WAppSearchViewProtocol, WAppSe
         searchBar.rx.value.orEmpty.changed
             .debug("===== SEARCH BAR")
             .subscribe(onNext: { [weak self] text in
-                //self?.interactor?.makeRequest(request: .getCitiesWhichContainText(searchText: text))
+                self?.presenter?.presenterRequest(requestType: .getCitiesWhichContainText(searchText: text))
             }).disposed(by: disposeBag)
     }
     

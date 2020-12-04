@@ -17,6 +17,7 @@ enum WAppSearch {
             enum RequestType {
                 case getCitiesList
                 case selectCity(city: String)
+                case getCitiesWhichContainText(searchText: String)
             }
         }
         struct InteractorRequest {

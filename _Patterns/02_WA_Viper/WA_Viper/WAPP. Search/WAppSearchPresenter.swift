@@ -27,8 +27,17 @@ class WAppSearchPresenter: WAppSearchPresenterProtocol, WAppSearchPresenterLogic
             
         case .selectCity(city: let city):
             dataStore?.selectedCity.onNext(city)
-            print("===== Selected CITY \(city)")
             dataStore?.selectedCity.onCompleted()
+            
+        case .getCitiesWhichContainText(searchText: let searchText):
+            guard searchText != "" else {
+                view?.display(displayType: .displayCities(cities: citiesList))
+                return
+            }
+            let searchData = citiesList.filter { city -> Bool in
+                return city.lowercased().contains(searchText.lowercased())
+            }
+            view?.display(displayType: .displayCities(cities: searchData))
         }
     }
     
