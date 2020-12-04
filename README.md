@@ -71,9 +71,6 @@ Path: cd Library/Developer/Xcode
 ### _Clean Swift
 Clean Swift Template
 
-### _Fonts
-UI Fonts
-
 ### _UITableView
 Templates for UITableView
 
