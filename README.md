@@ -68,14 +68,17 @@ Viper Pattern. Weather app with Storyboards
 Patterns for Xcode   
 Path: cd Library/Developer/Xcode
 
-### Fonts
-UI Fonts
-
-### Mike's Clean Swift
+### _Clean Swift
 Clean Swift Template
 
-### Mike's UITableView
-UITableView Template
+### _Fonts
+UI Fonts
+
+### _UITableView
+Templates for UITableView
+
+### _Viper
+Viper Template
 
 <br />
 <br />

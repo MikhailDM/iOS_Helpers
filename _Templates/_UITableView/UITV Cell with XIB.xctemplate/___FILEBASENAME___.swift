@@ -1,13 +1,13 @@
 //
-//  ActivStepsLoginCell.swift
-//  ekpv2
+//  ___FILENAME___
+//  ___PROJECTNAME___
 //
-//  Created by Михаил Дмитриев on 23.07.2020.
-//  Copyright © 2020 aisa. All rights reserved.
+//  Created by ___FULLUSERNAME___ on ___DATE___
 //
 
+
 import UIKit
-import RxSwift
+//import RxSwift
 
 
 class ___FILEBASENAME___: UITableViewCell {
@@ -15,7 +15,7 @@ class ___FILEBASENAME___: UITableViewCell {
     
     
     //MARK: - Properties
-    var disposeBag = DisposeBag()
+    //var disposeBag = DisposeBag()
     
     
     //MARK: - Lifecycle
@@ -26,7 +26,7 @@ class ___FILEBASENAME___: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        disposeBag = DisposeBag()
+        //disposeBag = DisposeBag()
     }
     
     
@@ -39,5 +39,4 @@ class ___FILEBASENAME___: UITableViewCell {
     
     
     //MARK: - Rx
-    
 }//
