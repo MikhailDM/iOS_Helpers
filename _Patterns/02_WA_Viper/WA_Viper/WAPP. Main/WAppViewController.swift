@@ -3,17 +3,17 @@
 //  WA_Viper
 //
 //  Created by Михаил Дмитриев on 03.12.2020.
-//  Copyright (c) 2020 ___ORGANIZATIONNAME___. All rights reserved.
 //
+
 
 import UIKit
 import RxSwift
 import RxCocoa
 
 
-class WAppViewController: UIViewController, WAppViewProtocol {
+class WAppViewController: UIViewController, WAppViewProtocol, WAppViewLogicProtocol {
     //MARK: - Configure
-    var presenter: WAppPresenterProtocol?
+    var presenter: (WAppPresenterLogicProtocol & WAppDataStoreProtocol)?
     var configurator = WAppConfigurator()
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -91,9 +91,7 @@ class WAppViewController: UIViewController, WAppViewProtocol {
     private func subscribeToChangeCityButtonPressed() {
         changeCityButton.rx.tap
             .subscribe { [weak self] _ in
-                //self?.subscribeToSelectedCityOnSearch()
-                self?.presenter?.router?.routeToView(routeType: .routeToSearch)
+                self?.presenter?.presenterRequest(requestType: .routeToSearch)
             }.disposed(by: disposeBag)
     }
-    
 }//

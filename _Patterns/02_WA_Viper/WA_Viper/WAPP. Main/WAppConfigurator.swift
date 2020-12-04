@@ -2,34 +2,43 @@
 //  WAppConfigurator.swift
 //  WA_Viper
 //
-//  Created by Михаил Дмитриев on 03.12.2020.
-//  Copyright (c) 2020 ___ORGANIZATIONNAME___. All rights reserved.
+//  Created by Михаил Дмитриев on 03.12.2020
 //
+
 
 import UIKit
 
 
 //MARK: - Protocol. View. Presenter -> View
+protocol WAppViewLogicProtocol {
+    func display(displayType: WApp.Action.Display.DisplayType)
+}
+
 protocol WAppViewProtocol {
     var configurator: WAppConfigurator { get set }
-    var presenter: WAppPresenterProtocol? { get set }
-    func display(displayType: WApp.Action.Display.DisplayType)
+    var presenter: (WAppPresenterLogicProtocol & WAppDataStoreProtocol)? { get set }
 }
 
 
 //MARK: - Protocol. Presenter. View -> Presenter
-protocol WAppPresenterProtocol {
-    var view: WAppViewProtocol? { get set }
-    var router: WAppRouterProtocol? { get set }
-    var interactor: WAppInputInteractorProtocol? { get set }
+protocol WAppPresenterLogicProtocol {
     func presenterRequest(requestType: WApp.Action.PresenterRequest.RequestType)
+}
+
+protocol WAppPresenterProtocol {
+    var view: WAppViewLogicProtocol? { get set }
+    var router: WAppRouterLogicProtocol? { get set }
+    var interactor: WAppInputInteractorLogicProtocol? { get set }
 }
 
 
 //MARK: - Protocol. Interactor. Presenter -> Interactor
+protocol WAppInputInteractorLogicProtocol: class {
+    func interactorRequest(requestType: WApp.Action.InteractorRequest.RequestType)
+}
+
 protocol WAppInputInteractorProtocol: class {
     var presenter: WAppOutputInteractorProtocol? { get set }
-    func interactorRequest(requestType: WApp.Action.InteractorRequest.RequestType)
 }
 
 
@@ -39,11 +48,14 @@ protocol WAppOutputInteractorProtocol: class {
 }
 
 
-//MARK: - Protocol. Presenter. Presenter -> Another View
+//MARK: - Protocol. Router. Presenter -> Another View
+protocol WAppRouterLogicProtocol {
+    func routeTo(routeType: WApp.Route)
+}
+
 protocol WAppRouterProtocol {
     var viewController: WAppViewController? { get set }
     var dataStore: WAppDataStoreProtocol? { get set }
-    func routeToView(routeType: WApp.Route)
 }
 
 
@@ -76,31 +88,4 @@ class WAppConfigurator: WAppConfiguratorProtocol {
         router.viewController     = viewController
         router.dataStore = presenter
     }
-    
 }//
-
-
-/*
- fruitListRef.presenter = presenter
- fruitListRef.presenter?.wireframe = FruitListWireframe()
- fruitListRef.presenter?.view = fruitListRef
- fruitListRef.presenter?.interactor = FruitListInteractor()
- fruitListRef.presenter?.interactor?.presenter = presenter
- */
-
-//MARK: - Protocol. Presenter
-//protocol WAppPresentationLogic {
-//    func presentData(response: WApp.Model.Response.ResponseType)
-//}
-
-
-//MARK: - Protocol. Display
-//protocol WAppDisplayLogic: class {
-//    func displayData(toDisplay: WApp.Model.ViewModel.ViewModelData)
-//}
-
-
-//MARK: - Protocol. Data Passing
-//protocol WAppDataPassing {
-//    var dataStore: WAppDataStore? { get set }
-//}

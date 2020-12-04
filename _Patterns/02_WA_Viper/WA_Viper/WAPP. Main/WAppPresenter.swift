@@ -3,17 +3,17 @@
 //  WA_Viper
 //
 //  Created by Михаил Дмитриев on 03.12.2020.
-//  Copyright (c) 2020 ___ORGANIZATIONNAME___. All rights reserved.
 //
+
 
 import UIKit
 
 
-class WAppPresenter: WAppPresenterProtocol, WAppOutputInteractorProtocol, WAppDataStoreProtocol {
+class WAppPresenter: WAppPresenterProtocol, WAppPresenterLogicProtocol, WAppOutputInteractorProtocol, WAppDataStoreProtocol {
     //MARK: - Properties
-    var view: WAppViewProtocol?
-    var router: WAppRouterProtocol?
-    var interactor: WAppInputInteractorProtocol?
+    var view: WAppViewLogicProtocol?
+    var router: WAppRouterLogicProtocol?
+    var interactor: WAppInputInteractorLogicProtocol?
     var dataStore: WApp.DataStore?
     
     private var serverData: WAppEntity.ServerData?
@@ -27,6 +27,9 @@ class WAppPresenter: WAppPresenterProtocol, WAppOutputInteractorProtocol, WAppDa
             
         case .updateCity(city: let city):
             interactor?.interactorRequest(requestType: .requestWeatherByCity(cityName: city))
+            
+        case .routeToSearch:
+            router?.routeTo(routeType: .routeToSearch)
         }
     }
     
@@ -48,5 +51,4 @@ class WAppPresenter: WAppPresenterProtocol, WAppOutputInteractorProtocol, WAppDa
                                     cityNameText: data.name,
                                     temperatureText: data.transformedTemperature)
     }
-    
 }//

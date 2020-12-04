@@ -5,11 +5,12 @@
 //  Created by Михаил Дмитриев on 03.12.2020.
 //
 
+
 import UIKit
 import RxSwift
 
 
-class WAppRouter: WAppRouterProtocol {
+class WAppRouter: WAppRouterProtocol, WAppRouterLogicProtocol {
     //MARK: - Properties
     weak var viewController: WAppViewController?
     var dataStore: WAppDataStoreProtocol?
@@ -18,7 +19,7 @@ class WAppRouter: WAppRouterProtocol {
     
     
     //MARK: - Route
-    func routeToView(routeType: WApp.Route) {
+    func routeTo(routeType: WApp.Route) {
         switch routeType {
         case .routeToSearch:
             let storyboard = UIStoryboard(name: "WAppSearch", bundle: nil)
@@ -39,7 +40,7 @@ class WAppRouter: WAppRouterProtocol {
     }
      
     
-    //MARK: - PassingData
+    //MARK: - Passing Data
     private func subscribeToSelectedCity(source: WApp.DataStore, destination: inout WAppSearch.DataStore) {
         destination.selectedCity.asObserver()
             .debug("===== SELECT CITY")

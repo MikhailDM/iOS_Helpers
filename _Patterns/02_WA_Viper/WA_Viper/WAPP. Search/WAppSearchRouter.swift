@@ -16,18 +16,7 @@ class WAppSearchRouter: WAppSearchRouterProtocol, WAppSearchRouterLogicProtocol 
     
     
     //MARK: - Route
-    func routeToView(routeType: WAppSearch.Route) { }
-//Navigation Forward
-//    func routeTo() {
-//        let storyboard = UIStoryboard(name: "_____", bundle: nil)
-//        guard let viewController = viewController,
-//            //let homeDS = dataStore,
-//            let destinationVC = storyboard.instantiateViewController(withIdentifier: "_____")
-//              as? UIViewController else { print("===== NAVIGATION FAIL"); return }
-//            //var destinationDS = destinationVC.router?.dataStore else { print("===== ===== NAVIGATION FAIL"); return }
-//
-//        navigateTo(source: viewController, destination: destinationVC)
-//        //passDataTo(source: homeDS, destination: &destinationDS)
+    func routeTo(routeType: WAppSearch.Route) { }
    
     
     //MARK: - Navigation
@@ -36,7 +25,7 @@ class WAppSearchRouter: WAppSearchRouterProtocol, WAppSearchRouterLogicProtocol 
 //    }
      
     
-    //MARK: - PassingData
+    //MARK: - Passing Data
 //    //Pass Data in Navigation Stack
 //    private func passDataTo(source: WAppSearchDataStore, destination: inout DestinationDataStore) {
 //        destination.dataStore = source.dataStore

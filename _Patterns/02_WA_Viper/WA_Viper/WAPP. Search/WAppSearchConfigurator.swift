@@ -50,7 +50,7 @@ protocol WAppSearchOutputInteractorProtocol: class {
 
 //MARK: - Protocol. Router. Presenter -> Another View
 protocol WAppSearchRouterLogicProtocol {
-    func routeToView(routeType: WAppSearch.Route)
+    func routeTo(routeType: WAppSearch.Route)
 }
 
 protocol WAppSearchRouterProtocol {

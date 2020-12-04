@@ -3,19 +3,19 @@
 //  WA_Viper
 //
 //  Created by Михаил Дмитриев on 03.12.2020.
-//  Copyright (c) 2020 ___ORGANIZATIONNAME___. All rights reserved.
 //
+
 
 import UIKit
 import RxSwift
 
 
-class WAppInteractor: WAppInputInteractorProtocol  {
+class WAppInteractor: WAppInputInteractorProtocol, WAppInputInteractorLogicProtocol  {
     //MARK: - Properties
     weak var presenter: WAppOutputInteractorProtocol?
     
     
-    //MARK: - Managers
+    //MARK: - Services
     private let networkManager = NetworkManager()
     private let disposeBag = DisposeBag()
     
@@ -44,6 +44,4 @@ class WAppInteractor: WAppInputInteractorProtocol  {
                 .disposed(by: disposeBag)
         }
     }
-    
-    
 }//

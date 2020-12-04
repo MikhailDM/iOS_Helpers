@@ -5,6 +5,7 @@
 //  Created by Михаил Дмитриев on 03.12.2020.
 //
 
+
 import UIKit
 import RxSwift
 
@@ -16,6 +17,7 @@ enum WApp {
             enum RequestType {
                 case requestDefaultWeather
                 case updateCity(city: String)
+                case routeToSearch
             }
         }
         struct InteractorRequest {
@@ -47,7 +49,6 @@ enum WApp {
     struct DataStore {
         var data: Any?
     }
-    
 }//
 
 

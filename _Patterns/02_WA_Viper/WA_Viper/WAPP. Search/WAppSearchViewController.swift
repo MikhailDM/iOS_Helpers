@@ -116,7 +116,6 @@ extension WAppSearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter?.presenterRequest(requestType: .selectCity(city: viewModel[indexPath.row]))
-        //interactor?.makeRequest(request: .completeSubscription)
         dismiss(animated: true, completion: nil)
     }
 }//
