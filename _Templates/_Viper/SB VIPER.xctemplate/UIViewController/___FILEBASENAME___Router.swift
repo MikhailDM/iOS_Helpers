@@ -9,16 +9,15 @@
 import UIKit
 
 
-class ___VARIABLE_sceneName___Router: ___VARIABLE_sceneName___RouterProtocol {
+class ___VARIABLE_sceneName___Router: ___VARIABLE_sceneName___RouterProtocol, ___VARIABLE_sceneName___RouterLogicProtocol {
     //MARK: - Properties
     weak var viewController: ___VARIABLE_sceneName___ViewController?
     var dataStore: ___VARIABLE_sceneName___DataStoreProtocol?
     
     
     //MARK: - Route
-    func routeToView(routeType: ___VARIABLE_sceneName___.Route) { }
+    func routeTo(routeType: ___VARIABLE_sceneName___.Route) { }
     
-//Navigation Forward
 //    let storyboard = UIStoryboard(name: "_____", bundle: nil)
 //    guard let viewController = viewController,
 //              //let homeDS = dataStore,
@@ -36,9 +35,9 @@ class ___VARIABLE_sceneName___Router: ___VARIABLE_sceneName___RouterProtocol {
 //    }
      
     
-    //MARK: - PassingData
+    //MARK: - Passing Data
 //    //Pass Data in Navigation Stack
-//    private func passDataTo(source: ___VARIABLE_sceneName___DataStore, destination: inout DestinationDataStore) {
+//    private func passDataTo(source: ___VARIABLE_sceneName___.DataStore, destination: inout Destination.DataStore) {
 //        destination.dataStore = source.dataStore
 //    }
 }//

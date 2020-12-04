@@ -9,7 +9,7 @@
 import UIKit
 
 
-class ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___InputInteractorProtocol  {
+class ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___InputInteractorProtocol, ___VARIABLE_sceneName___InputInteractorLogicProtocol  {
     //MARK: - Properties
     weak var presenter: ___VARIABLE_sceneName___OutputInteractorProtocol?
     
