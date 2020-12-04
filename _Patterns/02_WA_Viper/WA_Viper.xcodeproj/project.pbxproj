@@ -89,6 +89,7 @@
 			children = (
 				277981F22578EF9200CAAAC5 /* WAPP. Global */,
 				277981F52578EF9200CAAAC5 /* WAPP. Main */,
+				2795C181257A1490001205CD /* WAPP. Search */,
 				2779820A2578EFA000CAAAC5 /* Support */,
 			);
 			path = WA_Viper;
@@ -128,6 +129,13 @@
 				277981E42578EEC900CAAAC5 /* Info.plist */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		2795C181257A1490001205CD /* WAPP. Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "WAPP. Search";
 			sourceTree = "<group>";
 		};
 		DD5B85497E67553AC197758D /* Pods */ = {
