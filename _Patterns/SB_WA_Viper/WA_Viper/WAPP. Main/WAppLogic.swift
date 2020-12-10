@@ -47,7 +47,7 @@ enum WApp {
     
     //MARK: - Data Store
     struct DataStore {
-        var data: Any?
+        var selectedCity: String?
     }
 }//
 

@@ -26,6 +26,7 @@ class WAppPresenter: WAppPresenterProtocol, WAppPresenterLogicProtocol, WAppOutp
             interactor?.interactorRequest(requestType: .requestDefaultWeather)
             
         case .updateCity(city: let city):
+            dataStore?.selectedCity = city
             interactor?.interactorRequest(requestType: .requestWeatherByCity(cityName: city))
             
         case .routeToSearch:
