@@ -1,6 +1,6 @@
 //
 //  WAppInteractor.swift
-//  RxAndCS
+//  WA_CleanSwift
 //
 //  Created by Dmitriev on 25.09.2020.
 //
@@ -10,46 +10,29 @@ import UIKit
 import RxSwift
 
 
-//MARK: - Protocol. BusinessLogic
-protocol WAppBusinessLogic {
-    func makeRequest(request: WApp.Model.Request.RequestType)
-}
-
-
-//MARK: - Protocol. DataStore
-protocol WAppDataStore {
-    var dataStore: WAppServerData? { get set }
-    var cityName: String? { get set }
-}
-
-
-class WAppInteractor: WAppBusinessLogic, WAppDataStore {
+class WAppInteractor: WAppInteractorProtocol, WAppInteractorLogicProtocol, WAppDataStoreProtocol {
     //MARK: - Properties
-    var presenter: WAppPresentationLogic?
-    var service: WAppWorker?
+    var presenter: WAppPresenterLogicProtocol?
+    var router: WAppRouterLogicProtocol?
+    var dataStore: WApp.DataStore?
     
-    var dataStore: WAppServerData?
-    var cityName: String?
+    private var serverData: WAppEntity.ServerData?
     
     
-    //MARK: - Managers/Helpers
+    //MARK: - Services
     private let networkManager = NetworkManager()
     private let disposeBag = DisposeBag()
     
     
-    //MARK: - Requests
-    func makeRequest(request: WApp.Model.Request.RequestType) {
-        if service == nil {
-            service = WAppWorker()
-        }
-        
-        switch request {
+    //MARK: - Request
+    func interactorRequest(requestType: WApp.Action.InteractorRequest.RequestType) {
+        switch requestType {
         case .requestDefaultWeather:
             networkManager
                 .fetchWeather(requestType: .defaultWeather)
                 .subscribe { [weak self] data in
                     guard let self = self else { return }
-                    self.dataStore = data
+                    self.serverData = data
                     self.goToPresenter()
                 }
                 onError: { (error) in
@@ -62,22 +45,23 @@ class WAppInteractor: WAppBusinessLogic, WAppDataStore {
                 .fetchWeather(requestType: .weatherByCityName(cityName: cityName))
                 .subscribe { [weak self] data in
                     guard let self = self else { return }
-                    self.dataStore = data
+                    self.serverData = data
                     self.goToPresenter()
                 }
                 onError: { (error) in
                     print("FETCH WEATHER ERROR: \(error)")
                 }
                 .disposed(by: disposeBag)
+        
+        case .routeToSearch:
+            router?.routeTo(routeType: .routeToSearch)
         }
     }
     
     
     //MARK: - Private
-    
     private func goToPresenter() {
-        guard let dataStoreSafe = dataStore else { return }
-        presenter?.presentData(response: .presentWeather(data: dataStoreSafe))
+        guard let serverDataSafe = serverData else { return }
+        presenter?.presenterRequest(requestType: .presentWeather(data: serverDataSafe))
     }
-    
 }//

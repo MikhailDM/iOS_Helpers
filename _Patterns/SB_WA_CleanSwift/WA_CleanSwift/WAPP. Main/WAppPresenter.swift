@@ -1,6 +1,6 @@
 //
 //  WAppPresenter.swift
-//  RxAndCS
+//  WA_CleanSwift
 //
 //  Created by Dmitriev on 25.09.2020.
 //
@@ -9,28 +9,22 @@
 import UIKit
 
 
-//MARK: - Protocol. PresentationLogic
-protocol WAppPresentationLogic {
-    func presentData(response: WApp.Model.Response.ResponseType)
-}
-
-
-class WAppPresenter: WAppPresentationLogic {
+class WAppPresenter: WAppPresenterProtocol, WAppPresenterLogicProtocol {
     //MARK: - Properties
-    weak var viewController: WAppDisplayLogic?
+    weak var view: WAppViewLogicProtocol?
     
     
-    //MARK: - Managers/Helpers
+    //MARK: - Services
     
     
-    //MARK: - Present data
-    func presentData(response: WApp.Model.Response.ResponseType) {
-        switch response {
+    //MARK: - Present
+    func presenterRequest(requestType: WApp.Action.PresenterRequest.RequestType) {
+        switch requestType {
         case .presentWeather(data: let data):
-            let vm = WAppViewModel(conditionImage: transformCondition(conditionId: data.weather.first?.id),
+            let vm = WAppEntity.ViewModel(conditionImage: transformCondition(conditionId: data.weather.first?.id),
                                    cityNameText: data.name,
                                    temperatureText: transformTemperature(temperature: data.main.temp))
-            viewController?.displayData(viewModel: .displayWeather(viewModel: vm))
+            view?.display(displayType: .displayWeather(viewModel: vm))
         }
     }
     
@@ -61,5 +55,4 @@ class WAppPresenter: WAppPresentationLogic {
             return UIImage(systemName:"cloud")
         }
     }
-    
 }//

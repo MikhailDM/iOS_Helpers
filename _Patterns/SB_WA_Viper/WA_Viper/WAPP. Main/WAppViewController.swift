@@ -42,7 +42,7 @@ class WAppViewController: UIViewController, WAppViewProtocol, WAppViewLogicProto
         presenter?.presenterRequest(requestType: .requestDefaultWeather)
     }
     
-    deinit { print("DEINITED - WAppViewController") }
+    deinit { print("===== DEINITED: WAppViewController") }
     
     
     //MARK: - Display

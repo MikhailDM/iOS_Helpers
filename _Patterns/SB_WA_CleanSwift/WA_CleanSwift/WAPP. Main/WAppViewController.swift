@@ -1,6 +1,6 @@
 //
 //  WAppViewController.swift
-//  RxAndCS
+//  WA_CleanSwift
 //
 //  Created by Dmitriev on 25.09.2020.
 //
@@ -11,13 +11,16 @@ import RxSwift
 import RxCocoa
 
 
-//MARK: - Protocol. DisplayLogic
-protocol WAppDisplayLogic: class {
-    func displayData(viewModel: WApp.Model.ViewModel.ViewModelData)
-}
-
-
-class WAppViewController: UIViewController, WAppDisplayLogic {
+class WAppViewController: UIViewController, WAppViewProtocol, WAppViewLogicProtocol {
+    //MARK: - Configure
+    var interactor: (WAppInteractorLogicProtocol & WAppDataStoreProtocol)?
+    var configurator = WAppConfigurator()
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        configurator.configure(with: self)
+    }
+    
+    
     //MARK: - Outlets
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -29,43 +32,25 @@ class WAppViewController: UIViewController, WAppDisplayLogic {
     
     
     //MARK: - Properties
-    var interactor: WAppBusinessLogic?
-    var router: (NSObjectProtocol & WAppRoutingLogic & WAppDataPassing)?
-    lazy var configurator: WAppConfiguratorProtocol = WAppConfigurator()
     private let disposeBag = DisposeBag()
-    
     private let searchDelay = 1
     private let animationDelay = 0.5
     
     
-    //MARK: - Init
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        configurator.configure(with: self)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        configurator.configure(with: self)
-    }
-    
-    
-    //MARK: - View lifecycle
+    //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDesign()
         subscribeToChangeCityButtonPressed()
-        interactor?.makeRequest(request: .requestDefaultWeather)
+        interactor?.interactorRequest(requestType: .requestDefaultWeather)
     }
     
-    deinit {
-        print("DEINITED - WAppViewController")
-    }
+    deinit { print("===== DEINITED: WAppViewController") }
     
     
-    //MARK: - Display data
-    func displayData(viewModel: WApp.Model.ViewModel.ViewModelData) {
-        switch viewModel {
+    //MARK: - Display
+    func display(displayType: WApp.Action.Display.DisplayType) {
+        switch displayType {
         case .displayWeather(viewModel: let viewModel):
             cityLabel.text = viewModel.cityNameText
             temperatureLabel.text = viewModel.temperatureText
@@ -109,16 +94,8 @@ class WAppViewController: UIViewController, WAppDisplayLogic {
     private func subscribeToChangeCityButtonPressed() {
         changeCityButton.rx.tap
             .subscribe { [weak self] _ in
-                self?.subscribeToSelectedCityOnSearch()
+                self?.interactor?.interactorRequest(requestType: .routeToSearch)
             }.disposed(by: disposeBag)
-    }
-    
-    private func subscribeToSelectedCityOnSearch() {
-        router?.routeToSearch()
-            .debug("===== SELECT CITY")
-            .subscribe(onNext: { [weak self] city in
-                self?.interactor?.makeRequest(request: .requestWeatherByCity(cityName: city))
-            }).disposed(by: disposeBag)
     }
     
 }//

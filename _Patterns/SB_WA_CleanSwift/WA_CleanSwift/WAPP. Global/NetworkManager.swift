@@ -27,12 +27,12 @@ struct NetworkManager {
     }
     
     //MARK: - Public request
-    func fetchWeather(requestType: RequestType) -> Observable<WAppServerData> {
+    func fetchWeather(requestType: RequestType) -> Observable<WAppEntity.ServerData> {
         let requestURL = getCorrectURL(requestType: requestType)
         return session.rx
             .data(.get, requestURL)
-            .map { data -> WAppServerData in
-                return try JSONDecoder().decode(WAppServerData.self, from: data)
+            .map { data -> WAppEntity.ServerData in
+                return try JSONDecoder().decode(WAppEntity.ServerData.self, from: data)
             }
     }
     

@@ -1,6 +1,6 @@
 //
 //  WAppRouter.swift
-//  RxAndCS
+//  WA_CleanSwift
 //
 //  Created by Dmitriev on 25.09.2020
 //
@@ -10,35 +10,26 @@ import UIKit
 import RxSwift
 
 
-//MARK: - Protocol. RoutingLogic
-protocol WAppRoutingLogic {
-    func routeToSearch() -> PublishSubject<String>
-}
-
-
-//MARK: - Protocol. DataPassing
-protocol WAppDataPassing {
-    var dataStore: WAppDataStore? { get set }
-}
-
-
-class WAppRouter: NSObject, WAppRoutingLogic, WAppDataPassing {
+class WAppRouter: WAppRouterProtocol, WAppRouterLogicProtocol {
     //MARK: - Properties
-    weak var viewController: WAppViewController?
-    var dataStore: WAppDataStore?
+    var interactor: (WAppInteractorLogicProtocol & WAppDataStoreProtocol)?
+    private var disposeBag = DisposeBag()
     
     
     //MARK: - Routing
-    func routeToSearch() -> PublishSubject<String> {
-        let storyboard = UIStoryboard(name: "WAppSearch", bundle: nil)
-        guard
-            let viewController = viewController,
-            let destinationVC = storyboard.instantiateViewController(withIdentifier: "WAppSearchViewController")
-                as? WAppSearchViewController,
-            let destinationDS = destinationVC.router?.dataStore else { return PublishSubject<String>.create { (observer) -> Disposable in
-                observer.onCompleted(); return Disposables.create() } as! PublishSubject<String> }
-        navigateToSearch(source: viewController, destination: destinationVC)
-        return destinationDS.selectedCity
+    func routeTo(routeType: WApp.Route) {
+        switch routeType {
+        case .routeToSearch:
+            print("")
+//            let storyboard = UIStoryboard(name: "WAppSearch", bundle: nil)
+//            guard let viewController = view,
+//                  let homeDS = dataStore?.dataStore,
+//                  let destinationVC = storyboard.instantiateViewController(withIdentifier: "WAppSearchViewController")
+//                    as? WAppSearchViewController,
+//                  var destinationDS = destinationVC.presenter?.dataStore else { print("===== NAVIGATION FAIL"); return }
+//            navigateToSearch(source: viewController, destination: destinationVC)
+//            subscribeToSelectedCity(source: homeDS, destination: &destinationDS)
+        }
     }
     
     
@@ -49,5 +40,11 @@ class WAppRouter: NSObject, WAppRoutingLogic, WAppDataPassing {
      
     
     //MARK: - Passing data
-    
+//    private func subscribeToSelectedCity(source: WApp.DataStore, destination: inout WAppSearch.DataStore) {
+//        destination.selectedCity.asObserver()
+//            .debug("===== SELECT CITY")
+//            .subscribe(onNext: { [weak self] city in
+//                self?.viewController?.presenter?.presenterRequest(requestType: .updateCity(city: city))
+//            }).disposed(by: disposeBag)
+//    }
 }//
