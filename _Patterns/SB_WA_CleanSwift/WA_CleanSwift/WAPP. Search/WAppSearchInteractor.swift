@@ -1,58 +1,48 @@
 //
-//  WAppSearchInteractor.swift
+//  WAppSearchSearchInteractor.swift
 //  WA_CleanSwift
 //
-//  Created by Михаил Дмитриев on 27.11.2020.
-//  Copyright (c) 2020 ___ORGANIZATIONNAME___. All rights reserved.
+//  Created by Михаил Дмитриев on 27.11.2020
 //
 
 import UIKit
-import RxSwift
 
 
-//MARK: - Protocol. Data Store
-protocol WAppSearchDataStore {
-    var selectedCity: PublishSubject<String> { get set }
-}
-
-
-class WAppSearchInteractor: WAppSearchBusinessLogic, WAppSearchDataStore {
+class WAppSearchInteractor: WAppSearchInteractorProtocol, WAppSearchInteractorLogicProtocol, WAppSearchDataStoreProtocol  {
     //MARK: - Properties
-    var presenter: WAppSearchPresentationLogic?
-    public var selectedCity = PublishSubject<String>()
+    var presenter: WAppSearchPresenterLogicProtocol?
+    var router: WAppSearchRouterLogicProtocol?
+    var dataStore: WAppSearch.DataStore?
 
-    private var citiesList = [String]()
-    private var searchData = [String]()
-    private var disposeBag = DisposeBag()
+    private var citiesList = CitiesManager().getAllCitiesName()
     
     
-    //MARK: - Managers
-    private let citiesManager = CitiesManager()
+    //MARK: - Services
     
     
     //MARK: - Requests
-    func makeRequest(request: WAppSearch.Model.Request.RequestType) {
-        switch request{
-        case .subscribeToSearchedCities:
-            citiesList = citiesManager.getAllCitiesName()
-            presenter?.presentData(response: .presentCitiesWhichContainText(searchData: citiesList))
-
-        case .getCitiesWhichContainText(searchText: let searchText):
-            guard searchText != "" else {
-                presenter?.presentData(response: .presentCitiesWhichContainText(searchData: citiesList))
-                return
-            }
-            searchData = citiesList.filter { city -> Bool in
-                return city.lowercased().contains(searchText.lowercased())
-            }
-            presenter?.presentData(response: .presentCitiesWhichContainText(searchData: searchData))
+    func interactorRequest(requestType: WAppSearch.Action.InteractorRequest.RequestType) {
+        switch requestType {
+        case .getCitiesList:
+            presenter?.presenterRequest(requestType: .presentCities(cities: citiesList))
             
         case .selectCity(city: let city):
-            selectedCity.onNext(city)
+            dataStore?.selectedCity.onNext(city)
+            dataStore?.selectedCity.onCompleted()
+            router?.routeTo(routeType: .dismissView)
             
-        case .completeSubscription:
-            selectedCity.onCompleted()
+        case .getCitiesWhichContainText(searchText: let searchText):
+            guard searchText != "" else {
+                presenter?.presenterRequest(requestType: .presentCities(cities: citiesList))
+                return
+            }
+            let searchData = citiesList.filter { city -> Bool in
+                return city.lowercased().contains(searchText.lowercased())
+            }
+            presenter?.presenterRequest(requestType: .presentCities(cities: searchData))
+        
+        case .dismissView:
+            router?.routeTo(routeType: .dismissView)
         }
     }
-    
 }//

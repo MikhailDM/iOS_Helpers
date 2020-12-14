@@ -24,12 +24,13 @@
 		275283472570EB620003C20D /* WAppSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 275283402570EB620003C20D /* WAppSearch.storyboard */; };
 		275283482570EB620003C20D /* WAppSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275283412570EB620003C20D /* WAppSearchPresenter.swift */; };
 		275283492570EB620003C20D /* WAppSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275283422570EB620003C20D /* WAppSearchRouter.swift */; };
-		2752834A2570EB620003C20D /* WAppSearchModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275283432570EB620003C20D /* WAppSearchModels.swift */; };
+		2752834A2570EB620003C20D /* WAppSearchLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275283432570EB620003C20D /* WAppSearchLogic.swift */; };
 		2752834B2570EB620003C20D /* WAppSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275283442570EB620003C20D /* WAppSearchViewController.swift */; };
 		2752834C2570EB620003C20D /* WAppSearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275283452570EB620003C20D /* WAppSearchInteractor.swift */; };
 		2752834D2570EB620003C20D /* WAppSearchConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275283462570EB620003C20D /* WAppSearchConfigurator.swift */; };
 		27C435F425826211007A7AE9 /* WAppEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C435F325826211007A7AE9 /* WAppEntity.swift */; };
 		27C91ACC25710B480064B140 /* WAppSearchTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C91ACA25710B480064B140 /* WAppSearchTVCell.swift */; };
+		27FE14F2258753680002333F /* WAppSearchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE14F1258753680002333F /* WAppSearchEntity.swift */; };
 		6832E040FAF0C58FEAF8EE9B /* Pods_WA_CleanSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BCDDC394D4E692DF340F693 /* Pods_WA_CleanSwift.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,12 +54,13 @@
 		275283402570EB620003C20D /* WAppSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WAppSearch.storyboard; sourceTree = "<group>"; };
 		275283412570EB620003C20D /* WAppSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppSearchPresenter.swift; sourceTree = "<group>"; };
 		275283422570EB620003C20D /* WAppSearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppSearchRouter.swift; sourceTree = "<group>"; };
-		275283432570EB620003C20D /* WAppSearchModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppSearchModels.swift; sourceTree = "<group>"; };
+		275283432570EB620003C20D /* WAppSearchLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppSearchLogic.swift; sourceTree = "<group>"; };
 		275283442570EB620003C20D /* WAppSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppSearchViewController.swift; sourceTree = "<group>"; };
 		275283452570EB620003C20D /* WAppSearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppSearchInteractor.swift; sourceTree = "<group>"; };
 		275283462570EB620003C20D /* WAppSearchConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppSearchConfigurator.swift; sourceTree = "<group>"; };
 		27C435F325826211007A7AE9 /* WAppEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WAppEntity.swift; sourceTree = "<group>"; };
 		27C91ACA25710B480064B140 /* WAppSearchTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppSearchTVCell.swift; sourceTree = "<group>"; };
+		27FE14F1258753680002333F /* WAppSearchEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppSearchEntity.swift; sourceTree = "<group>"; };
 		2BCDDC394D4E692DF340F693 /* Pods_WA_CleanSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WA_CleanSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		964516F1D178AB68289C04F3 /* Pods-WA_CleanSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WA_CleanSwift.debug.xcconfig"; path = "Target Support Files/Pods-WA_CleanSwift/Pods-WA_CleanSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		AAFC76CE3327037E11DAF29F /* Pods-WA_CleanSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WA_CleanSwift.release.xcconfig"; path = "Target Support Files/Pods-WA_CleanSwift/Pods-WA_CleanSwift.release.xcconfig"; sourceTree = "<group>"; };
@@ -150,8 +152,9 @@
 				275283452570EB620003C20D /* WAppSearchInteractor.swift */,
 				275283412570EB620003C20D /* WAppSearchPresenter.swift */,
 				275283422570EB620003C20D /* WAppSearchRouter.swift */,
-				275283432570EB620003C20D /* WAppSearchModels.swift */,
 				275283462570EB620003C20D /* WAppSearchConfigurator.swift */,
+				27FE14F1258753680002333F /* WAppSearchEntity.swift */,
+				275283432570EB620003C20D /* WAppSearchLogic.swift */,
 			);
 			path = "WAPP. Search";
 			sourceTree = "<group>";
@@ -304,8 +307,9 @@
 				27C91ACC25710B480064B140 /* WAppSearchTVCell.swift in Sources */,
 				2752831A2570E0980003C20D /* WAppPresenter.swift in Sources */,
 				270C4A9B2570FCF700C37A5F /* CitiesManager.swift in Sources */,
-				2752834A2570EB620003C20D /* WAppSearchModels.swift in Sources */,
+				2752834A2570EB620003C20D /* WAppSearchLogic.swift in Sources */,
 				27C435F425826211007A7AE9 /* WAppEntity.swift in Sources */,
+				27FE14F2258753680002333F /* WAppSearchEntity.swift in Sources */,
 				275283242570E14C0003C20D /* NetworkManager.swift in Sources */,
 				2752831E2570E0980003C20D /* WAppLogic.swift in Sources */,
 				2752834B2570EB620003C20D /* WAppSearchViewController.swift in Sources */,

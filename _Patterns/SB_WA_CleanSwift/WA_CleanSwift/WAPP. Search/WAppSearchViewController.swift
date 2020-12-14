@@ -2,8 +2,7 @@
 //  WAppSearchViewController.swift
 //  WA_CleanSwift
 //
-//  Created by Михаил Дмитриев on 27.11.2020.
-//  Copyright (c) 2020 ___ORGANIZATIONNAME___. All rights reserved.
+//  Created by Михаил Дмитриев on 27.11.2020
 //
 
 import UIKit
@@ -11,11 +10,10 @@ import RxSwift
 import RxCocoa
 
 
-class WAppSearchViewController: UIViewController, WAppSearchDisplayLogic {
-    //MARK: - Settings
-    var interactor: WAppSearchBusinessLogic?
-    var router: (NSObjectProtocol & WAppSearchRoutingLogic & WAppSearchDataPassing)?
-    lazy var configurator: WAppSearchConfiguratorProtocol = WAppSearchConfigurator()
+class WAppSearchViewController: UIViewController, WAppSearchViewProtocol, WAppSearchViewLogicProtocol {
+    //MARK: - Configure
+    var interactor: (WAppSearchInteractorLogicProtocol & WAppSearchDataStoreProtocol)?
+    var configurator = WAppSearchConfigurator()
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         configurator.configure(with: self)
@@ -41,19 +39,18 @@ class WAppSearchViewController: UIViewController, WAppSearchDisplayLogic {
         
         subscribeToSearchBar()
         subscribeCancelButtonPressed()
-        interactor?.makeRequest(request: .subscribeToSearchedCities)
+        interactor?.interactorRequest(requestType: .getCitiesList)
     }
     
-    deinit { print("DEINITED - WAppSearchViewController") }
+    deinit { print("===== DEINITED: WAppSearchViewController") }
     
     
-    //MARK: - Display data
-    func displayData(toDisplay: WAppSearch.Model.ViewModel.ViewModelData) {
-        switch toDisplay {
-        case .displayCitiesWhichContainText(searchData: let searchData):
-            viewModel = searchData
+    //MARK: - Display
+    func display(displayType: WAppSearch.Action.Display.DisplayType) {
+        switch displayType {
+        case .displayCities(cities: let cities):
+            viewModel = cities
             tableView.reloadData()
-            print("===== searchData \(searchData)")
         }
     }
     
@@ -84,28 +81,26 @@ class WAppSearchViewController: UIViewController, WAppSearchDisplayLogic {
         searchBar.rx.value.orEmpty.changed
             .debug("===== SEARCH BAR")
             .subscribe(onNext: { [weak self] text in
-                self?.interactor?.makeRequest(request: .getCitiesWhichContainText(searchText: text))
+                self?.interactor?.interactorRequest(requestType: .getCitiesWhichContainText(searchText: text))
             }).disposed(by: disposeBag)
     }
     
     private func subscribeCancelButtonPressed() {
         cancelButton.rx.tap
             .subscribe { [weak self] _ in
-                self?.dismiss(animated: true, completion: nil)
+                self?.interactor?.interactorRequest(requestType: .dismissView)
             }.disposed(by: disposeBag)
     }
-    
 }//
 
 
 //MARK: - Extension. UITableView
 extension WAppSearchViewController: UITableViewDelegate, UITableViewDataSource {
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard !viewModel.isEmpty else { return 1 }
         return viewModel.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "WAppSearchTVCell") as! WAppSearchTVCell
         guard !viewModel.isEmpty else {
@@ -117,10 +112,6 @@ extension WAppSearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //guard viewModel.indices.contains(indexPath.row) else { return }
-        interactor?.makeRequest(request: .selectCity(city: viewModel[indexPath.row]))
-        interactor?.makeRequest(request: .completeSubscription)
-        dismiss(animated: true, completion: nil)
+        interactor?.interactorRequest(requestType: .selectCity(city: viewModel[indexPath.row]))
     }
-    
 }//

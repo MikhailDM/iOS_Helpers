@@ -1,37 +1,38 @@
 //
-//  WAppLogic.swift
+//  WAppSearchModels.swift
 //  WA_CleanSwift
 //
-//  Created by Dmitriev on 25.09.2020
+//  Created by Михаил Дмитриев on 27.11.2020
 //
 //  View -> Interactor -> Presenter -> View
 //  Interactor <-> Router
 //  Interactor contains Data Store
 
-
 import UIKit
+import RxSwift
 
 
-enum WApp {
+enum WAppSearch {
     //MARK: - Logic
     enum Action {
         struct InteractorRequest {
             enum RequestType {
-                case requestDefaultWeather
-                case requestWeatherByCity(cityName: String)
-                case searchButtonPressed
+                case getCitiesList
+                case selectCity(city: String)
+                case getCitiesWhichContainText(searchText: String)
+                case dismissView
             }
         }
         
         struct PresenterRequest {
             enum RequestType {
-                case presentWeather(data: WAppEntity.ServerData)
+                case presentCities(cities: [String])
             }
         }
         
         struct Display {
             enum DisplayType {
-                case displayWeather(viewModel: WAppEntity.ViewModel)
+                case displayCities(cities: [String])
             }
         }
     }
@@ -39,12 +40,12 @@ enum WApp {
     
     //MARK: - Route
     enum Route {
-        case routeToSearch
+        case dismissView
     }
     
     
     //MARK: - Data Store
     struct DataStore {
-        var selectedCity: String?
+        var selectedCity = PublishSubject<String>()
     }
 }//

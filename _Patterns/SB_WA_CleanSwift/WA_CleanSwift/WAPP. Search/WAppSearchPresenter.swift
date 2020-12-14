@@ -1,25 +1,26 @@
 //
-//  WAppSearchPresenter.swift
+//  WAppSearchSearchPresenter.swift
 //  WA_CleanSwift
 //
-//  Created by Михаил Дмитриев on 27.11.2020.
-//  Copyright (c) 2020 ___ORGANIZATIONNAME___. All rights reserved.
+//  Created by Михаил Дмитриев on 27.11.2020
 //
 
 import UIKit
 
 
-class WAppSearchPresenter: WAppSearchPresentationLogic {
+class WAppSearchPresenter: WAppSearchPresenterProtocol, WAppSearchPresenterLogicProtocol {
     //MARK: - Properties
-    weak var viewController: WAppSearchDisplayLogic?
+    weak var view: WAppSearchViewLogicProtocol?
+    
+    
+    //MARK: - Services
     
     
     //MARK: - Present Data
-    func presentData(response: WAppSearch.Model.Response.ResponseType) {
-        switch response {
-        case .presentCitiesWhichContainText(searchData: let searchData):
-            viewController?.displayData(toDisplay: .displayCitiesWhichContainText(searchData: searchData))
+    func presenterRequest(requestType: WAppSearch.Action.PresenterRequest.RequestType) {
+        switch requestType {
+        case .presentCities(cities: let cities):
+            view?.display(displayType: .displayCities(cities: cities))
         }
     }
-    
 }//

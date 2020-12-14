@@ -12,7 +12,7 @@ import RxSwift
 
 class WAppRouter: WAppRouterProtocol, WAppRouterLogicProtocol {
     //MARK: - Properties
-    var interactor: (WAppInteractorLogicProtocol & WAppDataStoreProtocol)?
+    weak var view: WAppViewController?
     private var disposeBag = DisposeBag()
     
     
@@ -20,15 +20,14 @@ class WAppRouter: WAppRouterProtocol, WAppRouterLogicProtocol {
     func routeTo(routeType: WApp.Route) {
         switch routeType {
         case .routeToSearch:
-            print("")
-//            let storyboard = UIStoryboard(name: "WAppSearch", bundle: nil)
-//            guard let viewController = view,
-//                  let homeDS = dataStore?.dataStore,
-//                  let destinationVC = storyboard.instantiateViewController(withIdentifier: "WAppSearchViewController")
-//                    as? WAppSearchViewController,
-//                  var destinationDS = destinationVC.presenter?.dataStore else { print("===== NAVIGATION FAIL"); return }
-//            navigateToSearch(source: viewController, destination: destinationVC)
-//            subscribeToSelectedCity(source: homeDS, destination: &destinationDS)
+            let storyboard = UIStoryboard(name: "WAppSearch", bundle: nil)
+            guard let viewController = view,
+                  let homeDS = viewController.interactor?.dataStore,
+                  let destinationVC = storyboard.instantiateViewController(withIdentifier: "WAppSearchViewController")
+                    as? WAppSearchViewController,
+                  var destinationDS = destinationVC.interactor?.dataStore else { print("===== NAVIGATION FAIL"); return }
+            navigateToSearch(source: viewController, destination: destinationVC)
+            subscribeToSelectedCity(source: homeDS, destination: &destinationDS)
         }
     }
     
@@ -40,11 +39,11 @@ class WAppRouter: WAppRouterProtocol, WAppRouterLogicProtocol {
      
     
     //MARK: - Passing data
-//    private func subscribeToSelectedCity(source: WApp.DataStore, destination: inout WAppSearch.DataStore) {
-//        destination.selectedCity.asObserver()
-//            .debug("===== SELECT CITY")
-//            .subscribe(onNext: { [weak self] city in
-//                self?.viewController?.presenter?.presenterRequest(requestType: .updateCity(city: city))
-//            }).disposed(by: disposeBag)
-//    }
+    private func subscribeToSelectedCity(source: WApp.DataStore, destination: inout WAppSearch.DataStore) {
+        destination.selectedCity.asObserver()
+            .debug("===== SELECT CITY")
+            .subscribe(onNext: { [weak self] city in
+                self?.view?.interactor?.interactorRequest(requestType: .requestWeatherByCity(cityName: city))
+            }).disposed(by: disposeBag)
+    }
 }//

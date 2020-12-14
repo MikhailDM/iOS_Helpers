@@ -14,7 +14,7 @@ protocol WAppViewLogicProtocol: class {
     func display(displayType: WApp.Action.Display.DisplayType)
 }
 
-protocol WAppViewProtocol {
+protocol WAppViewProtocol: class {
     var configurator: WAppConfigurator { get set }
     var interactor: (WAppInteractorLogicProtocol & WAppDataStoreProtocol)? { get set }
 }
@@ -32,27 +32,27 @@ protocol WAppInteractorProtocol: class {
 
 
 //MARK: - Protocol. Presenter. Interactor -> Presenter
-protocol WAppPresenterLogicProtocol {
+protocol WAppPresenterLogicProtocol: class {
     func presenterRequest(requestType: WApp.Action.PresenterRequest.RequestType)
 }
 
-protocol WAppPresenterProtocol {
+protocol WAppPresenterProtocol: class {
     var view: WAppViewLogicProtocol? { get set }
 }
 
 
 //MARK: - Protocol. Router. Interactor -> Another View
-protocol WAppRouterLogicProtocol {
+protocol WAppRouterLogicProtocol: class {
     func routeTo(routeType: WApp.Route)
 }
 
-protocol WAppRouterProtocol {
-    var interactor: (WAppInteractorLogicProtocol & WAppDataStoreProtocol)? { get set }
+protocol WAppRouterProtocol: class {
+    var view: WAppViewController? { get set }
 }
 
 
 //MARK: - Protocol. Interactor. Data Store
-protocol WAppDataStoreProtocol {
+protocol WAppDataStoreProtocol: class {
     var dataStore: WApp.DataStore? { get set }
 }
 
@@ -76,6 +76,6 @@ class WAppConfigurator: WAppConfiguratorProtocol {
         interactor.router         = router
         interactor.dataStore      = dataStore
         presenter.view            = view
-        router.interactor         = interactor
+        router.view               = view
     }
 }//

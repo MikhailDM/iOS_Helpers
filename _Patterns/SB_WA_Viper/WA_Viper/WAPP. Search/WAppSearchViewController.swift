@@ -43,16 +43,15 @@ class WAppSearchViewController: UIViewController, WAppSearchViewProtocol, WAppSe
         presenter?.presenterRequest(requestType: .getCitiesList)
     }
     
-    deinit { print("DEINITED - WAppSearchViewController") }
+    deinit { print("===== DEINITED: WAppSearchViewController") }
     
     
-    //MARK: - Display data
+    //MARK: - Display
     func display(displayType: WAppSearch.Action.Display.DisplayType) {
         switch displayType {
         case .displayCities(cities: let cities):
             viewModel = cities
             tableView.reloadData()
-            
         }
     }
     
