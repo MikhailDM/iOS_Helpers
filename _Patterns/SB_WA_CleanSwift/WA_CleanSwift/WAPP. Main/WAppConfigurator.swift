@@ -2,7 +2,7 @@
 //  WAppConfigurator.swift
 //  WA_CleanSwift
 //
-//  Created by Dmitriev on 25.09.2020.
+//  Created by Dmitriev on 25.09.2020
 //
 
 
@@ -41,7 +41,7 @@ protocol WAppPresenterProtocol {
 }
 
 
-//MARK: - Protocol. Router. Presenter -> Another View
+//MARK: - Protocol. Router. Interactor -> Another View
 protocol WAppRouterLogicProtocol {
     func routeTo(routeType: WApp.Route)
 }

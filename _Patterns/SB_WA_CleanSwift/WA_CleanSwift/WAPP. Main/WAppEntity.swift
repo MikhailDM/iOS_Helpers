@@ -2,7 +2,7 @@
 //  WAppEntity.swift
 //  WA_CleanSwift
 //
-//  Created by Михаил Дмитриев on 03.12.2020.
+//  Created by Михаил Дмитриев on 03.12.2020
 //
 
 

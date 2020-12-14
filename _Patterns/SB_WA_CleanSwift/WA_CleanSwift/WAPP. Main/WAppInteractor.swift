@@ -2,7 +2,7 @@
 //  WAppInteractor.swift
 //  WA_CleanSwift
 //
-//  Created by Dmitriev on 25.09.2020.
+//  Created by Dmitriev on 25.09.2020
 //
 
 
@@ -36,7 +36,7 @@ class WAppInteractor: WAppInteractorProtocol, WAppInteractorLogicProtocol, WAppD
                     self.goToPresenter()
                 }
                 onError: { (error) in
-                    print("FETCH WEATHER ERROR: \(error)")
+                    print("===== FETCH WEATHER ERROR: \(error)")
                 }
                 .disposed(by: disposeBag)
             
@@ -49,11 +49,11 @@ class WAppInteractor: WAppInteractorProtocol, WAppInteractorLogicProtocol, WAppD
                     self.goToPresenter()
                 }
                 onError: { (error) in
-                    print("FETCH WEATHER ERROR: \(error)")
+                    print("==== FETCH WEATHER ERROR: \(error)")
                 }
                 .disposed(by: disposeBag)
         
-        case .routeToSearch:
+        case .searchButtonPressed:
             router?.routeTo(routeType: .routeToSearch)
         }
     }

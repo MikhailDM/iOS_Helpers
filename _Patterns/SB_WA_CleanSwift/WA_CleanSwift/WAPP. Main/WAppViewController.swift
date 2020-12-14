@@ -2,7 +2,7 @@
 //  WAppViewController.swift
 //  WA_CleanSwift
 //
-//  Created by Dmitriev on 25.09.2020.
+//  Created by Dmitriev on 25.09.2020
 //
 
 
@@ -27,7 +27,6 @@ class WAppViewController: UIViewController, WAppViewProtocol, WAppViewLogicProto
     @IBOutlet weak var weatherIcon: UIImageView!
     @IBOutlet weak var celsiusLabel: UILabel!
     @IBOutlet weak var deegreeLabel: UILabel!
-    
     @IBOutlet weak var changeCityButton: UIButton!
     
     
@@ -94,9 +93,8 @@ class WAppViewController: UIViewController, WAppViewProtocol, WAppViewLogicProto
     private func subscribeToChangeCityButtonPressed() {
         changeCityButton.rx.tap
             .subscribe { [weak self] _ in
-                self?.interactor?.interactorRequest(requestType: .routeToSearch)
+                self?.interactor?.interactorRequest(requestType: .searchButtonPressed)
             }.disposed(by: disposeBag)
     }
-    
 }//
 

@@ -6,19 +6,20 @@
 //
 //  View -> Interactor -> Presenter -> View
 //  Interactor <-> Router
+//  Interactor contains Data Store
 
 
 import UIKit
 
 
 enum WApp {
-    //MARK: - Models
+    //MARK: - Logic
     enum Action {
         struct InteractorRequest {
             enum RequestType {
                 case requestDefaultWeather
                 case requestWeatherByCity(cityName: String)
-                case routeToSearch
+                case searchButtonPressed
             }
         }
         struct PresenterRequest {

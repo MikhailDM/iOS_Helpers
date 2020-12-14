@@ -2,8 +2,9 @@
 //  CitiesManager.swift
 //  WA_CleanSwift
 //
-//  Created by Михаил Дмитриев on 27.11.2020.
+//  Created by Михаил Дмитриев on 27.11.2020
 //
+
 
 import Foundation
 import MapKit
@@ -36,6 +37,5 @@ class CitiesManager: NSObject, MKLocalSearchCompleterDelegate {
     func getAllCitiesName() -> [String] {
         return citiesList.sorted { $0 < $1 }
     }
-    
 }//
 

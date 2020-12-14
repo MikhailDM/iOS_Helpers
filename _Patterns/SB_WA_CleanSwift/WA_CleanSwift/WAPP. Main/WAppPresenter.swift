@@ -2,7 +2,7 @@
 //  WAppPresenter.swift
 //  WA_CleanSwift
 //
-//  Created by Dmitriev on 25.09.2020.
+//  Created by Dmitriev on 25.09.2020
 //
 
 

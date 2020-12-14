@@ -1,9 +1,10 @@
 //
 //  NetworkManager.swift
-//  RxAndCS
+//   WA_CleanSwift
 //
-//  Created by Dmitriev on 25.09.2020.
+//  Created by Dmitriev on 25.09.2020
 //
+
 
 import Foundation
 import Alamofire
@@ -46,5 +47,4 @@ struct NetworkManager {
             return "\(weatherURL)&q=\(cityName.split(separator: " ").joined(separator: "+"))"
         }
     }    
-    
 }//
