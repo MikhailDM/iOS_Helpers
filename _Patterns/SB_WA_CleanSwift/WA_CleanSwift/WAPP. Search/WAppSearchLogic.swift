@@ -5,14 +5,15 @@
 //  Created by Михаил Дмитриев on 27.11.2020
 //
 //  View -> Interactor -> Presenter -> View
-//  Interactor <-> Router
+//  Interactor -> Router
+//  Router -> View
 //  Interactor contains Data Store
 
 import UIKit
 import RxSwift
 
-
 enum WAppSearch {
+    
     //MARK: - Logic
     enum Action {
         struct InteractorRequest {
@@ -37,15 +38,14 @@ enum WAppSearch {
         }
     }
     
-    
     //MARK: - Route
     enum Route {
         case dismissView
     }
     
-    
     //MARK: - Data Store
     struct DataStore {
         var selectedCity = PublishSubject<String>()
     }
+    
 }//

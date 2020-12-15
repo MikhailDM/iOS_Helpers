@@ -5,11 +5,9 @@
 //  Created by Михаил Дмитриев on 27.11.2020
 //
 
-
 import Foundation
 import MapKit
 import RxSwift
-
 
 //MARK: - Model of City
 struct City {
@@ -17,8 +15,8 @@ struct City {
     var en: String
 }
 
-
 class CitiesManager: NSObject, MKLocalSearchCompleterDelegate {
+    
     //MARK: - Properties
     private let citiesList = [
         "London",
@@ -32,10 +30,10 @@ class CitiesManager: NSObject, MKLocalSearchCompleterDelegate {
         "Sochi",
     ]
     
-    
     //MARK: - Get Cities
     func getAllCitiesName() -> [String] {
         return citiesList.sorted { $0 < $1 }
     }
+    
 }//
 

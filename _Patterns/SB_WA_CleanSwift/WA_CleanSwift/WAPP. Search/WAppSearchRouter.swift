@@ -8,8 +8,8 @@
 import UIKit
 import RxSwift
 
-
 class WAppSearchRouter: WAppSearchRouterProtocol, WAppSearchRouterLogicProtocol {
+    
     //MARK: - Properties
     weak var view: WAppSearchViewController?
     private var disposeBag = DisposeBag()
@@ -22,4 +22,5 @@ class WAppSearchRouter: WAppSearchRouterProtocol, WAppSearchRouterLogicProtocol 
             view?.dismiss(animated: true, completion: nil)
         }
     }
+    
 }//

@@ -5,17 +5,14 @@
 //  Created by Dmitriev on 25.09.2020
 //
 
-
 import UIKit
 
-
 class WAppPresenter: WAppPresenterProtocol, WAppPresenterLogicProtocol {
+    
     //MARK: - Properties
     weak var view: WAppViewLogicProtocol?
     
-    
     //MARK: - Services
-    
     
     //MARK: - Present
     func presenterRequest(requestType: WApp.Action.PresenterRequest.RequestType) {
@@ -27,7 +24,6 @@ class WAppPresenter: WAppPresenterProtocol, WAppPresenterLogicProtocol {
             view?.display(displayType: .displayWeather(viewModel: vm))
         }
     }
-    
     
     //MARK: - Private
     private func transformTemperature(temperature: Double) -> String {
@@ -55,4 +51,5 @@ class WAppPresenter: WAppPresenterProtocol, WAppPresenterLogicProtocol {
             return UIImage(systemName:"cloud")
         }
     }
+    
 }//

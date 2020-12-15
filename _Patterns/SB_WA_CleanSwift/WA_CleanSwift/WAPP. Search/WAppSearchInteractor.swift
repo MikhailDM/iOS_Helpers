@@ -7,8 +7,8 @@
 
 import UIKit
 
-
 class WAppSearchInteractor: WAppSearchInteractorProtocol, WAppSearchInteractorLogicProtocol, WAppSearchDataStoreProtocol  {
+    
     //MARK: - Properties
     var presenter: WAppSearchPresenterLogicProtocol?
     var router: WAppSearchRouterLogicProtocol?
@@ -16,9 +16,7 @@ class WAppSearchInteractor: WAppSearchInteractorProtocol, WAppSearchInteractorLo
 
     private var citiesList = CitiesManager().getAllCitiesName()
     
-    
     //MARK: - Services
-    
     
     //MARK: - Requests
     func interactorRequest(requestType: WAppSearch.Action.InteractorRequest.RequestType) {
@@ -45,4 +43,5 @@ class WAppSearchInteractor: WAppSearchInteractorProtocol, WAppSearchInteractorLo
             router?.routeTo(routeType: .dismissView)
         }
     }
+    
 }//

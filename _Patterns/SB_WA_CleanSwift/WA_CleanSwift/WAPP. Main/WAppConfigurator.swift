@@ -5,9 +5,7 @@
 //  Created by Dmitriev on 25.09.2020
 //
 
-
 import UIKit
-
 
 //MARK: - Protocol. View. Presenter -> View
 protocol WAppViewLogicProtocol: class {
@@ -19,7 +17,6 @@ protocol WAppViewProtocol: class {
     var interactor: (WAppInteractorLogicProtocol & WAppDataStoreProtocol)? { get set }
 }
 
-
 //MARK: - Protocol. Interactor. View -> Interactor
 protocol WAppInteractorLogicProtocol: class {
     func interactorRequest(requestType: WApp.Action.InteractorRequest.RequestType)
@@ -30,7 +27,6 @@ protocol WAppInteractorProtocol: class {
     var router: WAppRouterLogicProtocol? { get set }
 }
 
-
 //MARK: - Protocol. Presenter. Interactor -> Presenter
 protocol WAppPresenterLogicProtocol: class {
     func presenterRequest(requestType: WApp.Action.PresenterRequest.RequestType)
@@ -39,7 +35,6 @@ protocol WAppPresenterLogicProtocol: class {
 protocol WAppPresenterProtocol: class {
     var view: WAppViewLogicProtocol? { get set }
 }
-
 
 //MARK: - Protocol. Router. Interactor -> Another View
 protocol WAppRouterLogicProtocol: class {
@@ -50,20 +45,18 @@ protocol WAppRouterProtocol: class {
     var view: WAppViewController? { get set }
 }
 
-
 //MARK: - Protocol. Interactor. Data Store
 protocol WAppDataStoreProtocol: class {
     var dataStore: WApp.DataStore? { get set }
 }
-
 
 //MARK: - Protocol. Configurator
 protocol WAppConfiguratorProtocol: class {
     func configure(with view: WAppViewController)
 }
 
-
 class WAppConfigurator: WAppConfiguratorProtocol {
+    
     //MARK: - Configure
     func configure(with view: WAppViewController) {
         let interactor            = WAppInteractor()
@@ -78,4 +71,5 @@ class WAppConfigurator: WAppConfiguratorProtocol {
         presenter.view            = view
         router.view               = view
     }
+    
 }//

@@ -5,13 +5,11 @@
 //  Created by Dmitriev on 25.09.2020
 //
 
-
 import UIKit
 import RxSwift
-import RxCocoa
-
 
 class WAppViewController: UIViewController, WAppViewProtocol, WAppViewLogicProtocol {
+    
     //MARK: - Configure
     var interactor: (WAppInteractorLogicProtocol & WAppDataStoreProtocol)?
     var configurator = WAppConfigurator()
@@ -19,7 +17,6 @@ class WAppViewController: UIViewController, WAppViewProtocol, WAppViewLogicProto
         super.init(coder: aDecoder)
         configurator.configure(with: self)
     }
-    
     
     //MARK: - Outlets
     @IBOutlet weak var cityLabel: UILabel!
@@ -29,12 +26,10 @@ class WAppViewController: UIViewController, WAppViewProtocol, WAppViewLogicProto
     @IBOutlet weak var deegreeLabel: UILabel!
     @IBOutlet weak var changeCityButton: UIButton!
     
-    
     //MARK: - Properties
     private let disposeBag = DisposeBag()
     private let searchDelay = 1
     private let animationDelay = 0.5
-    
     
     //MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -46,7 +41,6 @@ class WAppViewController: UIViewController, WAppViewProtocol, WAppViewLogicProto
     
     deinit { print("===== DEINITED: WAppViewController") }
     
-    
     //MARK: - Display
     func display(displayType: WApp.Action.Display.DisplayType) {
         switch displayType {
@@ -57,7 +51,6 @@ class WAppViewController: UIViewController, WAppViewProtocol, WAppViewLogicProto
             animateUpdatedWeather()
         }
     }
-    
     
     //MARK: - Private
     private func animateUpdatedWeather() {
@@ -88,7 +81,6 @@ class WAppViewController: UIViewController, WAppViewProtocol, WAppViewLogicProto
         changeCityButton.layer.cornerRadius = changeCityButton.frame.height / 6
     }
     
-    
     //MARK: - Rx
     private func subscribeToChangeCityButtonPressed() {
         changeCityButton.rx.tap
@@ -96,5 +88,6 @@ class WAppViewController: UIViewController, WAppViewProtocol, WAppViewLogicProto
                 self?.interactor?.interactorRequest(requestType: .searchButtonPressed)
             }.disposed(by: disposeBag)
     }
+    
 }//
 

@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 //MARK: - Protocol. View. Presenter -> View
 protocol WAppSearchViewLogicProtocol: class {
     func display(displayType: WAppSearch.Action.Display.DisplayType)
@@ -17,7 +16,6 @@ protocol WAppSearchViewProtocol: class {
     var configurator: WAppSearchConfigurator { get set }
     var interactor: (WAppSearchInteractorLogicProtocol & WAppSearchDataStoreProtocol)? { get set }
 }
-
 
 //MARK: - Protocol. Interactor. View -> Interactor
 protocol WAppSearchInteractorLogicProtocol: class {
@@ -29,7 +27,6 @@ protocol WAppSearchInteractorProtocol: class {
     var router: WAppSearchRouterLogicProtocol? { get set }
 }
 
-
 //MARK: - Protocol. Presenter. Interactor -> Presenter
 protocol WAppSearchPresenterLogicProtocol: class {
     func presenterRequest(requestType: WAppSearch.Action.PresenterRequest.RequestType)
@@ -38,7 +35,6 @@ protocol WAppSearchPresenterLogicProtocol: class {
 protocol WAppSearchPresenterProtocol: class {
     var view: WAppSearchViewLogicProtocol? { get set }
 }
-
 
 //MARK: - Protocol. Router. Interactor -> Another View
 protocol WAppSearchRouterLogicProtocol: class {
@@ -49,20 +45,18 @@ protocol WAppSearchRouterProtocol: class {
     var view: WAppSearchViewController? { get set }
 }
 
-
 //MARK: - Protocol. Interactor. Data Store
 protocol WAppSearchDataStoreProtocol: class {
     var dataStore: WAppSearch.DataStore? { get set }
 }
-
 
 //MARK: - Protocol. Configurator
 protocol WAppSearchConfiguratorProtocol: class {
     func configure(with view: WAppSearchViewController)
 }
 
-
 class WAppSearchConfigurator: WAppSearchConfiguratorProtocol {
+    
     //MARK: - Configure
     func configure(with view: WAppSearchViewController) {
         let interactor            = WAppSearchInteractor()
@@ -77,4 +71,5 @@ class WAppSearchConfigurator: WAppSearchConfiguratorProtocol {
         presenter.view            = view
         router.view               = view
     }
+    
 }//

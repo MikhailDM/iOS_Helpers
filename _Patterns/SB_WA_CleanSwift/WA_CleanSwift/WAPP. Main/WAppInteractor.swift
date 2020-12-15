@@ -5,12 +5,11 @@
 //  Created by Dmitriev on 25.09.2020
 //
 
-
 import UIKit
 import RxSwift
 
-
 class WAppInteractor: WAppInteractorProtocol, WAppInteractorLogicProtocol, WAppDataStoreProtocol {
+    
     //MARK: - Properties
     var presenter: WAppPresenterLogicProtocol?
     var router: WAppRouterLogicProtocol?
@@ -18,11 +17,9 @@ class WAppInteractor: WAppInteractorProtocol, WAppInteractorLogicProtocol, WAppD
     
     private var serverData: WAppEntity.ServerData?
     
-    
     //MARK: - Services
     private let networkManager = NetworkManager()
     private let disposeBag = DisposeBag()
-    
     
     //MARK: - Request
     func interactorRequest(requestType: WApp.Action.InteractorRequest.RequestType) {
@@ -58,10 +55,10 @@ class WAppInteractor: WAppInteractorProtocol, WAppInteractorLogicProtocol, WAppD
         }
     }
     
-    
     //MARK: - Private
     private func goToPresenter() {
         guard let serverDataSafe = serverData else { return }
         presenter?.presenterRequest(requestType: .presentWeather(data: serverDataSafe))
     }
+    
 }//

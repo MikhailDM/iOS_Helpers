@@ -7,14 +7,12 @@
 
 import UIKit
 
-
 class WAppSearchPresenter: WAppSearchPresenterProtocol, WAppSearchPresenterLogicProtocol {
+    
     //MARK: - Properties
     weak var view: WAppSearchViewLogicProtocol?
     
-    
     //MARK: - Services
-    
     
     //MARK: - Present Data
     func presenterRequest(requestType: WAppSearch.Action.PresenterRequest.RequestType) {
@@ -23,4 +21,5 @@ class WAppSearchPresenter: WAppSearchPresenterProtocol, WAppSearchPresenterLogic
             view?.display(displayType: .displayCities(cities: cities))
         }
     }
+    
 }//
