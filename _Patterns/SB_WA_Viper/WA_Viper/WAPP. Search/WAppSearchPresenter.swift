@@ -5,11 +5,10 @@
 //  Created by Михаил Дмитриев on 04.12.2020
 //
 
-
 import UIKit
 
-
 class WAppSearchPresenter: WAppSearchPresenterProtocol, WAppSearchPresenterLogicProtocol, WAppSearchOutputInteractorProtocol, WAppSearchDataStoreProtocol {
+    
     //MARK: - Properties
     var view: WAppSearchViewLogicProtocol?
     var router: WAppSearchRouterLogicProtocol?
@@ -17,7 +16,6 @@ class WAppSearchPresenter: WAppSearchPresenterProtocol, WAppSearchPresenterLogic
     var dataStore: WAppSearch.DataStore?
     
     private var citiesList = CitiesManager().getAllCitiesName()
-    
     
     //MARK: - Presenter Request
     func presenterRequest(requestType: WAppSearch.Action.PresenterRequest.RequestType) {
@@ -41,10 +39,9 @@ class WAppSearchPresenter: WAppSearchPresenterProtocol, WAppSearchPresenterLogic
         }
     }
     
-    
     //MARK: - Interactor Response
     func interactorResponse(responseType: WAppSearch.Action.InteractorResponse.ResponseType) { }
     
-    
     //MARK: - Private
+    
 }//

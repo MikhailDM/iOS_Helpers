@@ -5,18 +5,16 @@
 //  Created by Михаил Дмитриев on 03.12.2020.
 //
 
-
 import UIKit
 
-
 class WAppEntity {
+    
     //MARK: - View Model
     struct ViewModel {
         let conditionImage: UIImage?
         let cityNameText: String
         let temperatureText: String
     }
-    
     
     //MARK: - Server Data
     struct ServerData: Codable {
@@ -57,6 +55,7 @@ class WAppEntity {
             }
         }
     }
+    
 }//
 
 

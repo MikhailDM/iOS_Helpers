@@ -5,20 +5,17 @@
 //  Created by Михаил Дмитриев on 03.12.2020.
 //
 
-
 import UIKit
 import RxSwift
 
-
 class WAppInteractor: WAppInputInteractorProtocol, WAppInputInteractorLogicProtocol  {
+    
     //MARK: - Properties
     weak var presenter: WAppOutputInteractorProtocol?
-    
     
     //MARK: - Services
     private let networkManager = NetworkManager()
     private let disposeBag = DisposeBag()
-    
     
     //MARK: - Request
     func interactorRequest(requestType: WApp.Action.InteractorRequest.RequestType) {
@@ -44,4 +41,5 @@ class WAppInteractor: WAppInputInteractorProtocol, WAppInputInteractorLogicProto
                 .disposed(by: disposeBag)
         }
     }
+    
 }//

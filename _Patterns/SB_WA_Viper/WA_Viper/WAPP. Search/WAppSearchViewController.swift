@@ -5,13 +5,12 @@
 //  Created by Михаил Дмитриев on 04.12.2020
 //
 
-
 import UIKit
 import RxSwift
 import RxCocoa
 
-
 class WAppSearchViewController: UIViewController, WAppSearchViewProtocol, WAppSearchViewLogicProtocol {
+    
     //MARK: - Configure
     var presenter: (WAppSearchPresenterLogicProtocol & WAppSearchDataStoreProtocol)?
     var configurator = WAppSearchConfigurator()
@@ -20,17 +19,14 @@ class WAppSearchViewController: UIViewController, WAppSearchViewProtocol, WAppSe
         configurator.configure(with: self)
     }
     
-    
     //MARK: - Outlets
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
-    
     //MARK: - Properties
     private var disposeBag = DisposeBag()
     private var viewModel = [String]()
-    
     
     //MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -45,7 +41,6 @@ class WAppSearchViewController: UIViewController, WAppSearchViewProtocol, WAppSe
     
     deinit { print("===== DEINITED: WAppSearchViewController") }
     
-    
     //MARK: - Display
     func display(displayType: WAppSearch.Action.Display.DisplayType) {
         switch displayType {
@@ -54,7 +49,6 @@ class WAppSearchViewController: UIViewController, WAppSearchViewProtocol, WAppSe
             tableView.reloadData()
         }
     }
-    
     
     //MARK: - Private
     private func configureDesign() {
@@ -76,7 +70,6 @@ class WAppSearchViewController: UIViewController, WAppSearchViewProtocol, WAppSe
         tableView.contentInset = UIEdgeInsets(top: 100, left: 0, bottom: 0, right: 0)
     }
     
-    
     //MARK: - Rx
     private func subscribeToSearchBar() {
         searchBar.rx.value.orEmpty.changed
@@ -92,8 +85,8 @@ class WAppSearchViewController: UIViewController, WAppSearchViewProtocol, WAppSe
                 self?.dismiss(animated: true, completion: nil)
             }.disposed(by: disposeBag)
     }
+    
 }//
-
 
 //MARK: - Extension. UITableView
 extension WAppSearchViewController: UITableViewDelegate, UITableViewDataSource {
@@ -117,4 +110,5 @@ extension WAppSearchViewController: UITableViewDelegate, UITableViewDataSource {
         presenter?.presenterRequest(requestType: .selectCity(city: viewModel[indexPath.row]))
         dismiss(animated: true, completion: nil)
     }
+    
 }//

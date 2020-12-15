@@ -9,15 +9,14 @@ import Foundation
 import MapKit
 import RxSwift
 
-
 //MARK: - Model of City
 struct City {
     var ru: String
     var en: String
 }
 
-
 class CitiesManager: NSObject, MKLocalSearchCompleterDelegate {
+    
     //MARK: - Properties
     private let citiesList = [
         "London",
@@ -30,7 +29,6 @@ class CitiesManager: NSObject, MKLocalSearchCompleterDelegate {
         "Tokio",
         "Sochi",
     ]
-    
     
     //MARK: - Get Cities
     func getAllCitiesName() -> [String] {

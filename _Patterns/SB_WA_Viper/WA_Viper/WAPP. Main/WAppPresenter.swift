@@ -5,11 +5,10 @@
 //  Created by Михаил Дмитриев on 03.12.2020.
 //
 
-
 import UIKit
 
-
 class WAppPresenter: WAppPresenterProtocol, WAppPresenterLogicProtocol, WAppOutputInteractorProtocol, WAppDataStoreProtocol {
+    
     //MARK: - Properties
     var view: WAppViewLogicProtocol?
     var router: WAppRouterLogicProtocol?
@@ -17,7 +16,6 @@ class WAppPresenter: WAppPresenterProtocol, WAppPresenterLogicProtocol, WAppOutp
     var dataStore: WApp.DataStore?
     
     private var serverData: WAppEntity.ServerData?
-    
     
     //MARK: - Present
     func presenterRequest(requestType: WApp.Action.PresenterRequest.RequestType) {
@@ -34,7 +32,6 @@ class WAppPresenter: WAppPresenterProtocol, WAppPresenterLogicProtocol, WAppOutp
         }
     }
     
-    
     //MARK: - Interactor Response
     func interactorResponse(responseType: WApp.Action.InteractorResponse.ResponseType) {
         switch responseType {
@@ -44,7 +41,6 @@ class WAppPresenter: WAppPresenterProtocol, WAppPresenterLogicProtocol, WAppOutp
         }
     }
     
-    
     //MARK: - Private
     private func getViewModel() -> WAppEntity.ViewModel {
         guard let data = serverData else { return WAppEntity.ViewModel(conditionImage: UIImage(systemName:"cloud.bolt"), cityNameText: "", temperatureText: "") }
@@ -52,4 +48,5 @@ class WAppPresenter: WAppPresenterProtocol, WAppPresenterLogicProtocol, WAppOutp
                                     cityNameText: data.name,
                                     temperatureText: data.transformedTemperature)
     }
+    
 }//

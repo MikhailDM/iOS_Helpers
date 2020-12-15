@@ -28,7 +28,6 @@
 		2752834B2570EB620003C20D /* WAppSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275283442570EB620003C20D /* WAppSearchViewController.swift */; };
 		2752834C2570EB620003C20D /* WAppSearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275283452570EB620003C20D /* WAppSearchInteractor.swift */; };
 		2752834D2570EB620003C20D /* WAppSearchConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275283462570EB620003C20D /* WAppSearchConfigurator.swift */; };
-		27B799632588D5F2003B4751 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B799622588D5F2003B4751 /* ViewController.swift */; };
 		27C435F425826211007A7AE9 /* WAppEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C435F325826211007A7AE9 /* WAppEntity.swift */; };
 		27C91ACC25710B480064B140 /* WAppSearchTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C91ACA25710B480064B140 /* WAppSearchTVCell.swift */; };
 		27FE14F2258753680002333F /* WAppSearchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE14F1258753680002333F /* WAppSearchEntity.swift */; };
@@ -59,7 +58,6 @@
 		275283442570EB620003C20D /* WAppSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppSearchViewController.swift; sourceTree = "<group>"; };
 		275283452570EB620003C20D /* WAppSearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppSearchInteractor.swift; sourceTree = "<group>"; };
 		275283462570EB620003C20D /* WAppSearchConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppSearchConfigurator.swift; sourceTree = "<group>"; };
-		27B799622588D5F2003B4751 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		27C435F325826211007A7AE9 /* WAppEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WAppEntity.swift; sourceTree = "<group>"; };
 		27C91ACA25710B480064B140 /* WAppSearchTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppSearchTVCell.swift; sourceTree = "<group>"; };
 		27FE14F1258753680002333F /* WAppSearchEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppSearchEntity.swift; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 				2752830E2570E0980003C20D /* WAPP. Main */,
 				2752832F2570E84C0003C20D /* WAPP. Search */,
 				275283262570E3050003C20D /* Support */,
-				27B799622588D5F2003B4751 /* ViewController.swift */,
 			);
 			path = WA_CleanSwift;
 			sourceTree = "<group>";
@@ -314,7 +311,6 @@
 				27C435F425826211007A7AE9 /* WAppEntity.swift in Sources */,
 				27FE14F2258753680002333F /* WAppSearchEntity.swift in Sources */,
 				275283242570E14C0003C20D /* NetworkManager.swift in Sources */,
-				27B799632588D5F2003B4751 /* ViewController.swift in Sources */,
 				2752831E2570E0980003C20D /* WAppLogic.swift in Sources */,
 				2752834B2570EB620003C20D /* WAppSearchViewController.swift in Sources */,
 				2752834D2570EB620003C20D /* WAppSearchConfigurator.swift in Sources */,
