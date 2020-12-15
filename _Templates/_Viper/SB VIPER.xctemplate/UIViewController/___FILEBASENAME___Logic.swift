@@ -4,12 +4,15 @@
 //
 //  Created by ___FULLUSERNAME___ on ___DATE___
 //
-
+//  View <-> Presenter <-> Interactor
+//  Presenter -> Router
+//  Router -> View
+//  Presenter contains Data Store
 
 import UIKit
 
-
 enum ___VARIABLE_sceneName___ {
+    
     //MARK: - Logic
     enum Action {
         struct PresenterRequest {
@@ -34,15 +37,14 @@ enum ___VARIABLE_sceneName___ {
         }
     }
     
-    
     //MARK: - Route
     enum Route {
         case some
     }
     
-    
     //MARK: - Data Store
     struct DataStore {
         var data: Any?
     }
+    
 }//

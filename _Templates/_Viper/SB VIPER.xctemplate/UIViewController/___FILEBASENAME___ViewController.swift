@@ -5,11 +5,11 @@
 //  Created by ___FULLUSERNAME___ on ___DATE___
 //
 
-
 import UIKit
-
+//import RxSwift
 
 class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_sceneName___ViewProtocol, ___VARIABLE_sceneName___ViewLogicProtocol {
+    
     //MARK: - Configure
     var presenter: (___VARIABLE_sceneName___PresenterLogicProtocol & ___VARIABLE_sceneName___DataStoreProtocol)?
     var configurator = ___VARIABLE_sceneName___Configurator()
@@ -18,13 +18,10 @@ class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_scen
         configurator.configure(with: self)
     }
     
-    
     //MARK: - Outlets
-    
     
     //MARK: - Properties
     //private var disposeBag = DisposeBag()
-    
     
     //MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -35,10 +32,8 @@ class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_scen
     
     deinit { print("===== DEINITED: ___VARIABLE_sceneName___ViewController") }
     
-    
     //MARK: - Display data
     func display(displayType: ___VARIABLE_sceneName___.Action.Display.DisplayType) { }
-    
     
     //MARK: - Private
     private func configureDesign() {
@@ -54,10 +49,9 @@ class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_scen
 //        tableView.register(UINib(nibName: "Cell Name", bundle: nil), forCellReuseIdentifier: "Cell ID")
     }
     
-    
     //MARK: - Rx
+    
 }//
-
 
 //MARK: - Extension. UITableView
 extension ___VARIABLE_sceneName___ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -78,4 +72,5 @@ extension ___VARIABLE_sceneName___ViewController: UITableViewDelegate, UITableVi
 //            return cell
 //        }
     }
+    
 }//
