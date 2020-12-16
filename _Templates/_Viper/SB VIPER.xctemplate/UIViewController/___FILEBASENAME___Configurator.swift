@@ -15,7 +15,7 @@ protocol ___VARIABLE_sceneName___ViewLogicProtocol {
 protocol ___VARIABLE_sceneName___ViewProtocol {
     var configurator: ___VARIABLE_sceneName___Configurator { get set }
     var presenter: (___VARIABLE_sceneName___PresenterLogicProtocol & ___VARIABLE_sceneName___DataStoreProtocol)? { get set }
-}
+} 
 
 //MARK: - Protocol. Presenter. View -> Presenter
 protocol ___VARIABLE_sceneName___PresenterLogicProtocol {
