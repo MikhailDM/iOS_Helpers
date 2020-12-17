@@ -5,29 +5,23 @@
 //  Created by ___FULLUSERNAME___ on ___DATE___
 //
 
-
 import UIKit
-import RxSwift
-import RxCocoa
+//import RxSwift
 
-
-class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_sceneName___DisplayLogic {
-    //MARK: - Settings
-    var interactor: ___VARIABLE_sceneName___BusinessLogic?
-    var router: (NSObjectProtocol & ___VARIABLE_sceneName___RoutingLogic & ___VARIABLE_sceneName___DataPassing)?
-    lazy var configurator: ___VARIABLE_sceneName___ConfiguratorProtocol = ___VARIABLE_sceneName___Configurator()
+class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_sceneName___ViewProtocol, ___VARIABLE_sceneName___ViewLogicProtocol {
+    
+    //MARK: - Configure
+    var interactor: (___VARIABLE_sceneName___InteractorLogicProtocol & ___VARIABLE_sceneName___DataStoreProtocol)?
+    var configurator = ___VARIABLE_sceneName___Configurator()
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         configurator.configure(with: self)
     }
     
-    
     //MARK: - Outlets
     
-    
     //MARK: - Properties
-    private var disposeBag = DisposeBag()
-    
+    //private var disposeBag = DisposeBag()
     
     //MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -36,11 +30,11 @@ class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_scen
         configureUITableView()
     }
     
-    deinit { print("DEINITED - ___VARIABLE_sceneName___ViewController") }
+    deinit { print("===== DEINITED: ___VARIABLE_sceneName___ViewController") }
     
     
-    //MARK: - Display data
-    func displayData(toDisplay: ___VARIABLE_sceneName___.Model.ViewModel.ViewModelData) { }
+    //MARK: - Display
+    func display(displayType: ___VARIABLE_sceneName___.Action.Display.DisplayType) { }
     
     
     //MARK: - Private
@@ -61,7 +55,6 @@ class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_scen
     //MARK: - Rx
     
 }//
-
 
 //MARK: - Extension. UITableView
 extension ___VARIABLE_sceneName___ViewController: UITableViewDelegate, UITableViewDataSource {

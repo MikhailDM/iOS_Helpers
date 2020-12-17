@@ -5,18 +5,15 @@
 //  Created by ___FULLUSERNAME___ on ___DATE___
 //
 
-
 import UIKit
 //import RxSwift
 
-
 class ___FILEBASENAME___: UITableViewCell {
-    //MARK: - Outlets
     
+    //MARK: - Outlets
     
     //MARK: - Properties
     //var disposeBag = DisposeBag()
-    
     
     //MARK: - Lifecycle
     override func awakeFromNib() {
@@ -29,14 +26,12 @@ class ___FILEBASENAME___: UITableViewCell {
         //disposeBag = DisposeBag()
     }
     
-    
     //MARK: - Configure
     func configure() { }
-    
     
     //MARK: - Private
     private func configureDesign() { }
     
-    
     //MARK: - Rx
+    
 }//

@@ -7,13 +7,14 @@
 
 import UIKit
 
-
-class ___VARIABLE_sceneName___Presenter: ___VARIABLE_sceneName___PresentationLogic {
-    //MARK: - Properties
-    weak var viewController: ___VARIABLE_sceneName___DisplayLogic?
+class ___VARIABLE_sceneName___Presenter: ___VARIABLE_sceneName___PresenterProtocol, ___VARIABLE_sceneName___PresenterLogicProtocol {
     
+    //MARK: - Properties
+    weak var view: ___VARIABLE_sceneName___ViewLogicProtocol?
+    
+    //MARK: - Services
     
     //MARK: - Present Data
-    func presentData(response: ___VARIABLE_sceneName___.Model.Response.ResponseType) { }
+    func presenterRequest(requestType: ___VARIABLE_sceneName___.Action.PresenterRequest.RequestType) { }
     
 }//

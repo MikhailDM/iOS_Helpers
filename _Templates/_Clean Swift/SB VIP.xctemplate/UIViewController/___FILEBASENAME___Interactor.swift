@@ -5,26 +5,18 @@
 //  Created by ___FULLUSERNAME___ on ___DATE___
 //
 
-
 import UIKit
 
-
-//MARK: - Protocol. Data Store
-protocol ___VARIABLE_sceneName___DataStore {
-    var dataStore: Any? { get set }
-}
-
-
-class ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___BusinessLogic, ___VARIABLE_sceneName___DataStore {
+class ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___InteractorProtocol, ___VARIABLE_sceneName___InteractorLogicProtocol, ___VARIABLE_sceneName___DataStoreProtocol  {
+    
     //MARK: - Properties
-    var presenter: ___VARIABLE_sceneName___PresentationLogic?
-    var dataStore: Any?
+    var presenter: ___VARIABLE_sceneName___PresenterLogicProtocol?
+    var router: ___VARIABLE_sceneName___RouterLogicProtocol?
+    var dataStore: ___VARIABLE_sceneName___.DataStore?
     
-    
-    //MARK: - Managers
-    
+    //MARK: - Services
     
     //MARK: - Requests
-    func makeRequest(request: ___VARIABLE_sceneName___.Model.Request.RequestType) { }
+    func interactorRequest(requestType: ___VARIABLE_sceneName___.Action.InteractorRequest.RequestType) { }
     
 }//

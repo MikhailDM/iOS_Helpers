@@ -48,6 +48,20 @@
 		</dict>
 		<dict>
 			<key>Default</key>
+			<string>___VARIABLE_sceneName:identifier___Entity</string>
+			<key>Description</key>
+			<string>The entity name</string>
+			<key>Identifier</key>
+			<string>entityName</string>
+			<key>Name</key>
+			<string>Entity Name:</string>
+			<key>Required</key>
+			<true/>
+			<key>Type</key>
+			<string>static</string>
+		</dict>
+		<dict>
+			<key>Default</key>
 			<string>___VARIABLE_sceneName:identifier___Interactor</string>
 			<key>Description</key>
 			<string>The interactor name</string>
@@ -104,13 +118,13 @@
 		</dict>
 		<dict>
 			<key>Default</key>
-			<string>___VARIABLE_sceneName:identifier___Models</string>
+			<string>___VARIABLE_sceneName:identifier___Logic</string>
 			<key>Description</key>
-			<string>The model file name</string>
+			<string>The logic file name</string>
 			<key>Identifier</key>
-			<string>modelFileName</string>
+			<string>logicFileName</string>
 			<key>Name</key>
-			<string>Model Name:</string>
+			<string>Logic Name:</string>
 			<key>Required</key>
 			<true/>
 			<key>Type</key>

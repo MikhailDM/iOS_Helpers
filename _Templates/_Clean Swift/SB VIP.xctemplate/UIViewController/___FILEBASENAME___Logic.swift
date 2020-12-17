@@ -4,9 +4,9 @@
 //
 //  Created by ___FULLUSERNAME___ on ___DATE___
 //
-//  View <-> Presenter <-> Interactor
-//  Presenter -> Router -> View
-//  Presenter contains Data Store
+//  View -> Interactor -> Presenter -> View
+//  Interactor -> Router -> View
+//  Interactor contains Data Store
 
 import UIKit
 
@@ -14,21 +14,18 @@ enum ___VARIABLE_sceneName___ {
     
     //MARK: - Logic
     enum Action {
-        struct PresenterRequest {
-            enum RequestType {
-                case some
-            }
-        }
         struct InteractorRequest {
             enum RequestType {
                 case some
             }
         }
-        struct InteractorResponse {
-            enum ResponseType {
+        
+        struct PresenterRequest {
+            enum RequestType {
                 case some
             }
         }
+        
         struct Display {
             enum DisplayType {
                 case some

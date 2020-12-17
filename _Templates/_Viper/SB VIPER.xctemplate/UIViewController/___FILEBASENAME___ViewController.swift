@@ -32,7 +32,7 @@ class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_scen
     
     deinit { print("===== DEINITED: ___VARIABLE_sceneName___ViewController") }
     
-    //MARK: - Display data
+    //MARK: - Display
     func display(displayType: ___VARIABLE_sceneName___.Action.Display.DisplayType) { }
     
     //MARK: - Private
