@@ -26,20 +26,6 @@
 		</dict>
 		<dict>
 			<key>Default</key>
-			<string>___VARIABLE_sceneName:identifier___Entity</string>
-			<key>Description</key>
-			<string>The entity file name</string>
-			<key>Identifier</key>
-			<string>entityFileName</string>
-			<key>Name</key>
-			<string>Entity Name:</string>
-			<key>Required</key>
-			<true/>
-			<key>Type</key>
-			<string>static</string>
-		</dict>
-		<dict>
-			<key>Default</key>
 			<string>___VARIABLE_sceneName:identifier___</string>
 			<key>Identifier</key>
 			<string>productName</string>
@@ -55,6 +41,20 @@
 			<string>viewControllerName</string>
 			<key>Name</key>
 			<string>View Controller Name:</string>
+			<key>Required</key>
+			<true/>
+			<key>Type</key>
+			<string>static</string>
+		</dict>
+		<dict>
+			<key>Default</key>
+			<string>___VARIABLE_sceneName:identifier___Entity</string>
+			<key>Description</key>
+			<string>The entity file name</string>
+			<key>Identifier</key>
+			<string>entityFileName</string>
+			<key>Name</key>
+			<string>Entity Name:</string>
 			<key>Required</key>
 			<true/>
 			<key>Type</key>

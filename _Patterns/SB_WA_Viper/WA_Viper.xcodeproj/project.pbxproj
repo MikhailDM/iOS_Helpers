@@ -31,14 +31,6 @@
 		2795C1A8257A1FA7001205CD /* WAppSearchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2795C1A1257A1FA7001205CD /* WAppSearchEntity.swift */; };
 		2795C1AE257A24F7001205CD /* WAppSearchTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2795C1AC257A24F7001205CD /* WAppSearchTVCell.swift */; };
 		2795C1AF257A24F7001205CD /* WAppSearchTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2795C1AD257A24F7001205CD /* WAppSearchTVCell.xib */; };
-		27CF06282589147700EB9E39 /* TYJR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27CF06202589147700EB9E39 /* TYJR.storyboard */; };
-		27CF06292589147700EB9E39 /* TYJRLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CF06212589147700EB9E39 /* TYJRLogic.swift */; };
-		27CF062A2589147800EB9E39 /* TYJRPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CF06222589147700EB9E39 /* TYJRPresenter.swift */; };
-		27CF062B2589147800EB9E39 /* TYJRRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CF06232589147700EB9E39 /* TYJRRouter.swift */; };
-		27CF062C2589147800EB9E39 /* TYJRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CF06242589147700EB9E39 /* TYJRViewController.swift */; };
-		27CF062D2589147800EB9E39 /* TYJRInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CF06252589147700EB9E39 /* TYJRInteractor.swift */; };
-		27CF062E2589147800EB9E39 /* TYJRConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CF06262589147700EB9E39 /* TYJRConfigurator.swift */; };
-		27CF062F2589147800EB9E39 /* TYJREntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CF06272589147700EB9E39 /* TYJREntity.swift */; };
 		7C780FF99FE7C920580F8063 /* Pods_WA_Viper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B1F3D1265BB927D3494D98 /* Pods_WA_Viper.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,14 +62,6 @@
 		2795C1A1257A1FA7001205CD /* WAppSearchEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppSearchEntity.swift; sourceTree = "<group>"; };
 		2795C1AC257A24F7001205CD /* WAppSearchTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WAppSearchTVCell.swift; sourceTree = "<group>"; };
 		2795C1AD257A24F7001205CD /* WAppSearchTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WAppSearchTVCell.xib; sourceTree = "<group>"; };
-		27CF06202589147700EB9E39 /* TYJR.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TYJR.storyboard; sourceTree = "<group>"; };
-		27CF06212589147700EB9E39 /* TYJRLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TYJRLogic.swift; sourceTree = "<group>"; };
-		27CF06222589147700EB9E39 /* TYJRPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TYJRPresenter.swift; sourceTree = "<group>"; };
-		27CF06232589147700EB9E39 /* TYJRRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TYJRRouter.swift; sourceTree = "<group>"; };
-		27CF06242589147700EB9E39 /* TYJRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TYJRViewController.swift; sourceTree = "<group>"; };
-		27CF06252589147700EB9E39 /* TYJRInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TYJRInteractor.swift; sourceTree = "<group>"; };
-		27CF06262589147700EB9E39 /* TYJRConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TYJRConfigurator.swift; sourceTree = "<group>"; };
-		27CF06272589147700EB9E39 /* TYJREntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TYJREntity.swift; sourceTree = "<group>"; };
 		5A44F9FDEF0C006290E32200 /* Pods-WA_Viper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WA_Viper.release.xcconfig"; path = "Target Support Files/Pods-WA_Viper/Pods-WA_Viper.release.xcconfig"; sourceTree = "<group>"; };
 		67B1F3D1265BB927D3494D98 /* Pods_WA_Viper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WA_Viper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -123,7 +107,6 @@
 		277981D52578EEC600CAAAC5 /* WA_Viper */ = {
 			isa = PBXGroup;
 			children = (
-				2799A4C82588E3590068BA45 /* 1234 */,
 				277981F22578EF9200CAAAC5 /* WAPP. Global */,
 				277981F52578EF9200CAAAC5 /* WAPP. Main */,
 				2795C181257A1490001205CD /* WAPP. Search */,
@@ -191,21 +174,6 @@
 				2795C1AD257A24F7001205CD /* WAppSearchTVCell.xib */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		2799A4C82588E3590068BA45 /* 1234 */ = {
-			isa = PBXGroup;
-			children = (
-				27CF06202589147700EB9E39 /* TYJR.storyboard */,
-				27CF06212589147700EB9E39 /* TYJRLogic.swift */,
-				27CF06222589147700EB9E39 /* TYJRPresenter.swift */,
-				27CF06232589147700EB9E39 /* TYJRRouter.swift */,
-				27CF06242589147700EB9E39 /* TYJRViewController.swift */,
-				27CF06252589147700EB9E39 /* TYJRInteractor.swift */,
-				27CF06262589147700EB9E39 /* TYJRConfigurator.swift */,
-				27CF06272589147700EB9E39 /* TYJREntity.swift */,
-			);
-			path = 1234;
 			sourceTree = "<group>";
 		};
 		DD5B85497E67553AC197758D /* Pods */ = {
@@ -277,7 +245,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				277981E32578EEC900CAAAC5 /* LaunchScreen.storyboard in Resources */,
-				27CF06282589147700EB9E39 /* TYJR.storyboard in Resources */,
 				2795C1AF257A24F7001205CD /* WAppSearchTVCell.xib in Resources */,
 				277981E02578EEC900CAAAC5 /* Assets.xcassets in Resources */,
 				2795C199257A1F92001205CD /* WAppSearch.storyboard in Resources */,
@@ -335,31 +302,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				2795C1A2257A1FA7001205CD /* WAppSearchLogic.swift in Sources */,
-				27CF062F2589147800EB9E39 /* TYJREntity.swift in Sources */,
-				27CF06292589147700EB9E39 /* TYJRLogic.swift in Sources */,
-				27CF062E2589147800EB9E39 /* TYJRConfigurator.swift in Sources */,
 				2779821F2578F1F300CAAAC5 /* WAppLogic.swift in Sources */,
 				2795C1A8257A1FA7001205CD /* WAppSearchEntity.swift in Sources */,
 				277981D72578EEC600CAAAC5 /* AppDelegate.swift in Sources */,
 				277982202578F1F300CAAAC5 /* WAppViewController.swift in Sources */,
 				277981FF2578EF9200CAAAC5 /* NetworkManager.swift in Sources */,
-				27CF062C2589147800EB9E39 /* TYJRViewController.swift in Sources */,
 				2779528D25797AB500C282C9 /* WAppEntity.swift in Sources */,
 				2795C1AE257A24F7001205CD /* WAppSearchTVCell.swift in Sources */,
 				277982222578F1F300CAAAC5 /* WAppConfigurator.swift in Sources */,
 				2779821E2578F1F300CAAAC5 /* WAppRouter.swift in Sources */,
-				27CF062B2589147800EB9E39 /* TYJRRouter.swift in Sources */,
 				2779821D2578F1F300CAAAC5 /* WAppPresenter.swift in Sources */,
 				277982212578F1F300CAAAC5 /* WAppInteractor.swift in Sources */,
 				2795C1A4257A1FA7001205CD /* WAppSearchRouter.swift in Sources */,
 				2795C1A5257A1FA7001205CD /* WAppSearchViewController.swift in Sources */,
 				2795C1A3257A1FA7001205CD /* WAppSearchPresenter.swift in Sources */,
 				277981FE2578EF9200CAAAC5 /* CitiesManager.swift in Sources */,
-				27CF062D2589147800EB9E39 /* TYJRInteractor.swift in Sources */,
 				2795C1A6257A1FA7001205CD /* WAppSearchInteractor.swift in Sources */,
 				2795C1A7257A1FA7001205CD /* WAppSearchConfigurator.swift in Sources */,
 				277981D92578EEC600CAAAC5 /* SceneDelegate.swift in Sources */,
-				27CF062A2589147800EB9E39 /* TYJRPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
