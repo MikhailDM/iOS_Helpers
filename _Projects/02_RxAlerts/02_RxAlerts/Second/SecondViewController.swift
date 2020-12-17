@@ -33,7 +33,7 @@ class SecondViewController: UIViewController, SecondDisplayLogic {
     
     
     //MARK: - Managers
-    private let alerts = RxAlertManager()
+    private let alerts = RxAlertService()
     
     
     //MARK: - View Lifecycle
@@ -80,14 +80,15 @@ class SecondViewController: UIViewController, SecondDisplayLogic {
     
     //MARK: - Alerts
     private func showOkAlert() {
-        alerts.showCustomAlert(controller: self, title: "Ok Title", text: "Ok Alert", actions: [.ok])
+        alerts.showCustomAlert(controller: self, title: alerts.texts.empty, message: alerts.texts.messages.ok, preferredStyle: .alert, actions: [(button: .ok, style: .default)])
             .subscribe(onNext: { [weak self] action in
                 if action == .ok { print("===== OK PRESSED"); self?.navigationController?.popViewController(animated: true) }
             }).disposed(by: disposeBag)
     }
     
     private func showRetryAlert() {
-        alerts.showCustomAlert(controller: self, title: "Ok/Retry Title", text: "Ok/Retry Alert", actions: [.ok, .retry])
+        alerts.showCustomAlert(controller: self, title: "Ok/Retry Title", message: "Ok/Retry Alert", preferredStyle: .actionSheet,
+                               actions: [(button: .ok, style: .default), (button: .retry, style: .default)])
             .subscribe(onNext: { [weak self] action in
                 if action == .ok { print("===== OK PRESSED"); self?.navigationController?.popViewController(animated: true) }
                 if action == .retry { print("===== RETRY PRESSED") }
@@ -95,7 +96,8 @@ class SecondViewController: UIViewController, SecondDisplayLogic {
     }
     
     private func showMultiButtonsAlert() {
-        alerts.showCustomAlert(controller: self, title: "Ok/Retry/Cancel Title", text: "Ok/Retry/Cancel Alert", actions: [.ok, .retry, .cancel])
+        alerts.showCustomAlert(controller: self, title: "Ok/Retry/Cancel Title", message: "Ok/Retry/Cancel Alert", preferredStyle: .actionSheet,
+                               actions: [(button: .ok, style: .default), (button: .retry, style: .destructive), (button: .cancel, style: .cancel)])
             .subscribe(onNext: { [weak self] action in
                 if action == .ok { print("===== OK PRESSED"); self?.navigationController?.popViewController(animated: true) }
                 if action == .retry { print("===== RETRY PRESSED") }
