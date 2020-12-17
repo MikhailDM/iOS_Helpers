@@ -46,7 +46,7 @@ Viper Pattern. Weather app with Storyboards
 Растягиваем посдеднюю ячейку до конца экрана
 
 + **UITableView. Fullscreen cell**   
-Растягиваем  ячейку на есь экран
+Растягиваем  ячейку на весь экран
 
 + **UITableView. Calculating cell**   
 Вычисляемая последняя ячейка списка для заполнения всего экрана
@@ -66,7 +66,7 @@ Viper Pattern. Weather app with Storyboards
 
 >## <a name="Templates"></a> Templates   
 Patterns for Xcode   
-Path: cd Library/Developer/Xcode
+Path: cd Library/Developer/Xcode/Templates/File Templates
 
 ### _Clean Swift
 Clean Swift Template
