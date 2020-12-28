@@ -13,7 +13,7 @@ import UIKit
 import RxSwift
 
 enum WAppSearch {
-    
+
     //MARK: - Logic
     enum Action {
         struct PresenterRequest {

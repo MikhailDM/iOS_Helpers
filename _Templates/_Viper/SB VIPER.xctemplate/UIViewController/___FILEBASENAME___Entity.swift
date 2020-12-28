@@ -7,6 +7,7 @@
 
 import UIKit
 
+//MARK: - Entity
 class ___VARIABLE_sceneName___Entity {
     
     //MARK: - View Model

@@ -10,25 +10,29 @@
 
 import UIKit
 
-enum ___VARIABLE_sceneName___ {
+//MARK: - Logic
+enum ___VARIABLE_sceneName___Logic {
     
-    //MARK: - Logic
+    //MARK: - Actions
     enum Action {
         struct PresenterRequest {
             enum RequestType {
                 case some
             }
         }
+        
         struct InteractorRequest {
             enum RequestType {
                 case some
             }
         }
+        
         struct InteractorResponse {
             enum ResponseType {
                 case some
             }
         }
+        
         struct Display {
             enum DisplayType {
                 case some

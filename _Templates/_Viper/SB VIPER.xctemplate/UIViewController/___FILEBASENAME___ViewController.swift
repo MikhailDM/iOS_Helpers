@@ -8,6 +8,7 @@
 import UIKit
 //import RxSwift
 
+//MARK: - View
 class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_sceneName___ViewProtocol, ___VARIABLE_sceneName___ViewLogicProtocol {
     
     //MARK: - Configure
@@ -33,7 +34,7 @@ class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_scen
     deinit { print("===== DEINITED: ___VARIABLE_sceneName___ViewController") }
     
     //MARK: - Display
-    func display(displayType: ___VARIABLE_sceneName___.Action.Display.DisplayType) { }
+    func display(displayType: ___VARIABLE_sceneName___Logic.Action.Display.DisplayType) { }
     
     //MARK: - Private
     private func configureDesign() {

@@ -8,6 +8,7 @@
 import UIKit
 //import RxSwift
 
+//MARK: - UITableViewCell
 class ___FILEBASENAME___: UITableViewCell {
     
     //MARK: - Outlets

@@ -7,6 +7,7 @@
 
 import UIKit
 
+//MARK: - Interactor
 class ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___InputInteractorProtocol, ___VARIABLE_sceneName___InputInteractorLogicProtocol {
     
     //MARK: - Properties
@@ -15,6 +16,6 @@ class ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___InputInteracto
     //MARK: - Services
     
     //MARK: - Interactor Request
-    func interactorRequest(requestType: ___VARIABLE_sceneName___.Action.InteractorRequest.RequestType) { }
+    func interactorRequest(requestType: ___VARIABLE_sceneName___Logic.Action.InteractorRequest.RequestType) { }
     
 }//

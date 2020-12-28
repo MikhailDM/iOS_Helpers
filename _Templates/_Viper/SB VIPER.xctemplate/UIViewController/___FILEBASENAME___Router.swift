@@ -7,13 +7,14 @@
 
 import UIKit
 
+//MARK: - Router
 class ___VARIABLE_sceneName___Router: ___VARIABLE_sceneName___RouterProtocol, ___VARIABLE_sceneName___RouterLogicProtocol {
     
     //MARK: - Properties
     weak var view: ___VARIABLE_sceneName___ViewController?
     
     //MARK: - Route
-    func routeTo(routeType: ___VARIABLE_sceneName___.Route) { }
+    func routeTo(routeType: ___VARIABLE_sceneName___Logic.Route) { }
     
 //    let storyboard = UIStoryboard(name: "WAppSearch", bundle: nil)
 //    guard let viewController = view,

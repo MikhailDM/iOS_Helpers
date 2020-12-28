@@ -8,7 +8,7 @@
 import UIKit
 
 class WAppSearchEntity {
-    
+   
     //MARK: - View Model
     struct ViewModel { }
     
