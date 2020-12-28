@@ -8,21 +8,21 @@
 import UIKit
 
 //MARK: - Protocol. View. Presenter -> View
-protocol WAppSearchViewLogicProtocol {
+protocol WAppSearchViewLogicProtocol: class {
     func display(displayType: WAppSearch.Action.Display.DisplayType)
 }
 
-protocol WAppSearchViewProtocol {
+protocol WAppSearchViewProtocol: class {
     var configurator: WAppSearchConfigurator { get set }
     var presenter: (WAppSearchPresenterLogicProtocol & WAppSearchDataStoreProtocol)? { get set }
 }
 
 //MARK: - Protocol. Presenter. View -> Presenter
-protocol WAppSearchPresenterLogicProtocol {
+protocol WAppSearchPresenterLogicProtocol: class {
     func presenterRequest(requestType: WAppSearch.Action.PresenterRequest.RequestType)
 }
 
-protocol WAppSearchPresenterProtocol {
+protocol WAppSearchPresenterProtocol: class {
     var view: WAppSearchViewLogicProtocol? { get set }
     var router: WAppSearchRouterLogicProtocol? { get set }
     var interactor: WAppSearchInputInteractorLogicProtocol? { get set }
@@ -43,16 +43,16 @@ protocol WAppSearchOutputInteractorProtocol: class {
 }
 
 //MARK: - Protocol. Router. Presenter -> Another View
-protocol WAppSearchRouterLogicProtocol {
+protocol WAppSearchRouterLogicProtocol: class {
     func routeTo(routeType: WAppSearch.Route)
 }
 
-protocol WAppSearchRouterProtocol {
+protocol WAppSearchRouterProtocol: class {
     var view: WAppSearchViewController? { get set }
 }
 
 //MARK: - Protocol. Presenter/Router. Data Store
-protocol WAppSearchDataStoreProtocol {
+protocol WAppSearchDataStoreProtocol: class {
     var dataStore: WAppSearch.DataStore? { get set }
 }
 
@@ -62,6 +62,8 @@ protocol WAppSearchConfiguratorProtocol: class {
 }
 
 class WAppSearchConfigurator: WAppSearchConfiguratorProtocol {
+    
+    deinit { print("===== DEINITED: WAppSearchConfigurator") }
     
     //MARK: - Configure
     func configure(with view: WAppSearchViewController) {

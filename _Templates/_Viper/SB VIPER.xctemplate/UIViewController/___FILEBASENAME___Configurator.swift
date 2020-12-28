@@ -8,21 +8,21 @@
 import UIKit
 
 //MARK: - Protocol. View. Presenter -> View
-protocol ___VARIABLE_sceneName___ViewLogicProtocol {
+protocol ___VARIABLE_sceneName___ViewLogicProtocol: class {
     func display(displayType: ___VARIABLE_sceneName___Logic.Action.Display.DisplayType)
 }
 
-protocol ___VARIABLE_sceneName___ViewProtocol {
+protocol ___VARIABLE_sceneName___ViewProtocol: class {
     var configurator: ___VARIABLE_sceneName___Configurator { get set }
     var presenter: (___VARIABLE_sceneName___PresenterLogicProtocol & ___VARIABLE_sceneName___DataStoreProtocol)? { get set }
 } 
 
 //MARK: - Protocol. Presenter. View -> Presenter
-protocol ___VARIABLE_sceneName___PresenterLogicProtocol {
+protocol ___VARIABLE_sceneName___PresenterLogicProtocol: class {
     func presenterRequest(requestType: ___VARIABLE_sceneName___Logic.Action.PresenterRequest.RequestType)
 }
 
-protocol ___VARIABLE_sceneName___PresenterProtocol {
+protocol ___VARIABLE_sceneName___PresenterProtocol: class {
     var view: ___VARIABLE_sceneName___ViewLogicProtocol? { get set }
     var router: ___VARIABLE_sceneName___RouterLogicProtocol? { get set }
     var interactor: ___VARIABLE_sceneName___InputInteractorLogicProtocol? { get set }
@@ -43,16 +43,16 @@ protocol ___VARIABLE_sceneName___OutputInteractorProtocol: class {
 }
 
 //MARK: - Protocol. Router. Presenter -> Another View
-protocol ___VARIABLE_sceneName___RouterLogicProtocol {
+protocol ___VARIABLE_sceneName___RouterLogicProtocol: class {
     func routeTo(routeType: ___VARIABLE_sceneName___Logic.Route)
 }
 
-protocol ___VARIABLE_sceneName___RouterProtocol {
+protocol ___VARIABLE_sceneName___RouterProtocol: class {
     var view: ___VARIABLE_sceneName___ViewController? { get set }
 }
 
 //MARK: - Protocol. Presenter. Data Store
-protocol ___VARIABLE_sceneName___DataStoreProtocol {
+protocol ___VARIABLE_sceneName___DataStoreProtocol: class {
     var dataStore: ___VARIABLE_sceneName___Logic.DataStore? { get set }
 }
 

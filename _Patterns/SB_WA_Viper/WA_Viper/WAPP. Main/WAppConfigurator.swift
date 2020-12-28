@@ -8,21 +8,21 @@
 import UIKit
 
 //MARK: - Protocol. View. Presenter -> View
-protocol WAppViewLogicProtocol {
+protocol WAppViewLogicProtocol: class {
     func display(displayType: WApp.Action.Display.DisplayType)
 }
 
-protocol WAppViewProtocol {
+protocol WAppViewProtocol: class {
     var configurator: WAppConfigurator { get set }
     var presenter: (WAppPresenterLogicProtocol & WAppDataStoreProtocol)? { get set }
 }
 
 //MARK: - Protocol. Presenter. View -> Presenter
-protocol WAppPresenterLogicProtocol {
+protocol WAppPresenterLogicProtocol: class {
     func presenterRequest(requestType: WApp.Action.PresenterRequest.RequestType)
 }
 
-protocol WAppPresenterProtocol {
+protocol WAppPresenterProtocol: class {
     var view: WAppViewLogicProtocol? { get set }
     var router: WAppRouterLogicProtocol? { get set }
     var interactor: WAppInputInteractorLogicProtocol? { get set }
@@ -43,16 +43,16 @@ protocol WAppOutputInteractorProtocol: class {
 }
 
 //MARK: - Protocol. Router. Presenter -> Another View
-protocol WAppRouterLogicProtocol {
+protocol WAppRouterLogicProtocol: class {
     func routeTo(routeType: WApp.Route)
 }
 
-protocol WAppRouterProtocol {
+protocol WAppRouterProtocol: class {
     var view: WAppViewController? { get set }
 }
 
 //MARK: - Protocol. Presenter/Router. Data Store
-protocol WAppDataStoreProtocol {
+protocol WAppDataStoreProtocol: class {
     var dataStore: WApp.DataStore? { get set }
 }
 

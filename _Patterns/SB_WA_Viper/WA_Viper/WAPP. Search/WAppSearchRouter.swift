@@ -9,6 +9,8 @@ import UIKit
 
 class WAppSearchRouter: WAppSearchRouterProtocol, WAppSearchRouterLogicProtocol {
     
+    deinit { print("===== DEINITED: WAppSearchRouter") }
+    
     //MARK: - Properties
     weak var view: WAppSearchViewController?
     

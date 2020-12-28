@@ -9,8 +9,10 @@ import UIKit
 
 class WAppSearchPresenter: WAppSearchPresenterProtocol, WAppSearchPresenterLogicProtocol, WAppSearchOutputInteractorProtocol, WAppSearchDataStoreProtocol {
     
+    deinit { print("===== DEINITED: WAppSearchPresenter") }
+    
     //MARK: - Properties
-    var view: WAppSearchViewLogicProtocol?
+    weak var view: WAppSearchViewLogicProtocol?
     var router: WAppSearchRouterLogicProtocol?
     var interactor: WAppSearchInputInteractorLogicProtocol?
     var dataStore: WAppSearch.DataStore?

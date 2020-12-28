@@ -11,7 +11,7 @@ import UIKit
 class ___VARIABLE_sceneName___Presenter: ___VARIABLE_sceneName___PresenterProtocol, ___VARIABLE_sceneName___PresenterLogicProtocol, ___VARIABLE_sceneName___OutputInteractorProtocol, ___VARIABLE_sceneName___DataStoreProtocol {
     
     //MARK: - Properties
-    var view: ___VARIABLE_sceneName___ViewLogicProtocol?
+    weak var view: ___VARIABLE_sceneName___ViewLogicProtocol?
     var router: ___VARIABLE_sceneName___RouterLogicProtocol?
     var interactor: ___VARIABLE_sceneName___InputInteractorLogicProtocol?
     var dataStore: ___VARIABLE_sceneName___Logic.DataStore?

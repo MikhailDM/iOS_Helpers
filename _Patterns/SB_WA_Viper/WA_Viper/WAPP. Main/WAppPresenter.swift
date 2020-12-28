@@ -10,7 +10,7 @@ import UIKit
 class WAppPresenter: WAppPresenterProtocol, WAppPresenterLogicProtocol, WAppOutputInteractorProtocol, WAppDataStoreProtocol {
     
     //MARK: - Properties
-    var view: WAppViewLogicProtocol?
+    weak var view: WAppViewLogicProtocol?
     var router: WAppRouterLogicProtocol?
     var interactor: WAppInputInteractorLogicProtocol?
     var dataStore: WApp.DataStore?

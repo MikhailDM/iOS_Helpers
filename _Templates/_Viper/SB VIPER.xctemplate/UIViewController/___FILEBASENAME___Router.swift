@@ -21,8 +21,8 @@ class ___VARIABLE_sceneName___Router: ___VARIABLE_sceneName___RouterProtocol, __
 //          let homeDS = view?.presenter?.dataStore,
 //          let destinationVC = storyboard.instantiateViewController(withIdentifier: "UIViewController") as? UIViewController,
 //          var destinationDS = destinationVC.presenter?.dataStore else { print("===== NAVIGATION FAIL"); return }
-//    navigateToSearch(source: viewController, destination: destinationVC)
-//    subscribeToSelectedCity(source: homeDS, destination: &destinationDS)
+//    navigateTo(source: viewController, destination: destinationVC)
+//    passDataTo(source: homeDS, destination: &destinationDS)
     
     //MARK: - Navigation
 //    private func navigateTo(source: ___VARIABLE_sceneName___ViewController, destination: UIViewController) {
