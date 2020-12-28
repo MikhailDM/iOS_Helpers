@@ -1,14 +1,14 @@
 //
-//  ___FILENAME___
-//  ___PROJECTNAME___
+//  TTTTEntity.swift
+//  WA_CleanSwift
 //
-//  Created by ___FULLUSERNAME___ on ___DATE___
+//  Created by Mikhail Dmitriev on 28.12.2020
 //
 
 import UIKit
 
 //MARK: - Entity
-class ___VARIABLE_sceneName___Entity {
+class TTTTEntity {
     
     //MARK: - View Model
     struct ViewModel { }

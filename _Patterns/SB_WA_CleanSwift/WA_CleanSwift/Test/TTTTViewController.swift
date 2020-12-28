@@ -1,19 +1,19 @@
 //
-//  ___FILENAME___
-//  ___PROJECTNAME___
+//  TTTTViewController.swift
+//  WA_CleanSwift
 //
-//  Created by ___FULLUSERNAME___ on ___DATE___
+//  Created by Mikhail Dmitriev on 28.12.2020
 //
 
 import UIKit
 //import RxSwift
 
 //MARK: - View
-class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_sceneName___ViewProtocol, ___VARIABLE_sceneName___ViewLogicProtocol {
+class TTTTViewController: UIViewController, TTTTViewProtocol, TTTTViewLogicProtocol {
     
     //MARK: - Configure
-    var interactor: (___VARIABLE_sceneName___InteractorLogicProtocol & ___VARIABLE_sceneName___DataStoreProtocol)?
-    var configurator = ___VARIABLE_sceneName___Configurator()
+    var interactor: (TTTTInteractorLogicProtocol & TTTTDataStoreProtocol)?
+    var configurator = TTTTConfigurator()
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         configurator.configure(with: self)
@@ -31,11 +31,11 @@ class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_scen
         configureUITableView()
     }
     
-    deinit { print("===== DEINITED: ___VARIABLE_sceneName___ViewController") }
+    deinit { print("===== DEINITED: TTTTViewController") }
     
     
     //MARK: - Display
-    func display(displayType: ___VARIABLE_sceneName___Logic.Action.Display.DisplayType) { }
+    func display(displayType: TTTTLogic.Action.Display.DisplayType) { }
     
     
     //MARK: - Private
@@ -58,7 +58,7 @@ class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_scen
 }//
 
 //MARK: - Extension. UITableView
-extension ___VARIABLE_sceneName___ViewController: UITableViewDelegate, UITableViewDataSource {
+extension TTTTViewController: UITableViewDelegate, UITableViewDataSource {
    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0

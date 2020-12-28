@@ -9,7 +9,7 @@ import UIKit
 
 //MARK: - Protocol. View. Presenter -> View
 protocol ___VARIABLE_sceneName___ViewLogicProtocol: class {
-    func display(displayType: ___VARIABLE_sceneName___.Action.Display.DisplayType)
+    func display(displayType: ___VARIABLE_sceneName___Logic.Action.Display.DisplayType)
 }
 
 protocol ___VARIABLE_sceneName___ViewProtocol: class {
@@ -19,7 +19,7 @@ protocol ___VARIABLE_sceneName___ViewProtocol: class {
 
 //MARK: - Protocol. Interactor. View -> Interactor
 protocol ___VARIABLE_sceneName___InteractorLogicProtocol: class {
-    func interactorRequest(requestType: ___VARIABLE_sceneName___.Action.InteractorRequest.RequestType)
+    func interactorRequest(requestType: ___VARIABLE_sceneName___Logic.Action.InteractorRequest.RequestType)
 }
 
 protocol ___VARIABLE_sceneName___InteractorProtocol: class {
@@ -29,7 +29,7 @@ protocol ___VARIABLE_sceneName___InteractorProtocol: class {
 
 //MARK: - Protocol. Presenter. Interactor -> Presenter
 protocol ___VARIABLE_sceneName___PresenterLogicProtocol: class {
-    func presenterRequest(requestType: ___VARIABLE_sceneName___.Action.PresenterRequest.RequestType)
+    func presenterRequest(requestType: ___VARIABLE_sceneName___Logic.Action.PresenterRequest.RequestType)
 }
 
 protocol ___VARIABLE_sceneName___PresenterProtocol: class {
@@ -38,7 +38,7 @@ protocol ___VARIABLE_sceneName___PresenterProtocol: class {
 
 //MARK: - Protocol. Router. Interactor -> Another View
 protocol ___VARIABLE_sceneName___RouterLogicProtocol: class {
-    func routeTo(routeType: ___VARIABLE_sceneName___.Route)
+    func routeTo(routeType: ___VARIABLE_sceneName___Logic.Route)
 }
 
 protocol ___VARIABLE_sceneName___RouterProtocol: class {
@@ -47,7 +47,7 @@ protocol ___VARIABLE_sceneName___RouterProtocol: class {
 
 //MARK: - Protocol. Interactor. Data Store
 protocol ___VARIABLE_sceneName___DataStoreProtocol: class {
-    var dataStore: ___VARIABLE_sceneName___.DataStore? { get set }
+    var dataStore: ___VARIABLE_sceneName___Logic.DataStore? { get set }
 }
 
 //MARK: - Protocol. Configurator
@@ -55,14 +55,14 @@ protocol ___VARIABLE_sceneName___ConfiguratorProtocol: class {
     func configure(with view: ___VARIABLE_sceneName___ViewController)
 }
 
+//MARK: - Configurator
 class ___VARIABLE_sceneName___Configurator: ___VARIABLE_sceneName___ConfiguratorProtocol {
     
-    //MARK: - Configure
     func configure(with view: ___VARIABLE_sceneName___ViewController) {
         let interactor            = ___VARIABLE_sceneName___Interactor()
         let presenter             = ___VARIABLE_sceneName___Presenter()
         let router                = ___VARIABLE_sceneName___Router()
-        let dataStore             = ___VARIABLE_sceneName___.DataStore()
+        let dataStore             = ___VARIABLE_sceneName___Logic.DataStore()
         
         view.interactor           = interactor
         interactor.presenter      = presenter

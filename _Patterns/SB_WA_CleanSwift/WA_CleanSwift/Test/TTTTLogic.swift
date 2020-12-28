@@ -1,8 +1,8 @@
 //
-//  ___FILENAME___
-//  ___PROJECTNAME___
+//  TTTTLogic.swift
+//  WA_CleanSwift
 //
-//  Created by ___FULLUSERNAME___ on ___DATE___
+//  Created by Mikhail Dmitriev on 28.12.2020
 //
 //  View -> Interactor -> Presenter -> View
 //  Interactor -> Router -> View
@@ -11,7 +11,7 @@
 import UIKit
 
 //MARK: - Logic
-enum ___VARIABLE_sceneName___Logic {
+enum TTTTLogic {
     
     //MARK: - Actions
     enum Action {

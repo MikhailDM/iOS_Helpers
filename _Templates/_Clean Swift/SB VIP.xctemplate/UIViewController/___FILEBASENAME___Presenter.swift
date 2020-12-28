@@ -7,6 +7,7 @@
 
 import UIKit
 
+//MARK: - Presenter
 class ___VARIABLE_sceneName___Presenter: ___VARIABLE_sceneName___PresenterProtocol, ___VARIABLE_sceneName___PresenterLogicProtocol {
     
     //MARK: - Properties
@@ -15,6 +16,6 @@ class ___VARIABLE_sceneName___Presenter: ___VARIABLE_sceneName___PresenterProtoc
     //MARK: - Services
     
     //MARK: - Present Data
-    func presenterRequest(requestType: ___VARIABLE_sceneName___.Action.PresenterRequest.RequestType) { }
+    func presenterRequest(requestType: ___VARIABLE_sceneName___Logic.Action.PresenterRequest.RequestType) { }
     
 }//

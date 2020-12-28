@@ -17,12 +17,12 @@ class ___VARIABLE_sceneName___Router: ___VARIABLE_sceneName___RouterProtocol, __
     func routeTo(routeType: ___VARIABLE_sceneName___Logic.Route) { }
     
 //    let storyboard = UIStoryboard(name: "WAppSearch", bundle: nil)
-//    guard let viewController = view,
-//          let homeDS = view?.presenter?.dataStore,
+//    guard let sourceVC = view,
+//          let sourceDS = view?.presenter?.dataStore,
 //          let destinationVC = storyboard.instantiateViewController(withIdentifier: "UIViewController") as? UIViewController,
 //          var destinationDS = destinationVC.presenter?.dataStore else { print("===== NAVIGATION FAIL"); return }
-//    navigateTo(source: viewController, destination: destinationVC)
-//    passDataTo(source: homeDS, destination: &destinationDS)
+//    navigateTo(source: sourceVC, destination: destinationVC)
+//    passDataTo(source: sourceDS, destination: &destinationDS)
     
     //MARK: - Navigation
 //    private func navigateTo(source: ___VARIABLE_sceneName___ViewController, destination: UIViewController) {
@@ -30,8 +30,8 @@ class ___VARIABLE_sceneName___Router: ___VARIABLE_sceneName___RouterProtocol, __
 //    }
     
     //MARK: - Passing Data
-//    private func passDataTo(source: ___VARIABLE_sceneName___.DataStore, destination: inout Destination.DataStore) {
-//        destination.dataStore = source.dataStore
+//    private func passDataTo(source: ___VARIABLE_sceneName___Logic.DataStore, destination: inout Destination.DataStore) {
+//        destination.data = source.data
 //    }
     
 }//
