@@ -15,5 +15,4 @@ class ___VARIABLE_sceneName___Entity {
     
     //MARK: - Server Data
     struct ServerData: Codable { }
-    
-}//
+}

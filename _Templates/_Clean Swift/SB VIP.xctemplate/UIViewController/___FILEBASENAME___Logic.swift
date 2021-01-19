@@ -6,7 +6,8 @@
 //
 //  View -> Interactor -> Presenter -> View
 //  Interactor -> Router -> View
-//  Interactor contains Data Store
+//  Data Store Access from View
+//  Data Store in Interactor
 
 import UIKit
 
@@ -33,15 +34,4 @@ enum ___VARIABLE_sceneName___Logic {
             }
         }
     }
-    
-    //MARK: - Route
-    enum Route {
-        case some
-    }
-    
-    //MARK: - Data Store
-    struct DataStore {
-        var data: Any?
-    }
-    
-}//
+}

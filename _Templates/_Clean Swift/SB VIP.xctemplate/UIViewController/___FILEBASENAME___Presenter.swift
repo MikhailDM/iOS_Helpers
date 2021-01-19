@@ -17,5 +17,4 @@ class ___VARIABLE_sceneName___Presenter: ___VARIABLE_sceneName___PresenterProtoc
     
     //MARK: - Present Data
     func presenterRequest(requestType: ___VARIABLE_sceneName___Logic.Action.PresenterRequest.RequestType) { }
-    
-}//
+}

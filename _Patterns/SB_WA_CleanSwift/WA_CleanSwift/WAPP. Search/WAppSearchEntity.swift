@@ -8,7 +8,7 @@
 import Foundation
 
 class WAppSearchEntity {
-    
+
     //MARK: - View Model
     struct ViewModel { }
     

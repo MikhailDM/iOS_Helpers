@@ -7,6 +7,11 @@
 
 import UIKit
 
+//MARK: - Protocol. Interactor -> Another View
+protocol ___VARIABLE_sceneName___RouterLogicProtocol: class {
+    func routeTo()
+}
+
 //MARK: - Router
 class ___VARIABLE_sceneName___Router: ___VARIABLE_sceneName___RouterProtocol, ___VARIABLE_sceneName___RouterLogicProtocol {
     
@@ -14,13 +19,13 @@ class ___VARIABLE_sceneName___Router: ___VARIABLE_sceneName___RouterProtocol, __
     weak var view: ___VARIABLE_sceneName___ViewController?
     
     //MARK: - Route
-    func routeTo(routeType: ___VARIABLE_sceneName___Logic.Route) { }
+    func routeTo() { }
     
-//    let storyboard = UIStoryboard(name: "WAppSearch", bundle: nil)
+//    let storyboard = UIStoryboard(name: "DestinationSB", bundle: nil)
 //    guard let sourceVC = view,
-//          let sourceDS = view?.interactor?.dataStore,
+//          let sourceDS = view?.dataStore,
 //          let destinationVC = storyboard.instantiateViewController(withIdentifier: "UIViewController") as? UIViewController,
-//          var destinationDS = destinationVC.interactor?.dataStore else { print("===== NAVIGATION FAIL"); return }
+//          var destinationDS = destinationVC.dataStore else { print("===== NAVIGATION FAIL"); return }
 //    navigateTo(source: sourceVC, destination: destinationVC)
 //    passDataTo(source: sourceDS, destination: &destinationDS)
     
@@ -30,8 +35,7 @@ class ___VARIABLE_sceneName___Router: ___VARIABLE_sceneName___RouterProtocol, __
 //    }
     
     //MARK: - Passing Data
-//    private func passDataTo(source: ___VARIABLE_sceneName___Logic.DataStore, destination: inout Destination.DataStore) {
+//    private func passDataTo(source: ___VARIABLE_sceneName___DataStoreProtocol, destination: inout DestinationDataStoreProtocol) {
 //        destination.data = source.data
 //    }
-    
-}//
+}

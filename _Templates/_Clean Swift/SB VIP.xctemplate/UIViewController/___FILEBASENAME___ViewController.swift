@@ -12,7 +12,8 @@ import UIKit
 class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_sceneName___ViewProtocol, ___VARIABLE_sceneName___ViewLogicProtocol {
     
     //MARK: - Configure
-    var interactor: (___VARIABLE_sceneName___InteractorLogicProtocol & ___VARIABLE_sceneName___DataStoreProtocol)?
+    var interactor: ___VARIABLE_sceneName___InteractorLogicProtocol?
+    var dataStore: ___VARIABLE_sceneName___DataStoreProtocol?
     var configurator = ___VARIABLE_sceneName___Configurator()
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -33,10 +34,8 @@ class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_scen
     
     deinit { print("===== DEINITED: ___VARIABLE_sceneName___ViewController") }
     
-    
     //MARK: - Display
     func display(displayType: ___VARIABLE_sceneName___Logic.Action.Display.DisplayType) { }
-    
     
     //MARK: - Private
     private func configureDesign() {
@@ -52,10 +51,8 @@ class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_scen
 //        tableView.register(UINib(nibName: "Cell Name", bundle: nil), forCellReuseIdentifier: "Cell ID")
     }
     
-    
     //MARK: - Rx
-    
-}//
+}
 
 //MARK: - Extension. UITableView
 extension ___VARIABLE_sceneName___ViewController: UITableViewDelegate, UITableViewDataSource {

@@ -28,14 +28,6 @@
 		2752834B2570EB620003C20D /* WAppSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275283442570EB620003C20D /* WAppSearchViewController.swift */; };
 		2752834C2570EB620003C20D /* WAppSearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275283452570EB620003C20D /* WAppSearchInteractor.swift */; };
 		2752834D2570EB620003C20D /* WAppSearchConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275283462570EB620003C20D /* WAppSearchConfigurator.swift */; };
-		2785C3D22599D5AC004BECC8 /* TTTT.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2785C3CA2599D5AC004BECC8 /* TTTT.storyboard */; };
-		2785C3D32599D5AC004BECC8 /* TTTTLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2785C3CB2599D5AC004BECC8 /* TTTTLogic.swift */; };
-		2785C3D42599D5AC004BECC8 /* TTTTPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2785C3CC2599D5AC004BECC8 /* TTTTPresenter.swift */; };
-		2785C3D52599D5AC004BECC8 /* TTTTRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2785C3CD2599D5AC004BECC8 /* TTTTRouter.swift */; };
-		2785C3D62599D5AC004BECC8 /* TTTTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2785C3CE2599D5AC004BECC8 /* TTTTViewController.swift */; };
-		2785C3D72599D5AC004BECC8 /* TTTTInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2785C3CF2599D5AC004BECC8 /* TTTTInteractor.swift */; };
-		2785C3D82599D5AC004BECC8 /* TTTTConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2785C3D02599D5AC004BECC8 /* TTTTConfigurator.swift */; };
-		2785C3D92599D5AC004BECC8 /* TTTTEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2785C3D12599D5AC004BECC8 /* TTTTEntity.swift */; };
 		27C435F425826211007A7AE9 /* WAppEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C435F325826211007A7AE9 /* WAppEntity.swift */; };
 		27C91ACC25710B480064B140 /* WAppSearchTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C91ACA25710B480064B140 /* WAppSearchTVCell.swift */; };
 		27FE14F2258753680002333F /* WAppSearchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE14F1258753680002333F /* WAppSearchEntity.swift */; };
@@ -66,14 +58,6 @@
 		275283442570EB620003C20D /* WAppSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppSearchViewController.swift; sourceTree = "<group>"; };
 		275283452570EB620003C20D /* WAppSearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppSearchInteractor.swift; sourceTree = "<group>"; };
 		275283462570EB620003C20D /* WAppSearchConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppSearchConfigurator.swift; sourceTree = "<group>"; };
-		2785C3CA2599D5AC004BECC8 /* TTTT.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TTTT.storyboard; sourceTree = "<group>"; };
-		2785C3CB2599D5AC004BECC8 /* TTTTLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTTLogic.swift; sourceTree = "<group>"; };
-		2785C3CC2599D5AC004BECC8 /* TTTTPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTTPresenter.swift; sourceTree = "<group>"; };
-		2785C3CD2599D5AC004BECC8 /* TTTTRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTTRouter.swift; sourceTree = "<group>"; };
-		2785C3CE2599D5AC004BECC8 /* TTTTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTTViewController.swift; sourceTree = "<group>"; };
-		2785C3CF2599D5AC004BECC8 /* TTTTInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTTInteractor.swift; sourceTree = "<group>"; };
-		2785C3D02599D5AC004BECC8 /* TTTTConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTTConfigurator.swift; sourceTree = "<group>"; };
-		2785C3D12599D5AC004BECC8 /* TTTTEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTTEntity.swift; sourceTree = "<group>"; };
 		27C435F325826211007A7AE9 /* WAppEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WAppEntity.swift; sourceTree = "<group>"; };
 		27C91ACA25710B480064B140 /* WAppSearchTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppSearchTVCell.swift; sourceTree = "<group>"; };
 		27FE14F1258753680002333F /* WAppSearchEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAppSearchEntity.swift; sourceTree = "<group>"; };
@@ -115,7 +99,6 @@
 		275282F12570DEF40003C20D /* WA_CleanSwift */ = {
 			isa = PBXGroup;
 			children = (
-				2785C3C92599D5A2004BECC8 /* Test */,
 				275283222570E11B0003C20D /* WAPP. Global */,
 				2752830E2570E0980003C20D /* WAPP. Main */,
 				2752832F2570E84C0003C20D /* WAPP. Search */,
@@ -174,21 +157,6 @@
 				275283432570EB620003C20D /* WAppSearchLogic.swift */,
 			);
 			path = "WAPP. Search";
-			sourceTree = "<group>";
-		};
-		2785C3C92599D5A2004BECC8 /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				2785C3CA2599D5AC004BECC8 /* TTTT.storyboard */,
-				2785C3CB2599D5AC004BECC8 /* TTTTLogic.swift */,
-				2785C3CC2599D5AC004BECC8 /* TTTTPresenter.swift */,
-				2785C3CD2599D5AC004BECC8 /* TTTTRouter.swift */,
-				2785C3CE2599D5AC004BECC8 /* TTTTViewController.swift */,
-				2785C3CF2599D5AC004BECC8 /* TTTTInteractor.swift */,
-				2785C3D02599D5AC004BECC8 /* TTTTConfigurator.swift */,
-				2785C3D12599D5AC004BECC8 /* TTTTEntity.swift */,
-			);
-			path = Test;
 			sourceTree = "<group>";
 		};
 		27C91AC925710B340064B140 /* Cell */ = {
@@ -276,7 +244,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2785C3D22599D5AC004BECC8 /* TTTT.storyboard in Resources */,
 				275282FF2570DEF70003C20D /* LaunchScreen.storyboard in Resources */,
 				275282FC2570DEF70003C20D /* Assets.xcassets in Resources */,
 				275283472570EB620003C20D /* WAppSearch.storyboard in Resources */,
@@ -337,28 +304,21 @@
 				2752834C2570EB620003C20D /* WAppSearchInteractor.swift in Sources */,
 				275283492570EB620003C20D /* WAppSearchRouter.swift in Sources */,
 				275283182570E0980003C20D /* WAppInteractor.swift in Sources */,
-				2785C3D42599D5AC004BECC8 /* TTTTPresenter.swift in Sources */,
 				27C91ACC25710B480064B140 /* WAppSearchTVCell.swift in Sources */,
 				2752831A2570E0980003C20D /* WAppPresenter.swift in Sources */,
 				270C4A9B2570FCF700C37A5F /* CitiesManager.swift in Sources */,
-				2785C3D62599D5AC004BECC8 /* TTTTViewController.swift in Sources */,
 				2752834A2570EB620003C20D /* WAppSearchLogic.swift in Sources */,
 				27C435F425826211007A7AE9 /* WAppEntity.swift in Sources */,
-				2785C3D92599D5AC004BECC8 /* TTTTEntity.swift in Sources */,
 				27FE14F2258753680002333F /* WAppSearchEntity.swift in Sources */,
 				275283242570E14C0003C20D /* NetworkManager.swift in Sources */,
 				2752831E2570E0980003C20D /* WAppLogic.swift in Sources */,
 				2752834B2570EB620003C20D /* WAppSearchViewController.swift in Sources */,
-				2785C3D32599D5AC004BECC8 /* TTTTLogic.swift in Sources */,
 				2752834D2570EB620003C20D /* WAppSearchConfigurator.swift in Sources */,
-				2785C3D82599D5AC004BECC8 /* TTTTConfigurator.swift in Sources */,
 				275283482570EB620003C20D /* WAppSearchPresenter.swift in Sources */,
 				275282F32570DEF40003C20D /* AppDelegate.swift in Sources */,
-				2785C3D72599D5AC004BECC8 /* TTTTInteractor.swift in Sources */,
 				275283172570E0980003C20D /* WAppViewController.swift in Sources */,
 				2752831D2570E0980003C20D /* WAppRouter.swift in Sources */,
 				275283192570E0980003C20D /* WAppConfigurator.swift in Sources */,
-				2785C3D52599D5AC004BECC8 /* TTTTRouter.swift in Sources */,
 				275282F52570DEF40003C20D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

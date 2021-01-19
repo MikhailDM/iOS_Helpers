@@ -14,7 +14,8 @@ protocol ___VARIABLE_sceneName___ViewLogicProtocol: class {
 
 protocol ___VARIABLE_sceneName___ViewProtocol: class {
     var configurator: ___VARIABLE_sceneName___Configurator { get set }
-    var interactor: (___VARIABLE_sceneName___InteractorLogicProtocol & ___VARIABLE_sceneName___DataStoreProtocol)? { get set }
+    var interactor: ___VARIABLE_sceneName___InteractorLogicProtocol? { get set }
+    var dataStore: ___VARIABLE_sceneName___DataStoreProtocol? { get set }
 }
 
 //MARK: - Protocol. Interactor. View -> Interactor
@@ -36,18 +37,9 @@ protocol ___VARIABLE_sceneName___PresenterProtocol: class {
     var view: ___VARIABLE_sceneName___ViewLogicProtocol? { get set }
 }
 
-//MARK: - Protocol. Router. Interactor -> Another View
-protocol ___VARIABLE_sceneName___RouterLogicProtocol: class {
-    func routeTo(routeType: ___VARIABLE_sceneName___Logic.Route)
-}
-
+//MARK: - Protocol. Router. Router -> View
 protocol ___VARIABLE_sceneName___RouterProtocol: class {
     var view: ___VARIABLE_sceneName___ViewController? { get set }
-}
-
-//MARK: - Protocol. Interactor. Data Store
-protocol ___VARIABLE_sceneName___DataStoreProtocol: class {
-    var dataStore: ___VARIABLE_sceneName___Logic.DataStore? { get set }
 }
 
 //MARK: - Protocol. Configurator
@@ -62,14 +54,12 @@ class ___VARIABLE_sceneName___Configurator: ___VARIABLE_sceneName___Configurator
         let interactor            = ___VARIABLE_sceneName___Interactor()
         let presenter             = ___VARIABLE_sceneName___Presenter()
         let router                = ___VARIABLE_sceneName___Router()
-        let dataStore             = ___VARIABLE_sceneName___Logic.DataStore()
         
         view.interactor           = interactor
+        view.dataStore            = interactor
         interactor.presenter      = presenter
         interactor.router         = router
-        interactor.dataStore      = dataStore
         presenter.view            = view
         router.view               = view
     }
-    
-}//
+}
