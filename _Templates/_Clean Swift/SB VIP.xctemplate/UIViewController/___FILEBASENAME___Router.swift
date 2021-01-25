@@ -8,12 +8,12 @@
 import UIKit
 
 //MARK: - Protocol. Interactor -> Another View
-protocol ___VARIABLE_sceneName___RouterLogicProtocol: class {
+protocol ___VARIABLE_sceneName___RouterLogic: class {
     func routeTo()
 }
 
 //MARK: - Router
-class ___VARIABLE_sceneName___Router: ___VARIABLE_sceneName___RouterProtocol, ___VARIABLE_sceneName___RouterLogicProtocol {
+class ___VARIABLE_sceneName___Router: ___VARIABLE_sceneName___RouterDependencies, ___VARIABLE_sceneName___RouterLogic {
     
     //MARK: - Properties
     weak var view: ___VARIABLE_sceneName___ViewController?
@@ -25,7 +25,7 @@ class ___VARIABLE_sceneName___Router: ___VARIABLE_sceneName___RouterProtocol, __
 //    guard let sourceVC = view,
 //          let sourceDS = view?.dataStore,
 //          let destinationVC = storyboard.instantiateViewController(withIdentifier: "UIViewController") as? UIViewController,
-//          var destinationDS = destinationVC.dataStore else { print("===== NAVIGATION FAIL"); return }
+//          var destinationDS = destinationVC.dataStore else { print("===== Navigation Fail"); return }
 //    navigateTo(source: sourceVC, destination: destinationVC)
 //    passDataTo(source: sourceDS, destination: &destinationDS)
     

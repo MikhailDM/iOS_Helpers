@@ -6,8 +6,8 @@
 //
 //  View -> Interactor -> Presenter -> View
 //  Interactor -> Router -> View
-//  Data Store Access from View
-//  Data Store in Interactor
+//  Data Store Access From View
+//  Data Store Keeps In Interactor
 
 import UIKit
 

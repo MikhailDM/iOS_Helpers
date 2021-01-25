@@ -8,10 +8,10 @@
 import UIKit
 
 //MARK: - Presenter
-class ___VARIABLE_sceneName___Presenter: ___VARIABLE_sceneName___PresenterProtocol, ___VARIABLE_sceneName___PresenterLogicProtocol {
+class ___VARIABLE_sceneName___Presenter: ___VARIABLE_sceneName___PresenterDependencies, ___VARIABLE_sceneName___PresenterLogic {
     
     //MARK: - Properties
-    weak var view: ___VARIABLE_sceneName___ViewLogicProtocol?
+    weak var view: ___VARIABLE_sceneName___ViewLogic?
     
     //MARK: - Services
     

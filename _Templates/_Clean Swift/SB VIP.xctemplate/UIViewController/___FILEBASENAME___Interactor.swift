@@ -8,16 +8,16 @@
 import UIKit
 
 //MARK: - Protocol. Data Store
-protocol ___VARIABLE_sceneName___DataStoreProtocol: class {
+protocol ___VARIABLE_sceneName___DataStore: class {
     var data: Any? { get set }
 }
 
 //MARK: - Interactor
-class ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___InteractorProtocol, ___VARIABLE_sceneName___InteractorLogicProtocol, ___VARIABLE_sceneName___DataStoreProtocol  {
+class ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___InteractorDependencies, ___VARIABLE_sceneName___InteractorLogic, ___VARIABLE_sceneName___DataStore  {
     
     //MARK: - Properties
-    var presenter: ___VARIABLE_sceneName___PresenterLogicProtocol?
-    var router: ___VARIABLE_sceneName___RouterLogicProtocol?
+    var presenter: ___VARIABLE_sceneName___PresenterLogic?
+    var router: ___VARIABLE_sceneName___RouterLogic?
     
     //MARK: - Data Store
     var data: Any?
