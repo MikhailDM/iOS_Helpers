@@ -12,7 +12,6 @@ iOS - Helpers
 + [Iterators ](#Iterators)
 + [Kingfisher](#Kingfisher)
 + [OtherManagers](#OtherManagers)
-+ [ReusViews](#ReusViews)
 
 <br />
 <br />
@@ -64,12 +63,15 @@ Viper Pattern. Weather app with Storyboards
 <br />
 <br />
 
->## <a name="Templates"></a> Templates   
+>## <a name="Templates"></a> _Templates   
 Patterns for Xcode   
 Path: cd Library/Developer/Xcode/Templates/File Templates
 
 ### _Clean Swift
 Clean Swift Template
+
+### _Reusable View
+Reusable View Template
 
 ### _UITableView
 Templates for UITableView
@@ -134,12 +136,6 @@ Requests with RxAlamofire
 ### 02_WordCases
 Склоняем слова в зависимости от числа
 
-<br />
-<br />
-
->## <a name="ReusViews"></a> ReusViews
-### 01_SimpleView
-Простой Reusable View
 
 
 
