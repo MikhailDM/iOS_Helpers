@@ -34,5 +34,4 @@ class ___FILEBASENAME___: UITableViewCell {
     private func configureDesign() { }
     
     //MARK: - Rx
-    
-}//
+}
