@@ -9,10 +9,11 @@ import UIKit
 //import RxSwift
 
 //MARK: - View
-class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_sceneName___ViewProtocol, ___VARIABLE_sceneName___ViewLogicProtocol {
+class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_sceneName___ViewDependencies, ___VARIABLE_sceneName___ViewLogic {
     
     //MARK: - Configure
-    var presenter: (___VARIABLE_sceneName___PresenterLogicProtocol & ___VARIABLE_sceneName___DataStoreProtocol)?
+    var presenter: ___VARIABLE_sceneName___PresenterLogic?
+    var dataStore: ___VARIABLE_sceneName___DataStore?
     var configurator = ___VARIABLE_sceneName___Configurator()
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -31,7 +32,7 @@ class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_scen
         configureUITableView()
     }
     
-    deinit { print("===== DEINITED: ___VARIABLE_sceneName___ViewController") }
+    deinit { print("===== Deinited: ___VARIABLE_sceneName___ViewController") }
     
     //MARK: - Display
     func display(displayType: ___VARIABLE_sceneName___Logic.Action.Display.DisplayType) { }
@@ -73,5 +74,4 @@ extension ___VARIABLE_sceneName___ViewController: UITableViewDelegate, UITableVi
 //            return cell
 //        }
     }
-    
-}//
+}
