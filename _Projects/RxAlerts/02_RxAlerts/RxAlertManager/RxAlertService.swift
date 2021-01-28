@@ -6,55 +6,48 @@
 //
 
 import UIKit
-import RxSwift
 
-struct RxAlertService {
+//MARK: - Protocol. Alert Service
+protocol AlertServiceLogic {
+    func showCustomAlert(controller: UIViewController, title: String, message: String, style: UIAlertController.Style,
+                                   actions: [(button: AlertServiceActionButtons, style: UIAlertAction.Style)],
+                                   _ completion: @escaping (AlertServiceActionButtons) -> ())
+}
+
+//MARK: - Buttons
+enum AlertServiceActionButtons {
+    case ok
+    case cancel
+    case retry
     
-    //MARK: - Properties
-    let texts = Texts()
-    
-    //MARK: - Buttons
-    enum ActionButton: String {
-        case ok = "Ок"
-        case cancel = "Отменить"
-        case retry = "Повторить"
-    }
-    
-    //MARK: - Messages
-    struct Texts {
-        let empty = ""
-        let titles = Titles()
-        let messages = Messages()
-       
-        struct Titles {
-            let ok = "Ok Title"
-            let okRetry = "Ok/Retry Title"
-            let okRetryCancel = "Ok/Retry/Cancel Title"
-        }
-        
-        struct Messages {
-            let ok = "Ok Message"
-            let okRetry = "Ok/Retry Message"
-            let okRetryCancel = "Ok/Retry/Message"
+    var localizedButtonText: String {
+        switch self {
+        case .ok:       return "Ок"
+        case .cancel:   return "Отменить"
+        case .retry:    return "Повторить"
         }
     }
+}
+
+//MARK: - Completion Alert Service
+struct AlertService: AlertServiceLogic {
     
     //MARK: - Universal Alert
-    /// Show custom alert
-    /// - Parameters:
-    ///   - controller: UIViewController
-    ///   - title: String
-    ///   - message: String
-    ///   - preferredStyle: Type of present
-    ///   - actions: Type/Types of actions buttons
-    /// - Returns: Type/Types of pressed buttons
-    func showCustomAlert(controller: UIViewController, title: String, message: String, preferredStyle: UIAlertController.Style, actions: [(button: ActionButton, style: UIAlertAction.Style)]) -> Observable<ActionButton> {
-        Observable<ActionButton>.create { observer in
-            let alertVC = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
-            actions.forEach { action, style in alertVC.addAction(UIAlertAction(title: action.rawValue, style: style, handler: { _ in observer.onNext(action) })) }
-            controller.present(alertVC, animated: true, completion: nil)
-            return Disposables.create()
-        }
+    func showCustomAlert(controller: UIViewController, title: String, message: String, style: UIAlertController.Style,
+                                   actions: [(button: AlertServiceActionButtons, style: UIAlertAction.Style)], _ completion: @escaping (AlertServiceActionButtons) -> ()) {
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: style)
+        actions.forEach { action, style in alertVC.addAction(UIAlertAction(title: action.localizedButtonText, style: style, handler: { _ in completion(action) })) }
+        controller.present(alertVC, animated: true, completion: nil)
     }
-    
-}//
+}
+
+//RxVersion
+//func showCustomAlert(controller: UIViewController, title: String, message: String, preferredStyle: UIAlertController.Style,
+//                     actions: [(button: AlertServiceActionButtons, style: UIAlertAction.Style)]) -> Observable<AlertServiceActionButtons> {
+//    Observable<AlertServiceActionButtons>.create { observer in
+//        let alertVC = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
+//        actions.forEach { action, style in alertVC.addAction(UIAlertAction(title: action.rawValue, style: style, handler: { _ in observer.onNext(action) })) }
+//        controller.present(alertVC, animated: true, completion: nil)
+//        return Disposables.create()
+//    }
+//}
