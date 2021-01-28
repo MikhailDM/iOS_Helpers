@@ -132,7 +132,7 @@
 		275DFDFD255FB4CD0026CC1D /* 02_RxAlerts */ = {
 			isa = PBXGroup;
 			children = (
-				275DFE6B255FB8AF0026CC1D /* RxAlertManager */,
+				275DFE6B255FB8AF0026CC1D /* AlertService */,
 				275DFE49255FB57F0026CC1D /* First */,
 				275DFE53255FB6340026CC1D /* Second */,
 				275DFDFE255FB4CD0026CC1D /* AppDelegate.swift */,
@@ -190,12 +190,12 @@
 			path = Second;
 			sourceTree = "<group>";
 		};
-		275DFE6B255FB8AF0026CC1D /* RxAlertManager */ = {
+		275DFE6B255FB8AF0026CC1D /* AlertService */ = {
 			isa = PBXGroup;
 			children = (
 				275DFE6C255FB8C00026CC1D /* AlertService.swift */,
 			);
-			path = RxAlertManager;
+			path = AlertService;
 			sourceTree = "<group>";
 		};
 		3B294AAE04D8FD2C9328F917 /* Pods */ = {

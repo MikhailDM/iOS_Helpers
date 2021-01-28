@@ -16,14 +16,14 @@ iOS - Helpers
 <br />
 
 >## <a name="Projects"></a> _Projects
+### AlertService
+Универсальный сервис для создания UIAlertController в лучших традициях SOLID
+
 ### Calendar. UICollectionView
 Календарь на UICollectionView
 
 ### RxAndCS
 Мультипроект по работе с CleanSwift/RxSwift/RxAlamofire
-
-### RxAlerts
-Универсальный менеджер для создания UIAlert через Rx
 
 <br />
 <br />
