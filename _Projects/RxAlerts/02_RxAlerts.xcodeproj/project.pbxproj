@@ -28,7 +28,7 @@
 		275DFE5F255FB6420026CC1D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275DFE58255FB6420026CC1D /* SecondViewController.swift */; };
 		275DFE60255FB6420026CC1D /* SecondInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275DFE59255FB6420026CC1D /* SecondInteractor.swift */; };
 		275DFE61255FB6420026CC1D /* SecondConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275DFE5A255FB6420026CC1D /* SecondConfigurator.swift */; };
-		275DFE6D255FB8C00026CC1D /* RxAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275DFE6C255FB8C00026CC1D /* RxAlertService.swift */; };
+		275DFE6D255FB8C00026CC1D /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275DFE6C255FB8C00026CC1D /* AlertService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +75,7 @@
 		275DFE58255FB6420026CC1D /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		275DFE59255FB6420026CC1D /* SecondInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondInteractor.swift; sourceTree = "<group>"; };
 		275DFE5A255FB6420026CC1D /* SecondConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondConfigurator.swift; sourceTree = "<group>"; };
-		275DFE6C255FB8C00026CC1D /* RxAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxAlertService.swift; sourceTree = "<group>"; };
+		275DFE6C255FB8C00026CC1D /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		28D66929C1CE6F767939AD41 /* Pods-02_RxAlerts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-02_RxAlerts.debug.xcconfig"; path = "Target Support Files/Pods-02_RxAlerts/Pods-02_RxAlerts.debug.xcconfig"; sourceTree = "<group>"; };
 		6C030217323FA8DBE5912466 /* Pods-02_RxAlerts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-02_RxAlerts.release.xcconfig"; path = "Target Support Files/Pods-02_RxAlerts/Pods-02_RxAlerts.release.xcconfig"; sourceTree = "<group>"; };
 		E130D10976EBB43E4496C6CE /* Pods_02_RxAlerts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_02_RxAlerts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,7 +193,7 @@
 		275DFE6B255FB8AF0026CC1D /* RxAlertManager */ = {
 			isa = PBXGroup;
 			children = (
-				275DFE6C255FB8C00026CC1D /* RxAlertService.swift */,
+				275DFE6C255FB8C00026CC1D /* AlertService.swift */,
 			);
 			path = RxAlertManager;
 			sourceTree = "<group>";
@@ -397,7 +397,7 @@
 				275DFE61255FB6420026CC1D /* SecondConfigurator.swift in Sources */,
 				275DFE5E255FB6420026CC1D /* SecondModels.swift in Sources */,
 				275DFE5F255FB6420026CC1D /* SecondViewController.swift in Sources */,
-				275DFE6D255FB8C00026CC1D /* RxAlertService.swift in Sources */,
+				275DFE6D255FB8C00026CC1D /* AlertService.swift in Sources */,
 				275DFE01255FB4CD0026CC1D /* SceneDelegate.swift in Sources */,
 				275DFE41255FB57A0026CC1D /* FirstRouter.swift in Sources */,
 				275DFE40255FB57A0026CC1D /* FirstPresenter.swift in Sources */,
