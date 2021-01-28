@@ -17,7 +17,7 @@ iOS - Helpers
 <br />
 
 >## <a name="EKP"></a> _EKP
-### 01_LoginNavigation
+### LoginNavigation
 Навигация к экрану логина
 
 <br />
@@ -64,7 +64,7 @@ Viper Pattern. Weather app with Storyboards
 <br />
 
 >## <a name="Templates"></a> _Templates   
-Patterns for Xcode   
+Templates for Xcode   
 Path: cd Library/Developer/Xcode/Templates/File Templates
 
 ### _Clean Swift
@@ -74,7 +74,7 @@ Clean Swift Template
 Reusable View Template
 
 ### _UITableView
-Templates for UITableView
+UITableView Cell Template
 
 ### _Viper
 Viper Template
