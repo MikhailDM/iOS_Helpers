@@ -80,26 +80,38 @@ class SecondViewController: UIViewController, SecondDisplayLogic {
     
     //MARK: - Alerts
     private func showOkAlert() {
-        alerts.showCustomAlert(controller: self, title: "", message: "Message", style: .actionSheet,
-                               actions: [(button: .ok, style: .default)]) { [weak self] buttonPressed in
-            if buttonPressed == .ok { print("===== OK PRESSED"); self?.navigationController?.popViewController(animated: true) }
-        }
+        let ok = AlertButtons.OkAlertButton(style: .default) { [weak self] in self?.navigationController?.popViewController(animated: true) }
+        AlertService().showCustomAlertSOLID(controller: self, title: "", message: "Message", preferredStyle: .alert, buttons: [ok])
+        
+//        AlertService().showCustomAlertSOLID(controller: self, title: "", message: "Message", style: .alert, actions: [(button: AlertButtons.OkAlertButton(, buttonPressed: () -> ()), style: .default)]) { _ in
+//            let sadfsd = AlertServiceActionButtons
+//        }
+        
+//        alerts.showCustomAlert(controller: self, title: "", message: "Message", style: .alert,
+//                               actions: [(button: .ok, style: .default)]) { [weak self] buttonPressed in
+//            if buttonPressed == .ok { print("===== OK PRESSED"); self?.navigationController?.popViewController(animated: true) }
+//        }
+        
+//        alerts.showCustomAlert(controller: self, title: "", message: "Message", style: .alert,
+//                               actions: [(button: .ok, style: .default)]) { [weak self] buttonPressed in
+//            if buttonPressed == .ok { print("===== OK PRESSED"); self?.navigationController?.popViewController(animated: true) }
+//        }
     }
     
     private func showRetryAlert() {
-        alerts.showCustomAlert(controller: self, title: "", message: "Message", style: .actionSheet,
-                               actions: [(button: .ok, style: .default), (button: .retry, style: .default)]) { [weak self] buttonPressed in
-            if buttonPressed == .ok { print("===== OK PRESSED"); self?.navigationController?.popViewController(animated: true) }
-            if buttonPressed == .retry { print("===== RETRY PRESSED") }
-        }
+//        alerts.showCustomAlert(controller: self, title: "", message: "Message", style: .actionSheet,
+//                               actions: [(button: .ok, style: .default), (button: .retry, style: .default)]) { [weak self] buttonPressed in
+//            if buttonPressed == .ok { print("===== OK PRESSED"); self?.navigationController?.popViewController(animated: true) }
+//            if buttonPressed == .retry { print("===== RETRY PRESSED") }
+//        }
     }
     
     private func showMultiButtonsAlert() {
-        alerts.showCustomAlert(controller: self, title: "", message: "Message", style: .actionSheet,
-                               actions: [(button: .ok, style: .default), (button: .retry, style: .destructive), (button: .cancel, style: .cancel)]) { [weak self] buttonPressed in
-            if buttonPressed == .ok { print("===== OK PRESSED"); self?.navigationController?.popViewController(animated: true) }
-            if buttonPressed == .retry { print("===== RETRY PRESSED") }
-            if buttonPressed == .cancel { print("===== CANCEL PRESSED") }
-        }
+//        alerts.showCustomAlert(controller: self, title: "", message: "Message", style: .actionSheet,
+//                               actions: [(button: .ok, style: .default), (button: .retry, style: .destructive), (button: .cancel, style: .cancel)]) { [weak self] buttonPressed in
+//            if buttonPressed == .ok { print("===== OK PRESSED"); self?.navigationController?.popViewController(animated: true) }
+//            if buttonPressed == .retry { print("===== RETRY PRESSED") }
+//            if buttonPressed == .cancel { print("===== CANCEL PRESSED") }
+//        }
     }
 }
