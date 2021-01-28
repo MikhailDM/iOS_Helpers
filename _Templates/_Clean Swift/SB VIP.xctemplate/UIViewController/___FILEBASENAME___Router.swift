@@ -21,21 +21,16 @@ class ___VARIABLE_sceneName___Router: ___VARIABLE_sceneName___RouterDependencies
     //MARK: - Route
     func routeTo() { }
     
-//    let storyboard = UIStoryboard(name: "DestinationSB", bundle: nil)
 //    guard let sourceVC = view,
 //          let sourceDS = view?.dataStore,
-//          let destinationVC = storyboard.instantiateViewController(withIdentifier: "UIViewController") as? UIViewController,
+//          let destinationVC = UIStoryboard(name: "Second", bundle: nil)
+//            .instantiateViewController(withIdentifier: "SecondViewController") as? SecondViewController,
 //          var destinationDS = destinationVC.dataStore else { print("===== Navigation Fail"); return }
-//    navigateTo(source: sourceVC, destination: destinationVC)
 //    passDataTo(source: sourceDS, destination: &destinationDS)
-    
-    //MARK: - Navigation
-//    private func navigateTo(source: ___VARIABLE_sceneName___ViewController, destination: UIViewController) {
-//        source.navigationController?.pushViewController(destination as UIViewController, animated: true)
-//    }
+//    sourceVC.navigationController?.pushViewController(destinationVC, animated: true)
     
     //MARK: - Passing Data
-//    private func passDataTo(source: ___VARIABLE_sceneName___DataStoreProtocol, destination: inout DestinationDataStoreProtocol) {
+//    private func passDataTo(source: ___VARIABLE_sceneName___DataStore, destination: inout DestinationDataStore) {
 //        destination.data = source.data
 //    }
 }
