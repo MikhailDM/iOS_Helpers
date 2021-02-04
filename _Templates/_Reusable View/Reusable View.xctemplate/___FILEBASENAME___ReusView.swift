@@ -7,6 +7,7 @@
 
 import UIKit
 
+@IBDesignable
 class ___VARIABLE_sceneName___ReusView: UIView {
     
     //MARK: - Outlets
