@@ -37,19 +37,19 @@ struct AlertButtons {
     }
     
     //MARK: - Button Models
-    struct OkAlertButton: AlertButton {
+    private struct OkAlertButton: AlertButton {
         var name: String = "Ок"
         var style: UIAlertAction.Style
         var buttonPressed: () -> ()
     }
 
-    struct CancelAlertButton: AlertButton {
+    private struct CancelAlertButton: AlertButton {
         var name: String = "Отменить"
         var style: UIAlertAction.Style
         var buttonPressed: () -> ()
     }
     
-    struct RetryAlertButton: AlertButton {
+    private struct RetryAlertButton: AlertButton {
         var name: String = "Повторить"
         var style: UIAlertAction.Style
         var buttonPressed: () -> ()
