@@ -22,8 +22,14 @@ iOS - Helpers
 ### Calendar. UICollectionView
 Календарь на UICollectionView
 
-### RxAndCS
-Мультипроект по работе с CleanSwift/RxSwift/RxAlamofire
+### UITV_CalculatedCells
+Ячейки по размеру экрана
+
+### XIB_CSWithoutSB
+CleanSwift with .xib
+
+### XIB_WithoutSB
+Simple Project with .xib
 
 <br />
 <br />

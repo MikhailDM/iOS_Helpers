@@ -82,7 +82,7 @@ extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
         case .SingleCalculated:
             interactor?.interactorRequest(requestType: .routeToSingle)
         case .MultipleCalculated:
-            print("Route2")
+            interactor?.interactorRequest(requestType: .routeToMultiple)
         }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  FirstLogic.swift
+//  MutiCellsLogic.swift
 //  CalculatedCells
 //
 //  Created by Mikhail Dmitriev on 05.02.2021
@@ -12,14 +12,13 @@
 import UIKit
 
 //MARK: - Logic
-enum FirstLogic {
+enum MutiCellsLogic {
     
     //MARK: - Actions
     enum Action {
         struct InteractorRequest {
             enum RequestType {
-                case routeToSingle
-                case routeToMultiple
+                case some
             }
         }
         

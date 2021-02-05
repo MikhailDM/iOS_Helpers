@@ -29,6 +29,9 @@ class FirstInteractor: FirstInteractorDependencies, FirstInteractorLogic, FirstD
         switch requestType {
         case .routeToSingle:
             router?.routeToSingle()
+            
+        case .routeToMultiple:
+            router?.routeToMultiple()
         }
     }
 }

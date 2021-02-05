@@ -31,6 +31,20 @@
 		27B8297F25CD4B830026684E /* SingleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27B8297725CD4B830026684E /* SingleViewController.xib */; };
 		27B8298425CD4BDA0026684E /* SingleScreenTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8298225CD4BDA0026684E /* SingleScreenTVCell.swift */; };
 		27B8298525CD4BDA0026684E /* SingleScreenTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27B8298325CD4BDA0026684E /* SingleScreenTVCell.xib */; };
+		27B8299225CD7B550026684E /* MutiCellsLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8298A25CD7B550026684E /* MutiCellsLogic.swift */; };
+		27B8299325CD7B550026684E /* MutiCellsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8298B25CD7B550026684E /* MutiCellsPresenter.swift */; };
+		27B8299425CD7B550026684E /* MutiCellsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8298C25CD7B550026684E /* MutiCellsRouter.swift */; };
+		27B8299525CD7B550026684E /* MutiCellsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8298D25CD7B550026684E /* MutiCellsViewController.swift */; };
+		27B8299625CD7B550026684E /* MutiCellsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8298E25CD7B550026684E /* MutiCellsInteractor.swift */; };
+		27B8299725CD7B550026684E /* MutiCellsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8298F25CD7B550026684E /* MutiCellsConfigurator.swift */; };
+		27B8299825CD7B550026684E /* MutiCellsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8299025CD7B550026684E /* MutiCellsEntity.swift */; };
+		27B8299925CD7B550026684E /* MutiCellsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27B8299125CD7B550026684E /* MutiCellsViewController.xib */; };
+		27B8299E25CD7B8F0026684E /* MultiCellsFirstTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B8299C25CD7B8F0026684E /* MultiCellsFirstTVCell.swift */; };
+		27B8299F25CD7B8F0026684E /* MultiCellsFirstTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27B8299D25CD7B8F0026684E /* MultiCellsFirstTVCell.xib */; };
+		27B829A325CD7BA30026684E /* MultiCellsSecondTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B829A125CD7BA30026684E /* MultiCellsSecondTVCell.swift */; };
+		27B829A425CD7BA30026684E /* MultiCellsSecondTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27B829A225CD7BA30026684E /* MultiCellsSecondTVCell.xib */; };
+		27B829A825CD7BB10026684E /* MultiCellsBottomTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B829A625CD7BB10026684E /* MultiCellsBottomTVCell.swift */; };
+		27B829A925CD7BB10026684E /* MultiCellsBottomTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27B829A725CD7BB10026684E /* MultiCellsBottomTVCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +74,20 @@
 		27B8297725CD4B830026684E /* SingleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleViewController.xib; sourceTree = "<group>"; };
 		27B8298225CD4BDA0026684E /* SingleScreenTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleScreenTVCell.swift; sourceTree = "<group>"; };
 		27B8298325CD4BDA0026684E /* SingleScreenTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleScreenTVCell.xib; sourceTree = "<group>"; };
+		27B8298A25CD7B550026684E /* MutiCellsLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutiCellsLogic.swift; sourceTree = "<group>"; };
+		27B8298B25CD7B550026684E /* MutiCellsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutiCellsPresenter.swift; sourceTree = "<group>"; };
+		27B8298C25CD7B550026684E /* MutiCellsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutiCellsRouter.swift; sourceTree = "<group>"; };
+		27B8298D25CD7B550026684E /* MutiCellsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutiCellsViewController.swift; sourceTree = "<group>"; };
+		27B8298E25CD7B550026684E /* MutiCellsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutiCellsInteractor.swift; sourceTree = "<group>"; };
+		27B8298F25CD7B550026684E /* MutiCellsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutiCellsConfigurator.swift; sourceTree = "<group>"; };
+		27B8299025CD7B550026684E /* MutiCellsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutiCellsEntity.swift; sourceTree = "<group>"; };
+		27B8299125CD7B550026684E /* MutiCellsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MutiCellsViewController.xib; sourceTree = "<group>"; };
+		27B8299C25CD7B8F0026684E /* MultiCellsFirstTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiCellsFirstTVCell.swift; sourceTree = "<group>"; };
+		27B8299D25CD7B8F0026684E /* MultiCellsFirstTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultiCellsFirstTVCell.xib; sourceTree = "<group>"; };
+		27B829A125CD7BA30026684E /* MultiCellsSecondTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiCellsSecondTVCell.swift; sourceTree = "<group>"; };
+		27B829A225CD7BA30026684E /* MultiCellsSecondTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultiCellsSecondTVCell.xib; sourceTree = "<group>"; };
+		27B829A625CD7BB10026684E /* MultiCellsBottomTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiCellsBottomTVCell.swift; sourceTree = "<group>"; };
+		27B829A725CD7BB10026684E /* MultiCellsBottomTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultiCellsBottomTVCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +120,7 @@
 		27B8293B25CD46690026684E /* CalculatedCells */ = {
 			isa = PBXGroup;
 			children = (
+				27B8298925CD7B3F0026684E /* MultiCells */,
 				27B8296F25CD4B5B0026684E /* SingleCell */,
 				27B8295225CD468A0026684E /* First */,
 				27B8296625CD47410026684E /* Support */,
@@ -161,6 +190,35 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		27B8298925CD7B3F0026684E /* MultiCells */ = {
+			isa = PBXGroup;
+			children = (
+				27B8299B25CD7B6B0026684E /* Cells */,
+				27B8299125CD7B550026684E /* MutiCellsViewController.xib */,
+				27B8298D25CD7B550026684E /* MutiCellsViewController.swift */,
+				27B8298A25CD7B550026684E /* MutiCellsLogic.swift */,
+				27B8298B25CD7B550026684E /* MutiCellsPresenter.swift */,
+				27B8298C25CD7B550026684E /* MutiCellsRouter.swift */,
+				27B8298E25CD7B550026684E /* MutiCellsInteractor.swift */,
+				27B8298F25CD7B550026684E /* MutiCellsConfigurator.swift */,
+				27B8299025CD7B550026684E /* MutiCellsEntity.swift */,
+			);
+			path = MultiCells;
+			sourceTree = "<group>";
+		};
+		27B8299B25CD7B6B0026684E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				27B8299C25CD7B8F0026684E /* MultiCellsFirstTVCell.swift */,
+				27B8299D25CD7B8F0026684E /* MultiCellsFirstTVCell.xib */,
+				27B829A125CD7BA30026684E /* MultiCellsSecondTVCell.swift */,
+				27B829A225CD7BA30026684E /* MultiCellsSecondTVCell.xib */,
+				27B829A625CD7BB10026684E /* MultiCellsBottomTVCell.swift */,
+				27B829A725CD7BB10026684E /* MultiCellsBottomTVCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -220,10 +278,14 @@
 			files = (
 				27B8296D25CD48640026684E /* FirstScreenTVCell.xib in Resources */,
 				27B8298525CD4BDA0026684E /* SingleScreenTVCell.xib in Resources */,
+				27B829A425CD7BA30026684E /* MultiCellsSecondTVCell.xib in Resources */,
+				27B8299F25CD7B8F0026684E /* MultiCellsFirstTVCell.xib in Resources */,
+				27B829A925CD7BB10026684E /* MultiCellsBottomTVCell.xib in Resources */,
 				27B8294925CD46690026684E /* LaunchScreen.storyboard in Resources */,
 				27B8297F25CD4B830026684E /* SingleViewController.xib in Resources */,
 				27B8294625CD46690026684E /* Assets.xcassets in Resources */,
 				27B8296225CD469C0026684E /* FirstViewController.xib in Resources */,
+				27B8299925CD7B550026684E /* MutiCellsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,22 +298,32 @@
 			files = (
 				27B8295B25CD469C0026684E /* FirstLogic.swift in Sources */,
 				27B8293D25CD46690026684E /* AppDelegate.swift in Sources */,
+				27B8299E25CD7B8F0026684E /* MultiCellsFirstTVCell.swift in Sources */,
 				27B8295F25CD469C0026684E /* FirstInteractor.swift in Sources */,
+				27B8299725CD7B550026684E /* MutiCellsConfigurator.swift in Sources */,
 				27B8297C25CD4B830026684E /* SingleInteractor.swift in Sources */,
+				27B8299225CD7B550026684E /* MutiCellsLogic.swift in Sources */,
+				27B8299325CD7B550026684E /* MutiCellsPresenter.swift in Sources */,
 				27B8295C25CD469C0026684E /* FirstPresenter.swift in Sources */,
 				27B8297B25CD4B830026684E /* SingleViewController.swift in Sources */,
 				27B8297A25CD4B830026684E /* SingleRouter.swift in Sources */,
 				27B8296C25CD48640026684E /* FirstScreenTVCell.swift in Sources */,
 				27B8297D25CD4B830026684E /* SingleConfigurator.swift in Sources */,
+				27B8299625CD7B550026684E /* MutiCellsInteractor.swift in Sources */,
 				27B8297825CD4B830026684E /* SingleLogic.swift in Sources */,
 				27B8296125CD469C0026684E /* FirstEntity.swift in Sources */,
+				27B829A825CD7BB10026684E /* MultiCellsBottomTVCell.swift in Sources */,
+				27B8299425CD7B550026684E /* MutiCellsRouter.swift in Sources */,
 				27B8293F25CD46690026684E /* SceneDelegate.swift in Sources */,
 				27B8295D25CD469C0026684E /* FirstRouter.swift in Sources */,
+				27B829A325CD7BA30026684E /* MultiCellsSecondTVCell.swift in Sources */,
 				27B8297E25CD4B830026684E /* SingleEntity.swift in Sources */,
 				27B8295E25CD469C0026684E /* FirstViewController.swift in Sources */,
+				27B8299825CD7B550026684E /* MutiCellsEntity.swift in Sources */,
 				27B8297925CD4B830026684E /* SinglePresenter.swift in Sources */,
 				27B8296025CD469C0026684E /* FirstConfigurator.swift in Sources */,
 				27B8298425CD4BDA0026684E /* SingleScreenTVCell.swift in Sources */,
+				27B8299525CD7B550026684E /* MutiCellsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

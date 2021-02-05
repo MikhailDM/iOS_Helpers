@@ -10,6 +10,7 @@ import UIKit
 //MARK: - Protocol. Interactor -> Another View
 protocol FirstRouterLogic: class {
     func routeToSingle()
+    func routeToMultiple()
 }
 
 //MARK: - Router
@@ -21,6 +22,11 @@ class FirstRouter: FirstRouterDependencies, FirstRouterLogic {
     //MARK: - Route
     func routeToSingle() {
         let destinationVC = SingleViewController(nibName: "SingleViewController", bundle: nil)
+        view?.navigationController?.pushViewController(destinationVC, animated: true)
+    }
+    
+    func routeToMultiple() {
+        let destinationVC = MutiCellsViewController(nibName: "MutiCellsViewController", bundle: nil)
         view?.navigationController?.pushViewController(destinationVC, animated: true)
     }
 
