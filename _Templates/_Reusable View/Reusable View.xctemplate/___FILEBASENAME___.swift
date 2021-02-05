@@ -8,7 +8,7 @@
 import UIKit
 
 @IBDesignable
-class ___VARIABLE_sceneName___ReusView: UIView {
+class ___VARIABLE_sceneName___: UIView {
     
     //MARK: - Outlets
     
@@ -25,8 +25,8 @@ class ___VARIABLE_sceneName___ReusView: UIView {
     
     //MARK: - Load
     func loadView() {
-        let bundle = Bundle(for: ___VARIABLE_sceneName___ReusView.self)
-        let nib = UINib(nibName: "___VARIABLE_sceneName___ReusView", bundle: bundle)
+        let bundle = Bundle(for: ___VARIABLE_sceneName___.self)
+        let nib = UINib(nibName: "___VARIABLE_sceneName___", bundle: bundle)
         let view = nib.instantiate(withOwner: self).first as! UIView
         view.frame = bounds
         addSubview(view)
