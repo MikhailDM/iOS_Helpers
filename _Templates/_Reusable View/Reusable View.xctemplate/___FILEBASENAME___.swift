@@ -31,4 +31,8 @@ class ___VARIABLE_sceneName___: UIView {
         view.frame = bounds
         addSubview(view)
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
 }
