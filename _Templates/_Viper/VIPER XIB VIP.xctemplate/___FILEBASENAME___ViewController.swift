@@ -57,8 +57,7 @@ class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_scen
     }
     
     //MARK: - Rx
-    
-}//
+}
 
 //MARK: - Extension. UITableView
 extension ___VARIABLE_sceneName___ViewController: UITableViewDelegate, UITableViewDataSource {

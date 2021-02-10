@@ -23,16 +23,16 @@ class ___VARIABLE_sceneName___: UIView {
         loadView()
     }
     
-    //MARK: - Load
-    func loadView() {
+    override func prepareForInterfaceBuilder() {
+        loadView()
+    }
+    
+    //MARK: - Private
+    private func loadView() {
         let bundle = Bundle(for: ___VARIABLE_sceneName___.self)
         let nib = UINib(nibName: "___VARIABLE_sceneName___", bundle: bundle)
         let view = nib.instantiate(withOwner: self).first as! UIView
         view.frame = bounds
         addSubview(view)
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
     }
 }
