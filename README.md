@@ -16,6 +16,9 @@ iOS - Helpers
 <br />
 
 >## <a name="Projects"></a> _Projects
+### _GCD
+Работа с GCD/Operations/RxSchedulers
+
 ### AlertService
 Универсальный сервис для создания UIAlertController в лучших традициях SOLID
 
