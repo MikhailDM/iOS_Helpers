@@ -16,12 +16,12 @@ class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_scen
     var dataStore: ___VARIABLE_sceneName___DataStore?
     var configurator = ___VARIABLE_sceneName___Configurator()
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    init() {
+        super.init(nibName: "___VARIABLE_sceneName___ViewController", bundle: nil)
         configurator.configure(with: self)
     }
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         configurator.configure(with: self)
     }
     
