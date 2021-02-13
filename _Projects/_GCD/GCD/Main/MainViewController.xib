@@ -19,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="0EH-CU-lYP">
-                    <rect key="frame" x="143" y="355" width="128" height="186"/>
+                    <rect key="frame" x="143" y="329" width="128" height="238"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9z-VH-f0P">
                             <rect key="frame" x="0.0" y="0.0" width="128" height="30"/>
@@ -42,11 +42,18 @@
                                 <action selector="operationsButoonPressed:" destination="-1" eventType="touchUpInside" id="irK-nM-T9b"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dS9-sN-T0W" userLabel="Operations">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dS9-sN-T0W">
                             <rect key="frame" x="0.0" y="156" width="128" height="30"/>
                             <state key="normal" title="Problems"/>
                             <connections>
                                 <action selector="problemsButtonPressed:" destination="-1" eventType="touchUpInside" id="B70-67-f6a"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RWx-2c-0Ok" userLabel="RxSchedulers">
+                            <rect key="frame" x="0.0" y="208" width="128" height="30"/>
+                            <state key="normal" title="RxSchedulers"/>
+                            <connections>
+                                <action selector="rxSchedulersButtonPressed:" destination="-1" eventType="touchUpInside" id="l2n-cE-Vjb"/>
                             </connections>
                         </button>
                     </subviews>

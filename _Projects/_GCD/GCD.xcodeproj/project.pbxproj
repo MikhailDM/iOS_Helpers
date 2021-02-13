@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,11 @@
 		2710329025D7CFF100884027 /* OperationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2710328E25D7CFF100884027 /* OperationsViewController.xib */; };
 		2710329B25D7E51A00884027 /* ProblemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710329925D7E51A00884027 /* ProblemsViewController.swift */; };
 		2710329C25D7E51A00884027 /* ProblemsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2710329A25D7E51A00884027 /* ProblemsViewController.xib */; };
+		271032A325D7EDB300884027 /* RxSchedulersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271032A125D7EDB300884027 /* RxSchedulersViewController.swift */; };
+		271032A425D7EDB300884027 /* RxSchedulersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 271032A225D7EDB300884027 /* RxSchedulersViewController.xib */; };
+		271032A825D7EE3B00884027 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 271032A725D7EE3B00884027 /* RxSwift */; };
+		271032AA25D7EE3B00884027 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 271032A925D7EE3B00884027 /* RxCocoa */; };
+		271032AC25D7EE3B00884027 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 271032AB25D7EE3B00884027 /* RxRelay */; };
 		2777BD4F25D5624500D1E1BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2777BD4E25D5624500D1E1BE /* AppDelegate.swift */; };
 		2777BD5125D5624500D1E1BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2777BD5025D5624500D1E1BE /* SceneDelegate.swift */; };
 		2777BD5925D5624500D1E1BE /* GCD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2777BD5725D5624500D1E1BE /* GCD.xcdatamodeld */; };
@@ -31,6 +36,8 @@
 		2710328E25D7CFF100884027 /* OperationsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OperationsViewController.xib; sourceTree = "<group>"; };
 		2710329925D7E51A00884027 /* ProblemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemsViewController.swift; sourceTree = "<group>"; };
 		2710329A25D7E51A00884027 /* ProblemsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProblemsViewController.xib; sourceTree = "<group>"; };
+		271032A125D7EDB300884027 /* RxSchedulersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSchedulersViewController.swift; sourceTree = "<group>"; };
+		271032A225D7EDB300884027 /* RxSchedulersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxSchedulersViewController.xib; sourceTree = "<group>"; };
 		2777BD4B25D5624500D1E1BE /* GCD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GCD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2777BD4E25D5624500D1E1BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2777BD5025D5624500D1E1BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +56,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				271032AC25D7EE3B00884027 /* RxRelay in Frameworks */,
+				271032AA25D7EE3B00884027 /* RxCocoa in Frameworks */,
+				271032A825D7EE3B00884027 /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +92,15 @@
 			path = Problems;
 			sourceTree = "<group>";
 		};
+		2710329F25D7ED5900884027 /* RxSchedulers */ = {
+			isa = PBXGroup;
+			children = (
+				271032A125D7EDB300884027 /* RxSchedulersViewController.swift */,
+				271032A225D7EDB300884027 /* RxSchedulersViewController.xib */,
+			);
+			path = RxSchedulers;
+			sourceTree = "<group>";
+		};
 		2777BD4225D5624500D1E1BE = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +125,7 @@
 				2710328625D7B2C400884027 /* Queues */,
 				2710328C25D7CFDC00884027 /* Operations */,
 				2710329325D7E4F700884027 /* Problems */,
+				2710329F25D7ED5900884027 /* RxSchedulers */,
 				2777BD6925D562A600D1E1BE /* Support */,
 			);
 			path = GCD;
@@ -158,6 +178,11 @@
 			dependencies = (
 			);
 			name = GCD;
+			packageProductDependencies = (
+				271032A725D7EE3B00884027 /* RxSwift */,
+				271032A925D7EE3B00884027 /* RxCocoa */,
+				271032AB25D7EE3B00884027 /* RxRelay */,
+			);
 			productName = GCD;
 			productReference = 2777BD4B25D5624500D1E1BE /* GCD.app */;
 			productType = "com.apple.product-type.application";
@@ -185,6 +210,9 @@
 				Base,
 			);
 			mainGroup = 2777BD4225D5624500D1E1BE;
+			packageReferences = (
+				271032A625D7EE3B00884027 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 2777BD4C25D5624500D1E1BE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -201,6 +229,7 @@
 			files = (
 				2710329C25D7E51A00884027 /* ProblemsViewController.xib in Resources */,
 				27880CA125D5642600124E37 /* ThreadViewController.xib in Resources */,
+				271032A425D7EDB300884027 /* RxSchedulersViewController.xib in Resources */,
 				2777BD5E25D5624600D1E1BE /* LaunchScreen.storyboard in Resources */,
 				2710329025D7CFF100884027 /* OperationsViewController.xib in Resources */,
 				2777BD6F25D562FF00D1E1BE /* MainViewController.xib in Resources */,
@@ -218,6 +247,7 @@
 			files = (
 				2710328925D7B2DF00884027 /* QueuesViewController.swift in Sources */,
 				2777BD4F25D5624500D1E1BE /* AppDelegate.swift in Sources */,
+				271032A325D7EDB300884027 /* RxSchedulersViewController.swift in Sources */,
 				2710329B25D7E51A00884027 /* ProblemsViewController.swift in Sources */,
 				2777BD5925D5624500D1E1BE /* GCD.xcdatamodeld in Sources */,
 				27880CA025D5642600124E37 /* ThreadViewController.swift in Sources */,
@@ -417,6 +447,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		271032A625D7EE3B00884027 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		271032A725D7EE3B00884027 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 271032A625D7EE3B00884027 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		271032A925D7EE3B00884027 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 271032A625D7EE3B00884027 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		271032AB25D7EE3B00884027 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 271032A625D7EE3B00884027 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		2777BD5725D5624500D1E1BE /* GCD.xcdatamodeld */ = {

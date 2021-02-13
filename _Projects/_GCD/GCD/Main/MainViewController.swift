@@ -28,4 +28,8 @@ class MainViewController: UIViewController {
     @IBAction func problemsButtonPressed(_ sender: UIButton) {
         navigationController?.pushViewController(ProblemsViewController(), animated: true)
     }
+    
+    @IBAction func rxSchedulersButtonPressed(_ sender: UIButton) {
+        navigationController?.pushViewController(RxSchedulersViewController(), animated: true)
+    }
 }
