@@ -15,14 +15,20 @@ class FirstViewController: UIViewController, FirstViewDependencies, FirstViewLog
     var interactor: FirstInteractorLogic?
     var dataStore: FirstDataStore?
     var configurator = FirstConfigurator()
+    
+    init() {
+        super.init(nibName: "FirstViewController", bundle: nil)
+        configurator.configure(with: self)
+    }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         configurator.configure(with: self)
     }
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        configurator.configure(with: self)
-    }
+    
+//    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+//        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+//        configurator.configure(with: self)
+//    }
     
     //MARK: - Outlets
     @IBOutlet weak var dataFromSecondLabel: UILabel!

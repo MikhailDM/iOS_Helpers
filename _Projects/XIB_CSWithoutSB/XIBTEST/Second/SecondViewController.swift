@@ -16,14 +16,19 @@ class SecondViewController: UIViewController, SecondViewDependencies, SecondView
     var dataStore: SecondDataStore?
     var configurator = SecondConfigurator()
     
+    init() {
+        super.init(nibName: "SecondViewController", bundle: nil)
+        configurator.configure(with: self)
+    }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         configurator.configure(with: self)
     }
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        configurator.configure(with: self)
-    }
+    
+//    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+//        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+//        configurator.configure(with: self)
+//    }
     
     //MARK: - Outlets
     @IBOutlet weak var dataFromFirstLabel: UILabel!

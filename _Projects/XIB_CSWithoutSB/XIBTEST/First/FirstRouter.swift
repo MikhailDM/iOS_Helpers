@@ -20,7 +20,8 @@ class FirstRouter: FirstRouterDependencies, FirstRouterLogic {
     
     //MARK: - Route
     func routeToSecond() {
-        let destinationVC = SecondViewController(nibName: "SecondViewController", bundle: nil)
+        //let destinationVC = SecondViewController(nibName: "SecondViewController", bundle: nil)
+        let destinationVC = SecondViewController()
         guard let sourceDS = view?.dataStore,
               var destinationDS = destinationVC.dataStore else { print("===== Navigation Fail"); return }
         passDataToSecond(source: sourceDS, destination: &destinationDS)
