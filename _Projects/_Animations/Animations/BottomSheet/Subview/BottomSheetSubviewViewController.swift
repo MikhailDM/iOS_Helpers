@@ -18,11 +18,10 @@ class BottomSheetSubviewViewController: UIViewController {
         case notExpanded
     }
     
-    var expandPosition: CGFloat {
+    var topCurrentPositionY: CGFloat {
         switch state {
         case .expanded: return topExpandedPositionY
         case .notExpanded: return self.view.frame.height - 40
-        //case .notExpanded: return self.view.frame.height - (self.tableView.frame.minY)
         }
     }
     
@@ -41,7 +40,7 @@ class BottomSheetSubviewViewController: UIViewController {
         print("===== Bottom View Button Click")
     }
     
-    func updateOnOpen() {
+    private func updateOnOpen() {
         print("==== Bottom Sheet Update")
     }
     
@@ -55,13 +54,11 @@ class BottomSheetSubviewViewController: UIViewController {
     private func moveToDefaultPosition(speed: Float, usingSpring: Bool) {
         UIView.animate(withDuration: TimeInterval(speed), delay: 0, usingSpringWithDamping: usingSpring ? 0.8 : 1, initialSpringVelocity: 5, options: .curveEaseInOut, animations: { [weak self] in
             guard let self = self else { return }
-            self.view.frame = CGRect(x: 0,
-                                     y: self.expandPosition,
-                                     width: self.view.frame.width,
-                                     height: self.view.frame.height)
+            self.view.frame = CGRect(x: 0, y: self.topCurrentPositionY, width: self.view.frame.width, height: self.view.frame.height)
         }) { _ in
             if self.isFirstLaunch && self.state == .expanded {
                 //self.presenter?.loadData()
+                self.updateOnOpen()
                 self.isFirstLaunch = false
             }
         }
@@ -86,12 +83,14 @@ class BottomSheetSubviewViewController: UIViewController {
             } else {
                 state = .notExpanded
             }
-            
-            newPositionY = view.center.y + (sender.translation(in: view).y / 5)
+            //Move view on Touch
+            newPositionY = view.center.y + (sender.translation(in: view).y / 4)
             view.center.y = newPositionY
             sender.setTranslation(.zero, in: view)
+            
         case .ended:
-            moveToDefaultPosition(speed: 0.4, usingSpring: true)
+            moveToDefaultPosition(speed: 0.5, usingSpring: true)
+            
         default: break
         }
     }
