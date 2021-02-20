@@ -9,7 +9,7 @@ import UIKit
 
 class BottomSheetViewController: UIViewController {
 
-    let transition = BottomSheetSubviewAnimator()
+    //let transition = BottomSheetSubviewAnimator()
     var bottomSheet = BottomSheetSubviewViewController()
     var bottomSheetViewTopAnchorWhenClosed: NSLayoutConstraint?
     var bottomSheetViewTopAnchorWhenOpened: NSLayoutConstraint?
@@ -123,21 +123,21 @@ class BottomSheetViewController: UIViewController {
     
 }
 
-extension BottomSheetViewController: UIViewControllerTransitioningDelegate {
-    
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        //    transition.originFrame = selectedImage!.superview!.convert(selectedImage!.frame, to: nil)
-        //
-        //    transition.presenting = true
-        //    selectedImage!.isHidden = true
-        
-        //return transition
-        return nil
-    }
-    
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        transition.presenting = false
-//        return transition
-        return nil
-    }
-}
+//extension BottomSheetViewController: UIViewControllerTransitioningDelegate {
+//    
+//    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        //    transition.originFrame = selectedImage!.superview!.convert(selectedImage!.frame, to: nil)
+//        //
+//        //    transition.presenting = true
+//        //    selectedImage!.isHidden = true
+//        
+//        //return transition
+//        return nil
+//    }
+//    
+//    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+////        transition.presenting = false
+////        return transition
+//        return nil
+//    }
+//}

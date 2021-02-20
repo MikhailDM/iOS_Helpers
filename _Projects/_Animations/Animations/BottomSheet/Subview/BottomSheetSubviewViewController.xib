@@ -21,7 +21,7 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZNj-Ts-CcG">
                     <rect key="frame" x="20" y="428" width="374" height="40"/>
-                    <color key="backgroundColor" systemColor="systemTealColor"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="93G-dR-N16"/>
                     </constraints>
@@ -32,7 +32,7 @@
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemIndigoColor"/>
+            <color key="backgroundColor" systemColor="systemTealColor"/>
             <constraints>
                 <constraint firstItem="ZNj-Ts-CcG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="RgB-Th-wp1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZNj-Ts-CcG" secondAttribute="trailing" constant="20" id="Svl-lj-VcI"/>
@@ -43,9 +43,6 @@
         </view>
     </objects>
     <resources>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

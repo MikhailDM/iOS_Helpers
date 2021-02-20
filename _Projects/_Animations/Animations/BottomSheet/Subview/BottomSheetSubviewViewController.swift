@@ -10,7 +10,7 @@ import UIKit
 class BottomSheetSubviewViewController: UIViewController {
     //MARK: - Properties
     var topExpandedPositionY: CGFloat!
-    var state: BottomSheetState = .notExpanded
+    var state = BottomSheetState.notExpanded
     var isFirstLaunch = true
     
     enum BottomSheetState {
@@ -22,16 +22,17 @@ class BottomSheetSubviewViewController: UIViewController {
         switch state {
         case .expanded: return topExpandedPositionY
         case .notExpanded: return self.view.frame.height - 40
-            //case .notExpanded: return self.view.frame.height - (self.tableView.frame.minY)
+        //case .notExpanded: return self.view.frame.height - (self.tableView.frame.minY)
         }
     }
     
     //MARK: - Services
-    let animator = BottomSheetSubviewAnimator()
+    //let animator = BottomSheetSubviewAnimator()
     
+    //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        addGesture()
+        configureGesture()
         view.layer.cornerRadius = 10
     }
     
@@ -46,15 +47,14 @@ class BottomSheetSubviewViewController: UIViewController {
     func updateOnOpen() {
         print("==== Bottom Sheet Update")
     }
-    //MARK: - public methods
+    
+    //MARK: - Public methods
     public func showBottomSheet() {
         self.view.layoutSubviews()
         moveToDefaultPosition(speed: 0.5, usingSpring: false)
     }
-}
-
-private extension BottomSheetSubviewViewController {
     
+    //MARK: - Private
     private func moveToDefaultPosition(speed: Float, usingSpring: Bool) {
         UIView.animate(withDuration: TimeInterval(speed), delay: 0, usingSpringWithDamping: usingSpring ? 0.8 : 1, initialSpringVelocity: 5, options: .curveEaseInOut, animations: { [weak self] in
             guard let self = self else { return }
@@ -74,16 +74,12 @@ private extension BottomSheetSubviewViewController {
         }
     }
     
-    private func addGesture() {
+    private func configureGesture() {
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.onTouch(_:)))
         self.view.addGestureRecognizer(panGesture)
     }
-}
-
-
-//MARK: - @objc methods
-@objc extension BottomSheetSubviewViewController {
     
+    //MARK: - Private. @objc
     @objc func onTouch(_ sender: UIPanGestureRecognizer) {
         switch sender.state {
         case .changed:
@@ -102,61 +98,26 @@ private extension BottomSheetSubviewViewController {
         default: break
         }
     }
-    
 }
 
-//MARK: - Presenter output (PRESENTER -> VIEW)
-extension BottomSheetSubviewViewController {
-//    func showData(_ viewModel: BottomSheetModels.ViewModel) {
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-//            self.tableView.setData(viewModel)
-//            self.tableView.isUserInteractionEnabled = true
-//        }
-//    }
-}
-
-//MARK: - TableView Header Click all Button delegate
-//extension BottomSheetSubviewViewController: BottomFeedTableViewClickDelegate {
-//
-//    func onHeaderAllButtonClick(cellType: BottomFeedCellType) {
-//        switch cellType {
-//        case .main: break
-//        case .news: self.onAllNewsClickCompletion?()
-//        case .notifications: self.onAllNotificationsClickCompletion?()
-//        }
-//    }
-//
-//    func onNewsItemClick(id: Int, cell: UICollectionViewCell) {
-////        selectedCell = cell
-////        selectedCellShapshot = (selectedCell as? BottomFeedNewsCollectionViewCell)?.newsImage.snapshotView(afterScreenUpdates: false)
-////        let storyboard = UIStoryboard(name: "DetailNewsViewController", bundle: nil)
-////        let vc = storyboard.instantiateViewController(withIdentifier: "DetailController") as! NewsDetailViewController
-////        vc.newsId = id
-////        vc.transitioningDelegate = self
-////        navigationController?.pushViewController(vc, animated: true)
-//        self.onAllNewsDetailClickCompletion?(id)
-//    }
-//
-//    func onNotifiationItemClick(id: Int, cell: UICollectionViewCell) { }
-//}
 
 //MARK: - Transition animation
-extension BottomSheetSubviewViewController: UIViewControllerTransitioningDelegate, UINavigationControllerDelegate {
-    
-    public func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        //let animator = presenter?.transitionAnimator
-        
-        if operation == .push {
-            //guard let selectedCell = self.selectedCell, let originFrame = selectedCell.superview?.convert(selectedCell.frame, to: nil) else { return animator }
-//            animator.cellSnapshot = selectedCellShapshot
-//            animator.originFrame = originFrame
-//            animator.setNeedsPresent(true)
-//            selectedCell.alpha = 0
-//            animator.cellSnapshot = selectedCell
-            return animator
-        } else {
-            animator.setNeedsPresent(false)
-            return animator
-        }
-    }
-}
+//extension BottomSheetSubviewViewController: UIViewControllerTransitioningDelegate, UINavigationControllerDelegate {
+//    
+//    public func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        //let animator = presenter?.transitionAnimator
+//        
+//        if operation == .push {
+//            //guard let selectedCell = self.selectedCell, let originFrame = selectedCell.superview?.convert(selectedCell.frame, to: nil) else { return animator }
+//            //            animator.cellSnapshot = selectedCellShapshot
+//            //            animator.originFrame = originFrame
+//            //            animator.setNeedsPresent(true)
+//            //            selectedCell.alpha = 0
+//            //            animator.cellSnapshot = selectedCell
+//            return animator
+//        } else {
+//            animator.setNeedsPresent(false)
+//            return animator
+//        }
+//    }
+//}
