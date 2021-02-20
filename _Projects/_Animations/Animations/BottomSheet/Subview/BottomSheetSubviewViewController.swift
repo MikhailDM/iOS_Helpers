@@ -26,9 +26,6 @@ class BottomSheetSubviewViewController: UIViewController {
         }
     }
     
-    //MARK: - Services
-    //let animator = BottomSheetSubviewAnimator()
-    
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +38,7 @@ class BottomSheetSubviewViewController: UIViewController {
     }
     
     @IBAction func childButtonClick(_ sender: UIButton) {
-        print("===== Child View Button Click")
+        print("===== Bottom View Button Click")
     }
     
     func updateOnOpen() {
@@ -99,25 +96,3 @@ class BottomSheetSubviewViewController: UIViewController {
         }
     }
 }
-
-
-//MARK: - Transition animation
-//extension BottomSheetSubviewViewController: UIViewControllerTransitioningDelegate, UINavigationControllerDelegate {
-//    
-//    public func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        //let animator = presenter?.transitionAnimator
-//        
-//        if operation == .push {
-//            //guard let selectedCell = self.selectedCell, let originFrame = selectedCell.superview?.convert(selectedCell.frame, to: nil) else { return animator }
-//            //            animator.cellSnapshot = selectedCellShapshot
-//            //            animator.originFrame = originFrame
-//            //            animator.setNeedsPresent(true)
-//            //            selectedCell.alpha = 0
-//            //            animator.cellSnapshot = selectedCell
-//            return animator
-//        } else {
-//            animator.setNeedsPresent(false)
-//            return animator
-//        }
-//    }
-//}

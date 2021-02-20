@@ -17,7 +17,6 @@
 		2780EA1625E1108F0008ED4C /* BottomSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2780EA1425E1108F0008ED4C /* BottomSheetViewController.xib */; };
 		2780EA1B25E111990008ED4C /* BottomSheetSubviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780EA1925E111990008ED4C /* BottomSheetSubviewViewController.swift */; };
 		2780EA1C25E111990008ED4C /* BottomSheetSubviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2780EA1A25E111990008ED4C /* BottomSheetSubviewViewController.xib */; };
-		2780EA2125E112010008ED4C /* BottomSheetSubviewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2780EA2025E112010008ED4C /* BottomSheetSubviewAnimator.swift */; };
 		27AD6F0D25DD4EB90090518A /* MainTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AD6F0B25DD4EB90090518A /* MainTVCell.swift */; };
 		27AD6F0E25DD4EB90090518A /* MainTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27AD6F0C25DD4EB90090518A /* MainTVCell.xib */; };
 		27AD6F1325DD50DF0090518A /* UIViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AD6F1125DD50DF0090518A /* UIViewViewController.swift */; };
@@ -37,7 +36,6 @@
 		2780EA1425E1108F0008ED4C /* BottomSheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomSheetViewController.xib; sourceTree = "<group>"; };
 		2780EA1925E111990008ED4C /* BottomSheetSubviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetSubviewViewController.swift; sourceTree = "<group>"; };
 		2780EA1A25E111990008ED4C /* BottomSheetSubviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomSheetSubviewViewController.xib; sourceTree = "<group>"; };
-		2780EA2025E112010008ED4C /* BottomSheetSubviewAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetSubviewAnimator.swift; sourceTree = "<group>"; };
 		27AD6F0B25DD4EB90090518A /* MainTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTVCell.swift; sourceTree = "<group>"; };
 		27AD6F0C25DD4EB90090518A /* MainTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTVCell.xib; sourceTree = "<group>"; };
 		27AD6F1125DD50DF0090518A /* UIViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewViewController.swift; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 		2780EA1225E110760008ED4C /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
-				2780EA1F25E111F70008ED4C /* Animator */,
 				2780EA1825E111820008ED4C /* Subview */,
 				2780EA1325E1108F0008ED4C /* BottomSheetViewController.swift */,
 				2780EA1425E1108F0008ED4C /* BottomSheetViewController.xib */,
@@ -122,14 +119,6 @@
 				2780EA1A25E111990008ED4C /* BottomSheetSubviewViewController.xib */,
 			);
 			path = Subview;
-			sourceTree = "<group>";
-		};
-		2780EA1F25E111F70008ED4C /* Animator */ = {
-			isa = PBXGroup;
-			children = (
-				2780EA2025E112010008ED4C /* BottomSheetSubviewAnimator.swift */,
-			);
-			path = Animator;
 			sourceTree = "<group>";
 		};
 		27AD6F0A25DD4EAD0090518A /* Cells */ = {
@@ -226,7 +215,6 @@
 			files = (
 				2763CEA325DD4BE500BA4CF6 /* MainViewController.swift in Sources */,
 				2780EA1525E1108F0008ED4C /* BottomSheetViewController.swift in Sources */,
-				2780EA2125E112010008ED4C /* BottomSheetSubviewAnimator.swift in Sources */,
 				2763CE8825DD4B6B00BA4CF6 /* AppDelegate.swift in Sources */,
 				2780EA1B25E111990008ED4C /* BottomSheetSubviewViewController.swift in Sources */,
 				27AD6F1325DD50DF0090518A /* UIViewViewController.swift in Sources */,
